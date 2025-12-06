@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Outfit", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 35px;
+}
+
+#aboutRef,
+#servicesRef,
+#amenities,
+#contact,
+#testimonials {
+  scroll-snap-align: start;
+  scroll-margin-top: 35px;
+}
+
+.wa-chat-box-poweredby {
+  display: none !important;
+}
+
+.bb-button {
+  background-color: #029a8d !important;
+}
+
+.bb-bg-light {
+  background-color: rgba(2, 154, 141, 0.15) !important;
+}
+
+.bb-bg-medium {
+  background-color: rgba(2, 154, 141, 0.3) !important;
+}
+
+.bb-heading {
+  color: #029a8d !important;
+}
+
+.bb-white {
+  background-color: white !important;
+}
+
+.bb-black {
+  background-color: #111827;
+}
+
+.bb-gradient-light {
+  background: linear-gradient(
+    to bottom,
+    #d1ecea,
+    rgba(2, 154, 141, 0.15)
+  ) !important;
+}
+
+.bb-text-hover:hover {
+  color: #029a8d !important;
+}
