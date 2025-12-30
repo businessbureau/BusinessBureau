@@ -170,6 +170,22 @@ const Footer = () => {
                           help.businessbureau@gmail.com
                         </a>
                       </li>
+                      <li>
+                        <a
+                          href="/privacy-policy"
+                          className="transition hover:text-cyan-600"
+                        >
+                          Privacy Policy
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/terms-and-conditions"
+                          className="transition hover:text-cyan-600"
+                        >
+                          Terms and Conditions
+                        </a>
+                      </li>
                       {/* <li>
                         <a
                           href="#me"
