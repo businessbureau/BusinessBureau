@@ -22,7 +22,33 @@
     />
     <title>Business Bureau</title>
     <!-- Google tag (gtag.js) -->
+<script>
 
+function gtag_report_conversion(url) {
+
+  var callback = function () {
+
+    if (typeof(url) != 'undefined') {
+
+      window.location = url;
+
+    }
+
+  };
+
+  gtag('event', 'conversion', {
+
+      'send_to': 'AW-17841824319/lXUWCOjsrNsbEL_E0rtC',
+
+      'event_callback': callback
+
+  });
+
+  return false;
+
+}
+
+</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17841824319"></script>
 
 <script>
