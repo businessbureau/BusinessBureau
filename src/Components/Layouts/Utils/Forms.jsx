@@ -46,6 +46,15 @@ const handleFormSubmit = async (e) => {
 
       // Success → show thank-you message
       setSubmitted(true);
+
+      // Fire Google Ads conversion helper if available
+      if (typeof window !== "undefined" && typeof window.gtag_report_conversion === "function") {
+        try {
+          window.gtag_report_conversion();
+        } catch (e) {
+          console.warn("gtag_report_conversion failed", e);
+        }
+      }
     } catch (error) {
       console.error("Submission failed:", error);
       alert("Something went wrong. Please try again.");
