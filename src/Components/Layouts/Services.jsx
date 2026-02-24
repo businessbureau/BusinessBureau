@@ -1,216 +1,139 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import dedicatedDesks from "../../assets/office pics/services/Dedicated desks.webp";
 import privateCabins from "../../assets/office pics/services/Private Cabins.webp";
 import virtualOffice from "../../assets/office pics/services/Meeting Rooms.webp";
 import cafeteria from "../../assets/office pics/services/Cafeteria.webp";
 import Clients from "./Clients";
 
+const services = [
+  {
+    title: "Coworking Space",
+    subtitle: "Vibrant Community",
+    description:
+      "Discover a dynamic ecosystem where ideas flourish. Our coworking spaces are designed for innovation, productivity, and connection.",
+    img: dedicatedDesks,
+    accent: "bg-primary",
+  },
+  {
+    title: "Private Offices",
+    subtitle: "Exclusive Privacy",
+    description:
+      "Experience privacy and exclusivity tailored for ambitious teams. Fully furnished cabins that merge comfort with professional precision.",
+    img: privateCabins,
+    accent: "bg-gray-800",
+  },
+  {
+    title: "Meeting Rooms",
+    subtitle: "State-of-the-art",
+    description:
+      "Foster collaboration and make impactful presentations in rooms equipped with modern amenities and high-speed connectivity.",
+    img: virtualOffice,
+    accent: "bg-primary",
+  },
+  {
+    title: "Day Pass",
+    subtitle: "Total Flexibility",
+    description:
+      "Need a desk for a day? Enjoy all our premium amenities and a vibrant work environment with total flexibility and zero long-term commitment.",
+    img: cafeteria,
+    accent: "bg-gray-800",
+  },
+];
+
 const Services = () => {
-  const [showMore, setShowMore] = useState({
-    dedicatedDesks: false,
-    privateCabins: false,
-    virtualOffice: false,
-    cafeteria: false,
-  });
-
-  const cardRefs = {
-    dedicatedDesks: useRef(null),
-    privateCabins: useRef(null),
-    virtualOffice: useRef(null),
-    cafeteria: useRef(null),
-  };
-
-  const handleShowMore = (service) => {
-    setShowMore((prevState) => ({
-      ...prevState,
-      [service]: !prevState[service],
-    }));
-  };
-
-  const handleClickOutside = (event) => {
-    for (const service in cardRefs) {
-      if (
-        cardRefs[service].current &&
-        !cardRefs[service].current.contains(event.target)
-      ) {
-        setShowMore((prevState) => ({
-          ...prevState,
-          [service]: false,
-        }));
-      }
-    }
-  };
-
-  const handleMouseLeave = (service) => {
-    setShowMore((prevState) => ({
-      ...prevState,
-      [service]: false,
-    }));
-  };
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
   return (
-    <div data-section id="servicesRef" className="bb-bg-light bg-primary/15">
-      <div className="py-20">
-        <div className="xl:container mx-auto px-6 md:px-12">
-          <div className="mb-16 w-full">
-            <h2 className="mb-4 text-4xl font-bold text-gray-800 md:text-5xl text-center">
-              Services
+    <section
+      id="servicesRef"
+      data-section
+      className="bg-[#0a0a0a] py-32 overflow-hidden"
+    >
+      <div className="xl:container mx-auto px-6 md:px-12">
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-24">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="max-w-2xl"
+          >
+            <span className="text-primary text-[10px] uppercase tracking-[0.6em] font-bold mb-4 block">
+              Tailored Solutions
+            </span>
+            <h2 className="text-white text-5xl md:text-8xl font-light leading-[0.85] tracking-tighter">
+              Bespoke <br />
+              <span className="text-primary italic font-serif">Services.</span>
             </h2>
-            <p className="text-gray-500 text-center w-full sm:w-3/4 mx-auto">
-              Discover convenience at Business Bureau: tailored services,
-              top-notch amenities, and a vibrant community. From private offices
-              to hot desks, check out our services and elevate your work
-              experience with us.
-            </p>
-          </div>
-          <div className="grid gap-6 px-4 sm:px-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            <div
-              ref={cardRefs.dedicatedDesks}
-              onMouseLeave={() => handleMouseLeave("dedicatedDesks")}
-              className="group relative rounded-3xl  space-y-6 overflow-hidden"
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            viewport={{ once: true }}
+            className="text-gray-400 max-w-sm text-sm md:text-base font-light leading-relaxed mb-4"
+          >
+            Elevate your journey with world-class environments. From solo
+            visionaries to growing titans, we have the space for your success.
+          </motion.p>
+        </div>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="group relative"
             >
-              <img
-                className="mx-auto h-[26rem] w-full grayscale-0 object-cover object-top transition duration-500 group-hover:scale-105 group-hover:grayscale"
-                src={dedicatedDesks}
-                alt="Dedicated Desks"
-                loading="lazy"
-                width={640}
-                height={805}
-              />
-              <div className="absolute bottom-0 inset-x-0 h-max mt-auto px-8 py-6 bg-gray-800 dark:bg-white translate-y-24 transition duration-300 ease-in-out group-hover:translate-y-0">
-                <div>
-                  <h4 className="text-2xl font-semibold dark:text-gray-700 text-white">
-                    Dedicated Desks
-                  </h4>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+                <motion.img
+                  src={service.img}
+                  alt={service.title}
+                  loading="lazy"
+                  className="w-full h-full object-cover opacity-100 group-hover:scale-105 transition-all duration-1000"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent transition-opacity duration-500 group-hover:opacity-40" />
+
+                {/* Floating Label */}
+                <div className="absolute top-8 left-8">
+                  <span
+                    className={`px-4 py-1.5 ${service.accent} text-white text-[8px] uppercase tracking-[0.3em] font-bold rounded-full`}
+                  >
+                    {service.subtitle}
+                  </span>
                 </div>
-                <p
-                  className={`mt-8 text-gray-300 dark:text-gray-600 ${showMore.dedicatedDesks ? "" : "line-clamp-2"}`}
-                >
-                  Elevate your productivity with our dedicated desks, providing
-                  a personalized workspace for focused and efficient work.
-                </p>
-                <span
-                  className="font-semibold text-info cursor-pointer hover:text-info/75"
-                  onClick={() => handleShowMore("dedicatedDesks")}
-                >
-                  {showMore.dedicatedDesks ? "less" : "more"}
-                </span>
-              </div>
-            </div>
-            <div
-              ref={cardRefs.privateCabins}
-              onMouseLeave={() => handleMouseLeave("privateCabins")}
-              className="group relative rounded-3xl  space-y-6 overflow-hidden"
-            >
-              <img
-                className="mx-auto h-[26rem] w-full grayscale-0 object-cover object-top transition duration-500 group-hover:scale-105 group-hover:grayscale"
-                src={privateCabins}
-                alt="private cabins"
-                loading="lazy"
-                width={640}
-                height={805}
-              />
-              <div className="absolute bottom-0 inset-x-0 h-max mt-auto px-8 py-6 bg-gray-800 dark:bg-white translate-y-24 transition duration-300 ease-in-out group-hover:translate-y-0">
-                <div>
-                  <h4 className="text-2xl font-semibold dark:text-gray-700 text-white">
-                    Private Cabins
-                  </h4>
+
+                {/* Content Overlay */}
+                <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full">
+                  <h3 className="text-white text-3xl md:text-4xl font-light mb-4 group-hover:text-primary transition-colors duration-500">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-300 text-sm md:text-base font-light max-w-md opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 delay-100">
+                    {service.description}
+                  </p>
+
+                  {/* Decorative Line */}
+                  <div className="w-12 h-[1px] bg-primary mt-6 scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
                 </div>
-                <p
-                  className={`mt-8 text-gray-300 dark:text-gray-600 ${showMore.privateCabins ? "" : "line-clamp-2"}`}
-                >
-                  Experience privacy and exclusivity in our private cabins,
-                  tailored for those who value a dedicated and secluded office
-                  environment.
-                </p>
-                <span
-                  className="font-semibold text-info cursor-pointer hover:text-info/75"
-                  onClick={() => handleShowMore("privateCabins")}
-                >
-                  {showMore.privateCabins ? "less" : "more"}
-                </span>
               </div>
-            </div>
-            <div
-              ref={cardRefs.virtualOffice}
-              onMouseLeave={() => handleMouseLeave("virtualOffice")}
-              className="group relative rounded-3xl  space-y-6 overflow-hidden"
-            >
-              <img
-                className="mx-auto h-[26rem] w-full grayscale-0 object-cover object-top transition duration-500 group-hover:scale-105 group-hover:grayscale"
-                src={virtualOffice}
-                alt="Meeting Rooms"
-                loading="lazy"
-                width={640}
-                height={805}
-              />
-              <div className="absolute bottom-0 inset-x-0 h-max mt-auto px-8 py-6 bg-gray-800 dark:bg-white translate-y-24 transition duration-300 ease-in-out group-hover:translate-y-0">
-                <div>
-                  <h4 className="text-2xl font-semibold dark:text-gray-700 text-white">
-                    Meeting Rooms
-                  </h4>
-                </div>
-                <p
-                  className={`mt-8 text-gray-300 dark:text-gray-600 ${showMore.virtualOffice ? "" : "line-clamp-2"}`}
-                >
-                  Foster collaboration and make impactful presentations in our
-                  state-of-the-art meeting rooms, equipped to enhance your
-                  team's creativity and communication.
-                </p>
-                <span
-                  className="font-semibold text-info cursor-pointer hover:text-info/75"
-                  onClick={() => handleShowMore("virtualOffice")}
-                >
-                  {showMore.virtualOffice ? "less" : "more"}
-                </span>
-              </div>
-            </div>
-            <div
-              ref={cardRefs.cafeteria}
-              onMouseLeave={() => handleMouseLeave("cafeteria")}
-              className="group relative rounded-3xl  space-y-6 overflow-hidden"
-            >
-              <img
-                className="mx-auto h-[26rem] w-full grayscale-0 object-cover object-top transition duration-500 group-hover:scale-105 group-hover:grayscale"
-                src={cafeteria}
-                alt="cafeteria"
-                loading="lazy"
-                width={640}
-                height={805}
-              />
-              <div className="absolute bottom-0 inset-x-0 h-max mt-auto px-8 py-6 bg-gray-800 dark:bg-white translate-y-24 transition duration-300 ease-in-out group-hover:translate-y-0">
-                <div>
-                  <h4 className="text-2xl font-semibold dark:text-gray-700 text-white">
-                    Cafeteria
-                  </h4>
-                </div>
-                <p
-                  className={`mt-8 text-gray-300 dark:text-gray-600 ${showMore.cafeteria ? "" : "line-clamp-2"}`}
-                >
-                  Recharge and socialize in our vibrant cafeteria, offering a
-                  welcoming space for networking, casual meetings, and enjoying
-                  refreshments in a relaxed setting.
-                </p>
-                <span
-                  className="font-semibold text-info cursor-pointer hover:text-info/75"
-                  onClick={() => handleShowMore("cafeteria")}
-                >
-                  {showMore.cafeteria ? "less" : "more"}
-                </span>
-              </div>
-            </div>
-          </div>
+            </motion.div>
+          ))}
         </div>
       </div>
-      <Clients />
-    </div>
+
+      {/* Clients Integration */}
+      <div className="mt-40 border-t border-white/5 pt-20">
+        <Clients />
+      </div>
+
+      {/* Background Graphic Element */}
+      <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+    </section>
   );
 };
 

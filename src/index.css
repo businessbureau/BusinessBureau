@@ -59,3 +59,28 @@ html {
 .bb-text-hover:hover {
   color: #029a8d !important;
 }
+
+/* Custom Scrollbar Implementation */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #029a8d;
+  border: 3px solid white;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #027a6f;
+}
+
+/* Firefox compatibility */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #029a8d white;
+}

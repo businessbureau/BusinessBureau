@@ -1,7 +1,9 @@
-import React from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import logo from "../../assets/bb logos-min.png";
+
 const Footer = () => {
-  const scrollToElement = (ref, menuItem) => {
+  const scrollToElement = (ref) => {
     const element = document.querySelector(`#${ref}`);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -9,259 +11,197 @@ const Footer = () => {
   };
 
   return (
-    <div>
-      <footer>
-        <div className="flex justify-stretch items-stretch -ms-3">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="-mb-0.5 w-full bg-gray-900 p-0 ps-0 "
-            viewBox="0 0 1367.743 181.155"
-          >
-            <path
-              className="fill-[#d1ecea] text-gray-100 dark:text-gray-800 p-0 w-full"
-              id="wave"
-              data-name="wave"
-              d="M0,0S166.91-56.211,405.877-49.5,715.838,14.48,955.869,26.854,1366,0,1366,0V115H0Z"
-              transform="translate(1.743 66.155)"
+    <footer className="relative bg-white border-t border-gray-102 pt-32 pb-16 overflow-hidden">
+      {/* Cinematic Background Text */}
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 0.02, x: 0 }}
+        transition={{ duration: 2, ease: "easeOut" }}
+        className="absolute top-0 left-0 text-[18rem] font-bold text-gray-900 whitespace-nowrap pointer-events-none select-none uppercase tracking-tighter"
+      >
+        Business Bureau
+      </motion.div>
+
+      <div className="xl:container mx-auto px-6 md:px-12 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-20 mb-24">
+          {/* Brand Column */}
+          <div className="sm:col-span-2 space-y-12">
+            <motion.img
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              src={logo}
+              alt="logo"
+              loading="lazy"
+              className="w-44"
             />
-          </svg>
-        </div>
-        <div className="bb-gradient-light bg-gradient-to-b from-primary/20 to-primary/15 dark:from-primary/20 dark:to-primary/15 pt-1">
-          <div className="container m-auto space-y-8 px-6 text-gray-600 dark:text-gray-800 md:px-12 lg:px-20">
-            <div className="grid grid-cols-8 gap-6 md:gap-0">
-              <div className="col-span-8 md:border-r border-gray-100 dark:border-gray-800 md:col-span-2 lg:col-span-3">
-                <div className="flex items-center justify-between gap-6 border-b border-white dark:border-gray-800 py-6 md:block md:space-y-6 md:border-none md:py-0">
-                  <img
-                    src={logo}
-                    alt="logo business bureau"
-                    width={100}
-                    height={42}
-                    className="w-32 hover:grayscale-0 py-4"
-                  />
-                  <div className="flex gap-6">
-                    <a
-                      href="https://www.facebook.com/businessbureau.in"
-                      target="blank"
-                      aria-label="github"
-                      className="hover:text-cyan-600"
-                    >
-                      <i class="fa-brands fa-facebook text-2xl"></i>
-                    </a>
-                    <a
-                      href="https://www.instagram.com/businessbureau.in?igsh=c3VtZXQ5cXV5ZjQ3"
-                      target="blank"
-                      aria-label="twitter"
-                      className="hover:text-cyan-600"
-                    >
-                      <i class="fa-brands fa-instagram text-2xl"></i>
-                    </a>
-                    <a
-                      href="https://youtube.com/@BusinessBureaukochi?si=QzEobzgaAF1pAhrp"
-                      target="blank"
-                      aria-label="youtube"
-                      className="hover:text-cyan-600"
-                    >
-                      <i class="fa-brands fa-youtube text-2xl"></i>
-                    </a>
-                    {/* <a
-                      href="#me"
-                      target="blank"
-                      aria-label="medium"
-                      className="hover:text-cyan-600"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={20}
-                        height={20}
-                        fill="currentColor"
-                        className="bi bi-medium"
-                        viewBox="0 0 16 16"
-                      >
-                        <path d="M9.025 8c0 2.485-2.02 4.5-4.513 4.5A4.506 4.506 0 0 1 0 8c0-2.486 2.02-4.5 4.512-4.5A4.506 4.506 0 0 1 9.025 8zm4.95 0c0 2.34-1.01 4.236-2.256 4.236-1.246 0-2.256-1.897-2.256-4.236 0-2.34 1.01-4.236 2.256-4.236 1.246 0 2.256 1.897 2.256 4.236zM16 8c0 2.096-.355 3.795-.794 3.795-.438 0-.793-1.7-.793-3.795 0-2.096.355-3.795.794-3.795.438 0 .793 1.699.793 3.795z" />
-                      </svg>
-                    </a> */}
-                  </div>
-                </div>
-              </div>
-              <div className="col-span-8 md:col-span-6 lg:col-span-5">
-                <div className="grid grid-cols-1 md:grid-cols-2  gap-6 pb-16  md:pl-16">
-                  <div>
-                    <h6 className="text-lg font-semibold text-gray-800 dark:text-gray-800">
-                      Quick Links
-                    </h6>
-                    <ul className="mt-4 list-inside space-y-4 font-light">
-                      <li>
-                        <span
-                          href="#me"
-                          className="transition hover:text-cyan-600 cursor-pointer"
-                          onClick={() => scrollToElement("homeRef", "Home")}
-                        >
-                          Home
-                        </span>
-                      </li>
-                      <li>
-                        <span
-                          href="#me"
-                          className="transition hover:text-cyan-600 cursor-pointer"
-                          onClick={() => scrollToElement("aboutRef", "About")}
-                        >
-                          About
-                        </span>
-                      </li>
-                      <li>
-                        <span
-                          href="#me"
-                          className="transition hover:text-cyan-600 cursor-pointer"
-                          onClick={() =>
-                            scrollToElement("servicesRef", "Services")
-                          }
-                        >
-                          Services
-                        </span>
-                      </li>
-                      <li>
-                        <span
-                          href="#me"
-                          className="transition hover:text-cyan-600 cursor-pointer"
-                          onClick={() =>
-                            scrollToElement("amenitiesRef", "Amenities")
-                          }
-                        >
-                          Amenities
-                        </span>
-                      </li>
-                      <li>
-                        <span
-                          href="#me"
-                          className="transition hover:text-cyan-600 cursor-pointer"
-                          onClick={() =>
-                            scrollToElement("contactRef", "Contact")
-                          }
-                        >
-                          Contact
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h6 className="text-lg font-semibold text-gray-800 dark:text-gray-800">
-                      Contact us
-                    </h6>
-                    <ul className="mt-4 list-inside space-y-4 font-light">
-                      <li>
-                        <a
-                          href="tel:+917907556090"
-                          className="transition hover:text-cyan-600"
-                        >
-                          <span className=" inline-flex pe-1">
-                            <i class="fa-solid fa-phone"></i>
-                          </span>
-                          +91 7907556090
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="mailto:help.businessbureau@gmail.com"
-                          className="transition hover:text-cyan-600"
-                        >
-                          <span className=" inline-flex pe-1">
-                            <i class="fa-solid fa-envelope"></i>
-                          </span>
-                          help.businessbureau@gmail.com
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="/privacy-policy"
-                          className="transition hover:text-cyan-600"
-                        >
-                          Privacy Policy
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="/terms-and-conditions"
-                          className="transition hover:text-cyan-600"
-                        >
-                          Terms and Conditions
-                        </a>
-                      </li>
-                      {/* <li>
-                        <a
-                          href="#me"
-                          className="transition hover:text-cyan-600"
-                        >
-                          <span className=" inline-flex pe-2">
-                            <i class="fa-solid fa-location-dot"></i>
-                          </span>
-                          G 287, opp. Federal Bank, Main Avenue, MIG Housing
-                          Society, Panampilly Nagar, Kochi, Ernakulam, Kerala
-                          682036
-                        </a>
-                      </li> */}
-                    </ul>
-                  </div>
-                  {/* <div>
-                    <h6 className="text-lg font-medium text-gray-800 dark:text-gray-800">
-                      Ressources
-                    </h6>
-                    <ul className="mt-4 list-inside space-y-4">
-                      <li>
-                        <a
-                          href="#menu"
-                          className="transition hover:text-cyan-600"
-                        >
-                          About
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#menu"
-                          className="transition hover:text-cyan-600"
-                        >
-                          Customers
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#menu"
-                          className="transition hover:text-cyan-600"
-                        >
-                          Enterprise
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#menu"
-                          className="transition hover:text-cyan-600"
-                        >
-                          Partners
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#menu"
-                          className="transition hover:text-cyan-600"
-                        >
-                          Jobs
-                        </a>
-                      </li>
-                    </ul>
-                  </div> */}
-                </div>
-                <div className="flex justify-between border-t border-gray-100 dark:border-gray-800 py-4 pb-8 md:pl-16">
-                  <span>
-                    © Business Bureau Coworking - <span id="year" />
-                    {2024}
-                  </span>
-                  <span>All right reserved</span>
-                </div>
-              </div>
+            <p className="text-gray-600 font-light max-w-sm leading-relaxed text-lg">
+              Empowering innovators and ambitious entrepreneurs with world-class
+              environments. <br />
+              <span className="text-gray-900 font-medium italic font-serif">
+                Your journey, elevated.
+              </span>
+            </p>
+            <div className="flex gap-8">
+              {[
+                {
+                  icon: "fa-facebook",
+                  link: "https://www.facebook.com/businessbureau.in",
+                },
+                {
+                  icon: "fa-instagram",
+                  link: "https://www.instagram.com/businessbureau.in",
+                },
+                {
+                  icon: "fa-youtube",
+                  link: "https://youtube.com/@BusinessBureaukochi",
+                },
+              ].map((social, i) => (
+                <motion.a
+                  key={i}
+                  whileHover={{ y: -8, color: "#029a8d" }}
+                  href={social.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-gray-400 transition-all duration-300 text-3xl"
+                >
+                  <i className={`fa-brands ${social.icon}`}></i>
+                </motion.a>
+              ))}
             </div>
           </div>
+
+          {/* Links Column */}
+          <div>
+            <h6 className="text-gray-900 font-medium mb-10 text-sm uppercase tracking-[0.4em] opacity-30">
+              Menu
+            </h6>
+            <ul className="space-y-6">
+              {[
+                "Home",
+                "About",
+                "Services",
+                "Gallery",
+                "Amenities",
+                "Contact",
+              ].map((item) => (
+                <li key={item}>
+                  <Link
+                    to={
+                      item === "Home"
+                        ? "/"
+                        : item === "About"
+                          ? "/about"
+                          : item === "Services"
+                            ? "/services"
+                            : item === "Gallery"
+                              ? "/gallery"
+                              : item === "Contact"
+                                ? "/contact"
+                                : "/"
+                    }
+                    className="group flex items-center text-gray-500 hover:text-gray-900 transition-all duration-300 font-light text-base"
+                  >
+                    <span className="w-0 group-hover:w-6 h-[1px] bg-primary mr-0 group-hover:mr-4 transition-all duration-500"></span>
+                    {item}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Locations Column */}
+          <div>
+            <h6 className="text-gray-900 font-medium mb-10 text-sm uppercase tracking-[0.4em] opacity-30">
+              Locations
+            </h6>
+            <ul className="space-y-6">
+              {[
+                { name: "Petta, Kochi", path: "/locations/petta" },
+                {
+                  name: "Panampally Nagar",
+                  path: "/locations/panampally-nagar",
+                },
+              ].map((loc) => (
+                <li key={loc.name}>
+                  <Link
+                    to={loc.path}
+                    className="group flex items-center text-gray-500 hover:text-gray-900 transition-all duration-300 font-light text-base"
+                  >
+                    <span className="w-0 group-hover:w-6 h-[1px] bg-primary mr-0 group-hover:mr-4 transition-all duration-500"></span>
+                    {loc.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Support Column */}
+          <div>
+            <h6 className="text-gray-900 font-medium mb-10 text-sm uppercase tracking-[0.4em] opacity-30">
+              Inquiries
+            </h6>
+            <ul className="space-y-10">
+              <li>
+                <span className="text-gray-400 text-[9px] uppercase tracking-[0.5em] block mb-3 font-bold">
+                  Connect via Phone
+                </span>
+                <a
+                  href="tel:+917907556090"
+                  className="text-gray-800 hover:text-primary transition-colors font-light text-lg block"
+                >
+                  +91 7907556090
+                </a>
+              </li>
+              <li>
+                <span className="text-gray-400 text-[9px] uppercase tracking-[0.5em] block mb-3 font-bold">
+                  Write to Us
+                </span>
+                <a
+                  href="mailto:help.businessbureau@gmail.com"
+                  className="text-gray-800 hover:text-primary transition-colors font-light text-lg block italic"
+                >
+                  help.businessbureau@gmail.com
+                </a>
+              </li>
+              <li className="pt-6 border-t border-gray-100 space-y-4">
+                <a
+                  href="/privacy-policy"
+                  className="text-[10px] text-gray-500 hover:text-gray-900 uppercase tracking-[0.2em] transition-all block"
+                >
+                  Privacy Policy
+                </a>
+                <a
+                  href="/terms-and-conditions"
+                  className="text-[10px] text-gray-500 hover:text-gray-900 uppercase tracking-[0.2em] transition-all block"
+                >
+                  Terms of Service
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </footer>
-    </div>
+
+        <div className="border-t border-gray-100 pt-16 flex flex-col md:flex-row justify-between items-center gap-8 text-gray-400 text-[9px] uppercase tracking-[0.5em]">
+          <div className="flex items-center gap-6">
+            <span className="w-12 h-[1px] bg-gray-200"></span>
+            <span>© Business Bureau Coworking {new Date().getFullYear()}</span>
+          </div>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="flex items-center gap-2 group cursor-default"
+          >
+            <span>State of the Art</span>
+            <span className="text-primary font-bold group-hover:text-gray-900 transition-colors">
+              Excellence
+            </span>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Stylized Grain Overlay */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.02] mix-blend-multiply bg-[url('https://www.transparenttextures.com/patterns/black-paper.png')]" />
+    </footer>
   );
 };
 
