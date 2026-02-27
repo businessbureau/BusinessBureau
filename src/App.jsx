@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Home from "./Components/Home";
 import AboutPage from "./Components/AboutPage";
-import PanampallyNagar from "./Components/Locations/PanampallyNagar";
+import PanampillyNagar from "./Components/Locations/PanampillyNagar";
 import Petta from "./Components/Locations/Petta";
 import ServicesPage from "./Components/ServicesPage";
 import GalleryPage from "./Components/GalleryPage";
@@ -20,14 +20,15 @@ import ScrollToTop from "./Components/Layouts/Utils/ScrollToTop";
 import Lenis from "lenis";
 
 const LenisScroll = ({ children }) => {
-  const location = useLocation();
-
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
     });
+
+    // Attach to window so ScrollToTop can access the persistent instance
+    window.lenis = lenis;
 
     function raf(time) {
       lenis.raf(time);
@@ -36,13 +37,11 @@ const LenisScroll = ({ children }) => {
 
     requestAnimationFrame(raf);
 
-    // Scroll to top on route change
-    lenis.scrollTo(0, { immediate: true });
-
     return () => {
       lenis.destroy();
+      delete window.lenis;
     };
-  }, [location.pathname]);
+  }, []); // Run only once on mount
 
   return children;
 };
@@ -60,8 +59,8 @@ function App() {
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route
-              path="/locations/panampally-nagar"
-              element={<PanampallyNagar />}
+              path="/locations/panampilly-nagar"
+              element={<PanampillyNagar />}
             />
             <Route path="/locations/petta" element={<Petta />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />

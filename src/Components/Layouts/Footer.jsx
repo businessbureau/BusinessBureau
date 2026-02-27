@@ -3,13 +3,6 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/bb logos-min.png";
 
 const Footer = () => {
-  const scrollToElement = (ref) => {
-    const element = document.querySelector(`#${ref}`);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <footer className="relative bg-white border-t border-gray-102 pt-32 pb-16 overflow-hidden">
       {/* Cinematic Background Text */}
@@ -77,36 +70,31 @@ const Footer = () => {
               Menu
             </h6>
             <ul className="space-y-6">
-              {[
-                "Home",
-                "About",
-                "Services",
-                "Gallery",
-                "Amenities",
-                "Contact",
-              ].map((item) => (
-                <li key={item}>
-                  <Link
-                    to={
-                      item === "Home"
-                        ? "/"
-                        : item === "About"
-                          ? "/about"
-                          : item === "Services"
-                            ? "/services"
-                            : item === "Gallery"
-                              ? "/gallery"
-                              : item === "Contact"
-                                ? "/contact"
-                                : "/"
-                    }
-                    className="group flex items-center text-gray-500 hover:text-gray-900 transition-all duration-300 font-light text-base"
-                  >
-                    <span className="w-0 group-hover:w-6 h-[1px] bg-primary mr-0 group-hover:mr-4 transition-all duration-500"></span>
-                    {item}
-                  </Link>
-                </li>
-              ))}
+              {["Home", "About", "Services", "Gallery", "Contact"].map(
+                (item) => (
+                  <li key={item}>
+                    <Link
+                      to={
+                        item === "Home"
+                          ? "/"
+                          : item === "About"
+                            ? "/about"
+                            : item === "Services"
+                              ? "/services"
+                              : item === "Gallery"
+                                ? "/gallery"
+                                : item === "Contact"
+                                  ? "/contact"
+                                  : "/"
+                      }
+                      className="group flex items-center text-gray-500 hover:text-gray-900 transition-all duration-300 font-light text-base"
+                    >
+                      <span className="w-0 group-hover:w-6 h-[1px] bg-primary mr-0 group-hover:mr-4 transition-all duration-500"></span>
+                      {item}
+                    </Link>
+                  </li>
+                ),
+              )}
             </ul>
           </div>
 
@@ -119,8 +107,8 @@ const Footer = () => {
               {[
                 { name: "Petta, Kochi", path: "/locations/petta" },
                 {
-                  name: "Panampally Nagar",
-                  path: "/locations/panampally-nagar",
+                  name: "Panampilly Nagar",
+                  path: "/locations/panampilly-nagar",
                 },
               ].map((loc) => (
                 <li key={loc.name}>

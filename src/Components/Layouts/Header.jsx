@@ -214,8 +214,8 @@ function Header() {
                     {[
                       { name: "Petta", path: "/locations/petta" },
                       {
-                        name: "Panampally Nagar",
-                        path: "/locations/panampally-nagar",
+                        name: "Panampilly Nagar",
+                        path: "/locations/panampilly-nagar",
                       },
                     ].map((loc) => (
                       <Link

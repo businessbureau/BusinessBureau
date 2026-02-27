@@ -1,9 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Link } from "react-router-dom";
 import interiorImage from "../../assets/about/IMG_0534_0002_Color Lookup 3.jpg";
 
 const About = () => {
-  const [readmore, setReadMore] = useState(false);
   const containerRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -58,32 +58,20 @@ const About = () => {
 
           <div className="space-y-6 text-gray-600 font-light leading-relaxed">
             <p>
-              Discover a vibrant and collaborative workspace designed for
-              innovation, productivity, and community. Business Bureau is not
-              just a place to work; it's a dynamic ecosystem where ideas
-              flourish.
+              At Business Bureau, we create professional environments that
+              empower innovation, collaboration, and long-term growth. Our
+              coworking spaces are designed to help individuals and teams work
+              efficiently while staying connected to a thriving business
+              community.
             </p>
 
-            {readmore && (
-              <motion.p
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                className="text-gray-500"
-              >
-                Focusing on freelancers, ambitious entrepreneurs, and growing
-                teams, our spaces go beyond desks, merging innovation with
-                comfort. Join a community where every interaction sparks
-                possibility.
-              </motion.p>
-            )}
-
-            <button
-              onClick={() => setReadMore(!readmore)}
-              className="group flex items-center gap-4 text-gray-800 text-sm uppercase tracking-widest mt-8"
+            <Link
+              to="/about"
+              className="group flex items-center gap-4 text-gray-800 text-sm uppercase tracking-widest mt-8 w-max"
             >
               <span className="w-8 h-[1px] bg-primary group-hover:w-12 transition-all" />
-              {readmore ? "Less Information" : "Our Full Story"}
-            </button>
+              Our Full Story
+            </Link>
           </div>
         </motion.div>
       </div>

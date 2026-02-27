@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Layouts/Header";
+import Seo from "./Seo";
 import HeroSection from "./Layouts/HeroSection";
+import WhoWeAre from "./Layouts/WhoWeAre";
 import About from "./Layouts/About";
 import Services from "./Layouts/Services";
 import Amenities from "./Layouts/Amenities";
@@ -28,8 +30,13 @@ const Home = () => {
         <Loader />
       ) : (
         <>
+          <Seo
+            title="Coworking Space in Kerala | Business Bureau"
+            description="Discover a premium coworking space in Kerala with shared offices, meeting rooms, and a productive environment for professionals."
+          />
           <Header />
           <HeroSection />
+          <WhoWeAre />
           <About />
           <Services />
           <Amenities />

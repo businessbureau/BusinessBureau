@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Header from "./Layouts/Header";
+import Seo from "./Seo";
 import Footer from "./Layouts/Footer";
 
 // Gallery Assets - Organized by Folder
@@ -12,9 +13,10 @@ import int5 from "../assets/Gallery/Interior/WhatsApp Image 2026-01-23 at 6.22.5
 import int6 from "../assets/Gallery/Interior/WhatsApp Image 2026-01-23 at 6.22.59 PM.jpeg";
 import int7 from "../assets/Gallery/Interior/WhatsApp Image 2026-01-23 at 6.23.00 PM.jpeg";
 
-import ext1 from "../assets/Gallery/Exterior/IMG_0543_0010_Brightness_Contrast 7.jpg";
-import ext2 from "../assets/Gallery/Exterior/IMG_0543_0012_Brightness_Contrast 8.jpg";
-import ext3 from "../assets/Gallery/Exterior/IMG_0543_0015_Brightness_Contrast 10.jpg";
+import ext1 from "../assets/Gallery/Exterior/exterior1.jpg";
+import ext2 from "../assets/Gallery/Exterior/exterior2.jpg";
+import ext3 from "../assets/Gallery/Exterior/exterior3.jpg";
+import ext4 from "../assets/Gallery/Exterior/exterior4.jpg";
 
 const GalleryPage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -32,6 +34,7 @@ const GalleryPage = () => {
       title: "Architectural Detail",
       size: "large",
     },
+    { src: ext4, type: "exterior", title: "Modern Facade", size: "small" },
     { src: int4, type: "interior", title: "Common Area", size: "small" },
     {
       src: int5,
@@ -50,6 +53,10 @@ const GalleryPage = () => {
 
   return (
     <div className="bg-white min-h-screen">
+      <Seo
+        title="Coworking Space in Kochi | Workspace Gallery"
+        description="View images of our coworking space in Kochi showcasing modern workspaces, shared offices, meeting rooms, and professional interiors."
+      />
       <Header />
 
       {/* Hero Section */}

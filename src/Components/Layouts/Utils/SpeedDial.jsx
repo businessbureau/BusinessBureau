@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const SpeedDial = () => {
   const handleClick = () => {
@@ -9,20 +10,28 @@ const SpeedDial = () => {
   };
 
   return (
-    <div>
+    <>
       <div data-dial-init="" className="fixed end-6 bottom-6 group z-[99999]">
-        <button
+        <motion.button
           type="button"
           onClick={handleClick}
+          animate={{ y: [0, -10, 0] }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
           aria-controls="speed-dial-menu-default"
           aria-expanded="false"
-          className="flex items-center justify-center text-white bg-emerald-500 rounded-full w-14 h-14 hover:bg-emerald-600 dark:bg-emerald-500 dark:hover:bg-emerald-700 focus:ring-4 focus:ring-emerald-300 focus:outline-none dark:focus:ring-emerald-800"
+          className="flex items-center justify-center text-white bg-emerald-500 rounded-full w-14 h-14 shadow-lg hover:shadow-xl hover:bg-emerald-600 dark:bg-emerald-500 dark:hover:bg-emerald-700 focus:ring-4 focus:ring-emerald-300 focus:outline-none dark:focus:ring-emerald-800 cursor-pointer"
         >
           <i className="fa-brands fa-whatsapp text-3xl"></i>
           <span className="sr-only">Open actions menu</span>
-        </button>
+        </motion.button>
       </div>
-    </div>
+    </>
   );
 };
 

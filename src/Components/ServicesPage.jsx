@@ -1,96 +1,227 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState, useRef } from "react";
+import { Link } from "react-router-dom";
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import Header from "./Layouts/Header";
+import Seo from "./Seo";
 import Footer from "./Layouts/Footer";
-import officeImage from "../assets/service page/IMG_0534_0000_Color Lookup 1.jpg";
+import dedicatedDesks from "../assets/office pics/services/Dedicated desks.webp";
+import privateCabins from "../assets/office pics/services/Private Cabins.webp";
+import meetingRooms from "../assets/office pics/services/Meeting Rooms.webp";
+import dayPass from "../assets/office pics/services/Cafeteria.webp";
 
-const ServiceCard = ({ title, description, price, icon }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    className="bg-white p-12 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-700 group relative overflow-hidden"
-  >
-    <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity duration-700">
-      <i className={`fa-solid ${icon} text-8xl text-primary`}></i>
+const ServiceRow = ({ service, index }) => {
+  const isEven = index % 2 === 0;
+
+  return (
+    <div
+      className={`py-24 border-b border-gray-100 last:border-0 ${isEven ? "bg-white" : "bg-gray-50/50"}`}
+    >
+      <div className="container mx-auto px-6">
+        <div
+          className={`flex flex-col ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"} gap-20 items-center`}
+        >
+          {/* Image Side */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="lg:w-1/2 relative group"
+          >
+            <div className="aspect-[16/10] overflow-hidden rounded-[2.5rem] shadow-2xl">
+              <img
+                src={service.img}
+                alt={service.title}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2s]"
+              />
+              <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-700" />
+            </div>
+            {/* Abstract Overlay Element */}
+            <div
+              className={`absolute -bottom-10 ${isEven ? "-right-10" : "-left-10"} w-40 h-40 bg-primary/5 rounded-full blur-3xl pointer-events-none`}
+            />
+          </motion.div>
+
+          {/* Content Side */}
+          <div className="lg:w-1/2">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-primary text-[10px] uppercase tracking-[0.6em] font-bold mb-8 block">
+                Workspace Solution {index + 1}
+              </span>
+              <h2 className="text-5xl md:text-7xl font-light text-gray-900 mb-8 tracking-tighter leading-none">
+                {service.title.split(" ")[0]} <br />
+                <span className="text-primary italic font-serif">
+                  {service.title.split(" ").slice(1).join(" ")}
+                </span>
+              </h2>
+              <p className="text-gray-500 text-lg md:text-xl font-light leading-relaxed mb-12 max-w-xl">
+                {service.description}
+              </p>
+
+              <div className="flex items-center gap-6">
+                <Link
+                  to="/contact"
+                  className="px-8 py-4 bg-gray-900 text-white rounded-full text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-primary transition-all duration-500 transform hover:scale-105"
+                >
+                  Inquire Now
+                </Link>
+                <div className="h-[1px] w-20 bg-gray-200" />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div className="relative z-10">
-      <span className="text-primary text-[10px] uppercase tracking-[0.5em] font-bold mb-6 block">
-        {title}
-      </span>
-      <p className="text-gray-600 text-lg font-light leading-relaxed mb-8 pr-12">
-        {description}
-      </p>
-      <div className="flex items-baseline gap-2 mb-8">
-        <span className="text-4xl font-light text-gray-900">{price}</span>
-        <span className="text-gray-400 text-xs uppercase tracking-widest">
-          + Tax
+  );
+};
+
+const StackingReason = ({ reason, index, total }) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.9]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
+
+  return (
+    <motion.div
+      ref={ref}
+      style={{ scale, opacity }}
+      className="sticky top-0 h-screen flex items-center bg-gray-50 border-t border-gray-100 overflow-hidden"
+    >
+      <div className="container mx-auto px-6 grid lg:grid-cols-12 gap-12 items-end py-20">
+        <div className="lg:col-span-8">
+          <div className="flex items-center gap-4 mb-12">
+            <span className="text-gray-400 text-sm font-medium tracking-widest">
+              0{index + 1}
+            </span>
+            <div className="w-12 h-[1px] bg-gray-200" />
+          </div>
+          <h2 className="text-gray-900 text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] uppercase">
+            {reason.title.split(" ")[0]} <br />
+            <span className="text-primary">
+              {reason.title.split(" ").slice(1).join(" ")}
+            </span>
+          </h2>
+        </div>
+        <div className="lg:col-span-4">
+          <p className="text-gray-600 text-lg md:text-xl font-light leading-relaxed mb-8">
+            {reason.text}
+          </p>
+          <div className="flex items-center gap-4 text-primary font-bold tracking-[0.2em] text-[10px] uppercase">
+            <span>Business Bureau Standard</span>
+            <div className="w-8 h-[1px] bg-primary/30" />
+          </div>
+        </div>
+      </div>
+      <div className="absolute top-0 right-0 p-20 opacity-[0.03] pointer-events-none select-none">
+        <span className="text-[20rem] font-black leading-none">
+          {index + 1}
         </span>
       </div>
-      <div className="w-12 h-[1px] bg-primary group-hover:w-full transition-all duration-700" />
-    </div>
-  </motion.div>
-);
+    </motion.div>
+  );
+};
+const FAQItem = ({ question, answer, isOpen, onClick, index }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      viewport={{ once: true }}
+      className="border-b border-gray-200 overflow-hidden"
+    >
+      <button
+        onClick={onClick}
+        onMouseEnter={onClick}
+        className="w-full py-8 flex items-center justify-between text-left group"
+      >
+        <span className="text-xl md:text-2xl font-light text-gray-900 group-hover:text-primary transition-colors duration-300 pr-8">
+          {question}
+        </span>
+        <div className="relative w-6 h-6 flex-shrink-0">
+          <motion.div
+            className="absolute top-1/2 left-0 w-full h-[1px] bg-gray-300"
+            animate={{ rotate: isOpen ? 0 : 0 }}
+          />
+          <motion.div
+            className="absolute top-1/2 left-0 w-full h-[1px] bg-gray-300"
+            animate={{ rotate: isOpen ? 0 : 90 }}
+            transition={{ duration: 0.3 }}
+          />
+        </div>
+      </button>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.5, ease: [0.04, 0.62, 0.23, 0.98] }}
+          >
+            <div className="pb-8 pr-12">
+              <p className="text-gray-500 text-base md:text-lg font-light leading-relaxed max-w-3xl">
+                {answer}
+              </p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+};
 
 const ServicesPage = () => {
+  const [openIndex, setOpenIndex] = useState(0);
   const services = [
     {
       title: "Coworking Space",
       description:
-        "A vibrant, collaborative environment designed for solo visionaries and agile teams. Professional desks with ergonomic comfort.",
-      price: "₹7,000",
-      icon: "fa-users-viewfinder",
+        "Our coworking model fosters a collaborative work environment while maintaining professional standards. It supports freelancers, digital nomads, and small teams seeking flexibility, networking opportunities, and a community-driven workspace. The shared workspace is thoughtfully designed to balance openness and focus, allowing members to work productively without distractions.",
+      img: dedicatedDesks,
     },
     {
       title: "Private Offices",
       description:
-        "Secure, fully-equipped suites tailored for focused productivity. Perfect for established firms and growing teams.",
-      price: "Starting ₹20,000",
-      icon: "fa-building-shield",
+        "Private cabins offer controlled access, dedicated infrastructure, and a distraction-free setup. Ideal for startups and growing teams needing privacy with scalable office solutions. Each private office is fully furnished and designed to support confidentiality, focused work, and team collaboration without the burden of managing utilities.",
+      img: privateCabins,
     },
     {
       title: "Meeting Rooms",
       description:
-        "State-of-the-art facilities for impactful presentations, interviews, and deep-focus sessions. High-speed connectivity included.",
-      price: "₹800 / hr",
-      icon: "fa-handshake",
+        "Our meeting rooms support client presentations, internal discussions, and workshops. Equipped with modern facilities and designed to reflect professionalism and efficiency. Suitable for both short discussions and extended sessions, offering a comfortable environment for productive conversations with presentation-ready setups.",
+      img: meetingRooms,
     },
     {
       title: "Day Pass",
       description:
-        "Total flexibility for the mobile professional. Access our premium facilities for a single day with no long-term commitment.",
-      price: "₹800",
-      icon: "fa-ticket",
-    },
-    {
-      title: "Office Functions",
-      description:
-        "Customizable event and workshop spaces designed to facilitate innovation and professional networking.",
-      price: "On Request",
-      icon: "fa-calendar-check",
+        "Day access options allow professionals to work without long-term commitments. Ideal for consultants, remote workers, and professionals who need occasional access to a professional workspace. It offers full use of essential amenities during working hours without ongoing obligations, combining flexibility with a managed environment.",
+      img: dayPass,
     },
   ];
 
   return (
     <div className="bg-white">
+      <Seo
+        title="Coworking Space in Kochi | Workspace Services"
+        description="Looking for a coworking space in Kochi? Explore workspace services including shared offices, desks, meeting rooms, and a productive business environment."
+      />
       <Header />
 
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center bg-black overflow-hidden">
-        <motion.div
-          initial={{ scale: 1.1, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.5 }}
-          transition={{ duration: 1.5 }}
-          className="absolute inset-0"
-        >
-          <img
-            src={officeImage}
-            alt="Business Bureau Services"
-            className="w-full h-full object-cover grayscale"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black" />
-        </motion.div>
-
         <div className="relative z-10 text-center px-6">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
@@ -113,185 +244,138 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* Services Breakdown */}
-      <section className="py-40 px-6">
-        <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-            {services.map((service, i) => (
-              <ServiceCard key={i} {...service} />
-            ))}
-          </div>
+      {/* Services Breakdown Redesign */}
+      <section className="py-20 bg-white overflow-hidden">
+        <div className="container mx-auto px-6 mb-24 text-center">
+          <span className="text-primary text-[10px] uppercase tracking-[0.5em] font-bold mb-6 block">
+            Core Offerings
+          </span>
+          <h2 className="text-6xl md:text-9xl font-light tracking-tighter leading-none mb-8">
+            Workspace <br />
+            <span className="text-primary italic font-serif">Solutions.</span>
+          </h2>
         </div>
+
+        {services.map((service, i) => (
+          <ServiceRow key={i} service={service} index={i} />
+        ))}
       </section>
 
-      {/* Office Functioning Policies */}
-      <section className="py-40 bg-gray-50 overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-24 items-center">
-            <div>
-              <span className="text-primary text-[10px] uppercase tracking-[0.5em] font-bold mb-8 block">
-                Policy & Standards
-              </span>
-              <motion.h2
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
-                viewport={{ once: true }}
-                className="text-5xl md:text-7xl font-light text-gray-900 mb-12 tracking-tighter leading-tight"
-              >
-                Flawless <br />
-                <span className="text-primary italic font-serif">
-                  Operations.
-                </span>
-              </motion.h2>
-              <div className="space-y-12">
-                <div className="flex gap-8 group">
-                  <div className="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors duration-500">
-                    <i className="fa-solid fa-clock text-primary group-hover:text-white transition-colors duration-500"></i>
-                  </div>
-                  <div>
-                    <h4 className="text-gray-900 font-bold uppercase tracking-widest text-xs mb-3">
-                      Operating Hours
-                    </h4>
-                    <p className="text-gray-500 font-light leading-relaxed">
-                      Monday to Saturday: 09:00 AM – 09:00 PM <br />
-                      Sundays: Rest & Recharge (Holiday)
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-8 group">
-                  <div className="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors duration-500">
-                    <i className="fa-solid fa-file-contract text-primary group-hover:text-white transition-colors duration-500"></i>
-                  </div>
-                  <div>
-                    <h4 className="text-gray-900 font-bold uppercase tracking-widest text-xs mb-3">
-                      Terms & GST
-                    </h4>
-                    <p className="text-gray-500 font-light leading-relaxed">
-                      Virtual offices are not provided. Business & GST
-                      documentation is exclusively available for physical space
-                      clients with a minimum 1-year commitment.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-8 group">
-                  <div className="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors duration-500">
-                    <i className="fa-solid fa-shield-halved text-primary group-hover:text-white transition-colors duration-500"></i>
-                  </div>
-                  <div>
-                    <h4 className="text-gray-900 font-bold uppercase tracking-widest text-xs mb-3">
-                      Security & Access
-                    </h4>
-                    <p className="text-gray-500 font-light leading-relaxed">
-                      Biometric entry to the facility. Room keys are provided
-                      for private suites. 2-month refundable security deposit
-                      and 2-month notice period apply.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1 }}
-              viewport={{ once: true }}
-              className="relative p-12 bg-white rounded-[3rem] shadow-2xl border border-gray-100"
-            >
-              <h3 className="text-3xl font-light mb-8 italic font-serif">
-                Why Choose Us?
-              </h3>
-              <ul className="space-y-6">
-                {[
-                  "High-speed primary & backup WiFi",
-                  "Enterprise-grade redundant internet",
-                  "Professional community of visionaries",
-                  "Prime business district locations",
-                  "Biometric-secured facilities",
-                  "Fully managed operational friction",
-                ].map((item, i) => (
-                  <li
-                    key={i}
-                    className="flex items-center gap-4 text-gray-600 font-light"
-                  >
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-12 p-8 bg-primary/5 rounded-2xl border border-primary/10">
-                <p className="text-primary text-sm font-medium leading-relaxed">
-                  Looking for free meeting room credits? <br />
-                  <span className="text-gray-400 font-light uppercase tracking-widest text-[10px] block mt-2">
-                    Speak with our Hub Manager
-                  </span>
-                  <a
-                    href="tel:9567299942"
-                    className="text-lg font-bold block mt-1"
-                  >
-                    +91 9567299942
-                  </a>
-                </p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Service FAQs */}
-      <section className="py-40 bg-white">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-24"
-          >
-            <span className="text-primary text-[10px] uppercase tracking-[0.6em] font-bold mb-6 block font-serif italic text-2xl uppercase">
-              Questions
+      {/* Why Choose Us - Immersive Stacking Redesign */}
+      <section className="bg-gray-50 relative">
+        <div className="bg-white py-32 px-6 border-b border-gray-100">
+          <div className="container mx-auto text-center">
+            <span className="text-primary text-[10px] uppercase tracking-[0.5em] font-bold mb-8 block">
+              The Distinction
             </span>
-            <h3 className="text-5xl md:text-8xl font-light tracking-tighter uppercase leading-none">
-              Transparency.
+            <h2 className="text-5xl md:text-8xl font-light text-gray-900 tracking-tighter leading-tight mb-8">
+              Why <br />
+              <span className="text-primary italic font-serif">Choose Us.</span>
+            </h2>
+            <p className="text-gray-400 text-xl font-light leading-relaxed max-w-2xl mx-auto">
+              We are proud to be the coworking space in Kerala that
+              professionals across industries choose when they want both quality
+              and community.
+            </p>
+          </div>
+        </div>
+
+        {[
+          {
+            title: "Strategic Locations",
+            text: "Our workspaces are located in well-connected areas across Kochi and Ernakulam, offering easy access to major business zones, public transport, and essential services. This ensures daily convenience, reduced commute time, and smoother client interactions.",
+          },
+          {
+            title: "Operational Expertise",
+            text: "Strong expertise in operations and facilities management ensures seamless daily functioning, consistent service quality, and well-maintained infrastructure. Proactive management minimizes disruptions, allowing professionals to focus fully on productivity and business growth.",
+          },
+          {
+            title: "Flexible Models",
+            text: "Flexible workspace models remove the pressure of long-term leases and high upfront costs. Businesses can easily upgrade, scale, or adjust their workspace requirements as needs evolve, without facing relocation challenges or contractual limitations.",
+          },
+          {
+            title: "Professional Infrastructure",
+            text: "All workspaces are fully furnished and equipped with reliable internet, modern amenities, and secure access systems. The professional setup supports focused work, client meetings, and team collaboration in a comfortable, business-ready environment.",
+          },
+          {
+            title: "Community Focus",
+            text: "Our spaces attract a diverse mix of professionals from across Kerala which means every day offers the chance to connect, collaborate, and grow. We believe a great workspace is one where the people around you make you better.",
+          },
+        ].map((reason, i, arr) => (
+          <StackingReason
+            key={i}
+            reason={reason}
+            index={i}
+            total={arr.length}
+          />
+        ))}
+
+        {/* Closing "Choose Us" segment */}
+        <div className="h-[50vh] bg-white flex items-center justify-center px-6 border-t border-gray-100">
+          <div className="text-center">
+            <h3 className="text-4xl md:text-6xl font-light tracking-tighter mb-8">
+              Ready to{" "}
+              <span className="text-primary italic font-serif">Elevate?</span>
             </h3>
-          </motion.div>
-          <div className="space-y-8">
+            <p className="text-gray-400 text-lg font-light mb-12">
+              Join Kochi's most sophisticated professional ecosystem.
+            </p>
+            <Link
+              to="/contact"
+              className="inline-block px-12 py-5 bg-gray-900 text-white rounded-full text-xs uppercase tracking-[0.2em] font-bold hover:bg-primary transition-all duration-500 transform hover:scale-105"
+            >
+              Get Started
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Service FAQs Redesign */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6 grid lg:grid-cols-12 gap-20">
+          <div className="lg:col-span-4 lg:sticky lg:top-32 h-fit">
+            <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-bold mb-6 block">
+              POLICY Q&A
+            </span>
+            <h3 className="text-5xl md:text-8xl font-light tracking-tighter leading-none mb-8">
+              Every <br />
+              <span className="text-primary italic font-serif">Detail.</span>
+            </h3>
+            <p className="text-gray-400 text-base font-light max-w-xs leading-relaxed">
+              Clear answers for professional teams exploring our Kochi network.
+            </p>
+          </div>
+          <div className="lg:col-span-8 border-t border-gray-200">
             {[
               {
-                q: "Is internet included in the pricing?",
-                a: "Yes, enterprise-grade high-speed internet and a backup WiFi connection are included in all our plans.",
+                q: "What services does your coworking space offer?",
+                a: "Our coworking space offers flexible workspace solutions including meeting rooms, day pass access, and private offices. These options are designed for startups, freelancers, remote workers, and businesses looking for professional work environments without long-term commitments.",
               },
               {
-                q: "Do you provide virtual office services?",
-                a: "No, we strictly provide physical workspaces to ensure a high-quality, professional community environment.",
+                q: "How does the coworking day pass work?",
+                a: "A coworking day pass allows you to access our shared workspace for a full day. It includes high-speed internet, comfortable seating, power backup, and common amenities—ideal for remote workers, travelers, and short-term professionals.",
               },
               {
-                q: "Can I get GST documentation?",
-                a: "GST and business legal documentation are provided for clients taking physical rooms with a minimum one-year lock-in period.",
+                q: "Can I book a meeting room in advance?",
+                a: "Yes, our meeting rooms can be booked in advance for client meetings, team discussions, interviews, or presentations. Each meeting room is equipped with high-speed Wi-Fi, presentation screens, and a professional setup to ensure productive sessions.",
               },
               {
-                q: "What is the security deposit?",
-                a: "A refundable security deposit equivalent to 2 months' rent is required at the time of onboarding.",
+                q: "What are the benefits of choosing a private office in your coworking space?",
+                a: "Our private offices provide a secure, fully furnished workspace with dedicated access, privacy, and flexibility. They are ideal for growing teams, startups, and businesses that need a professional office environment without the cost of traditional office leasing.",
               },
               {
-                q: "Is there a notice period?",
-                a: "Yes, we require a 2-month notice period for existing clients.",
+                q: "Who should choose a coworking space instead of a traditional office?",
+                a: "A coworking space is perfect for freelancers, startups, remote teams, and consultants who want flexible office solutions, cost efficiency, and networking opportunities without long-term contracts or high overhead costs.",
               },
             ].map((faq, i) => (
-              <div
+              <FAQItem
                 key={i}
-                className="p-10 bg-gray-50 rounded-3xl border border-transparent hover:border-primary/20 transition-all duration-500 group"
-              >
-                <h4 className="text-gray-900 font-medium mb-4 text-lg">
-                  {faq.q}
-                </h4>
-                <p className="text-gray-500 font-light leading-relaxed">
-                  {faq.a}
-                </p>
-              </div>
+                index={i}
+                question={faq.q}
+                answer={faq.a}
+                isOpen={openIndex === i}
+                onClick={() => setOpenIndex(openIndex === i ? -1 : i)}
+              />
             ))}
           </div>
         </div>

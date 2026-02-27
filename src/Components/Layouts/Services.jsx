@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Link } from "react-router-dom";
 import dedicatedDesks from "../../assets/office pics/services/Dedicated desks.webp";
 import privateCabins from "../../assets/office pics/services/Private Cabins.webp";
 import virtualOffice from "../../assets/office pics/services/Meeting Rooms.webp";
@@ -11,7 +11,7 @@ const services = [
     title: "Coworking Space",
     subtitle: "Vibrant Community",
     description:
-      "Discover a dynamic ecosystem where ideas flourish. Our coworking spaces are designed for innovation, productivity, and connection.",
+      "Our shared environment is built for focus and connection. Freelancers, consultants, and remote workers enjoy a coworking space for freelancers in Kerala that gives them a dedicated place to work without the isolation of home or the distraction of a cafe.",
     img: dedicatedDesks,
     accent: "bg-primary",
   },
@@ -19,7 +19,7 @@ const services = [
     title: "Private Offices",
     subtitle: "Exclusive Privacy",
     description:
-      "Experience privacy and exclusivity tailored for ambitious teams. Fully furnished cabins that merge comfort with professional precision.",
+      "Our private cabins are fully furnished, secure, and ready for teams that need focus without distraction. Each managed office space comes with dedicated infrastructure, climate control, and scalable layouts making them the right choice for startups and growing teams.",
     img: privateCabins,
     accent: "bg-gray-800",
   },
@@ -27,7 +27,7 @@ const services = [
     title: "Meeting Rooms",
     subtitle: "State-of-the-art",
     description:
-      "Foster collaboration and make impactful presentations in rooms equipped with modern amenities and high-speed connectivity.",
+      " Book a meeting room rental by the hour for client presentations, team workshops, or video conferences. A coworking space with conference room facilities that is accessible makes client meetings far less stressful. ",
     img: virtualOffice,
     accent: "bg-primary",
   },
@@ -35,7 +35,7 @@ const services = [
     title: "Day Pass",
     subtitle: "Total Flexibility",
     description:
-      "Need a desk for a day? Enjoy all our premium amenities and a vibrant work environment with total flexibility and zero long-term commitment.",
+      "For professionals needing short-term access, our day office option allows you to use the workspace for a single day ideal for travelers, consultants, or remote workers. You’ll enjoy high-speed internet, a quiet and professional environment, and access to essential office amenities. ",
     img: cafeteria,
     accent: "bg-gray-800",
   },
@@ -58,9 +58,10 @@ const Services = () => {
             viewport={{ once: true }}
             className="max-w-2xl"
           >
-            <span className="text-primary text-[10px] uppercase tracking-[0.6em] font-bold mb-4 block">
-              Tailored Solutions
-            </span>
+            <h2 className="text-primary text-[10px] uppercase tracking-[0.5em] font-bold mb-4 block">
+              coworking space in Kochi
+            </h2>
+
             <h2 className="text-white text-5xl md:text-8xl font-light leading-[0.85] tracking-tighter">
               Bespoke <br />
               <span className="text-primary italic font-serif">Services.</span>
@@ -90,37 +91,40 @@ const Services = () => {
               viewport={{ once: true }}
               className="group relative"
             >
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-                <motion.img
-                  src={service.img}
-                  alt={service.title}
-                  loading="lazy"
-                  className="w-full h-full object-cover opacity-100 group-hover:scale-105 transition-all duration-1000"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent transition-opacity duration-500 group-hover:opacity-40" />
+              <Link to="/services">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+                  <motion.img
+                    src={service.img}
+                    alt={service.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover opacity-100 group-hover:scale-105 transition-all duration-1000"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent text-opacity-100" />
+                  <div className="absolute inset-0 bg-[#0a0a0a]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                {/* Floating Label */}
-                <div className="absolute top-8 left-8">
-                  <span
-                    className={`px-4 py-1.5 ${service.accent} text-white text-[8px] uppercase tracking-[0.3em] font-bold rounded-full`}
-                  >
-                    {service.subtitle}
-                  </span>
+                  {/* Floating Label */}
+                  <div className="absolute top-8 left-8">
+                    <span
+                      className={`px-4 py-1.5 ${service.accent} text-white text-[8px] uppercase tracking-[0.3em] font-bold rounded-full`}
+                    >
+                      {service.subtitle}
+                    </span>
+                  </div>
+
+                  {/* Content Overlay */}
+                  <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full">
+                    <h3 className="text-white text-3xl md:text-4xl font-light mb-4 group-hover:text-primary transition-colors duration-500">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-300 text-sm md:text-base font-light max-w-md opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 delay-100">
+                      {service.description}
+                    </p>
+
+                    {/* Decorative Line */}
+                    <div className="w-12 h-[1px] bg-primary mt-6 scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
+                  </div>
                 </div>
-
-                {/* Content Overlay */}
-                <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full">
-                  <h3 className="text-white text-3xl md:text-4xl font-light mb-4 group-hover:text-primary transition-colors duration-500">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-300 text-sm md:text-base font-light max-w-md opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 delay-100">
-                    {service.description}
-                  </p>
-
-                  {/* Decorative Line */}
-                  <div className="w-12 h-[1px] bg-primary mt-6 scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
-                </div>
-              </div>
+              </Link>
             </motion.div>
           ))}
         </div>

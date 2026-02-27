@@ -3,40 +3,64 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const faqData = [
   {
-    question: "What is Business Bureau?",
+    question: "What types of workspaces are available?",
     answer:
-      "Business Bureau is a premium coworking space and business ecosystem designed to foster innovation and productivity for freelancers, entrepreneurs, and teams.",
-    category: "BUSINESS BUREAU",
+      "The Business Bureau offers shared work areas, dedicated desks, private office cabins, and meeting rooms. These options are designed to support freelancers, startups, consultants, and small teams with flexible workspace requirements.",
+    category: "WORKSPACE TYPES",
   },
   {
-    question: "What coworking space options are available?",
+    question: "Is short-term access possible?",
     answer:
-      "We offer flexible coworking options including dedicated desks, day passes, and hot desking in a vibrant community environment.",
-    category: "COWORKING SPACE",
+      "Yes, short-term access is available through flexible day-based options. This allows professionals, remote workers, and business travelers to use the workspace without long-term commitments or contractual obligations.",
+    category: "FLEXIBILITY",
   },
   {
-    question: "Are there meeting rooms available for rent?",
+    question: "Do you provide meeting room rentals?",
     answer:
-      "Yes, we have state-of-the-art meeting rooms equipped with modern amenities and high-speed internet available for both members and non-members.",
+      "Meeting rooms are available for client discussions, internal meetings, presentations, and workshops. Each space is professionally set up to ensure a productive environment with reliable connectivity and essential meeting infrastructure.",
     category: "MEETING ROOMS",
   },
   {
-    question: "Do you offer private office spaces?",
+    question: "Are private cabins fully furnished?",
     answer:
-      "Absolutely! We provide fully furnished private office cabins for teams that require a more exclusive and secluded work environment.",
-    category: "PRIVATE OFFICE",
+      "All private cabins are fully furnished with work-ready furniture, lighting, and essential infrastructure. These cabins provide a secure, distraction-free environment suitable for focused work and confidential business operations.",
+    category: "PRIVATE CABINS",
   },
   {
-    question: "What amenities are included with a membership?",
+    question: "Is internet speed suitable for IT work?",
     answer:
-      "Members enjoy perks like high-speed WIFI, power backup, refreshments, lockers, video conferencing facilities, and 24/7 surveillance.",
+      "The workspace is equipped with high-speed, stable internet connectivity suitable for IT professionals, developers, and remote teams. This ensures smooth video conferencing, cloud-based work, and uninterrupted daily operations.",
+    category: "CONNECTIVITY",
+  },
+  {
+    question: "Can small teams scale easily?",
+    answer:
+      "Small teams can easily scale by upgrading workspace plans or moving into larger private offices. The flexible model allows businesses to grow without the limitations of long-term leases or relocation challenges.",
+    category: "SCALABILITY",
+  },
+  {
+    question: "Is parking available?",
+    answer:
+      "Parking facilities are available for members and visitors, depending on location. This ensures convenient access for professionals commuting by personal vehicles and supports hassle-free daily workspace usage.",
     category: "AMENITIES",
   },
   {
-    question: "Where are your locations?",
+    question: "Are utilities included?",
     answer:
-      "We are proudly located in Petta and Panampally Nagar, providing convenient access to key business hubs in Kochi.",
-    category: "LOCATIONS",
+      "Yes, essential utilities such as electricity, internet, and maintenance are included in the workspace plans. This helps businesses manage predictable costs without worrying about separate operational expenses.",
+    category: "UTILITIES",
+  },
+  {
+    question: "Can freelancers join?",
+    answer:
+      "Freelancers are welcome and benefit from a professional environment, reliable infrastructure, and a collaborative atmosphere. The workspace supports independent professionals seeking focus, networking opportunities, and work-life balance.",
+    category: "COMMUNITY",
+  },
+  {
+    question: "Do you offer professional address services?",
+    answer:
+      "Professional address services are available for businesses needing a credible office address. This supports registrations, official correspondence, and client communication while enhancing the company’s professional presence.",
+    category: "VIRTUAL OFFICE",
   },
 ];
 
@@ -71,6 +95,7 @@ const FAQ = () => {
             <div key={index} className="border-b border-gray-100 pb-4">
               <button
                 onClick={() => toggleFAQ(index)}
+                onMouseEnter={() => setActiveIndex(index)}
                 className="w-full flex justify-between items-center py-6 text-left group"
               >
                 <div className="space-y-1">

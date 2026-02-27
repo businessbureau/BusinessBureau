@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   motion,
   useInView,
@@ -6,6 +7,7 @@ import {
   useTransform,
   AnimatePresence,
 } from "framer-motion";
+import Seo from "./Seo";
 import Header from "./Layouts/Header";
 import Footer from "./Layouts/Footer";
 import officeImage from "../assets/about/IMG_0534_0002_Color Lookup 3.jpg";
@@ -15,7 +17,11 @@ import leader2 from "../assets/about/Sham.JPG"; // Sham
 const Counter = ({ value, title, suffix = "" }) => {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const isInView = useInView(ref, {
+    once: false,
+    amount: 0.5,
+    margin: "-50px",
+  });
 
   useEffect(() => {
     if (isInView) {
@@ -33,6 +39,8 @@ const Counter = ({ value, title, suffix = "" }) => {
       }, incrementTime);
 
       return () => clearInterval(timer);
+    } else {
+      setCount(0);
     }
   }, [isInView, value]);
 
@@ -50,21 +58,28 @@ const Counter = ({ value, title, suffix = "" }) => {
 };
 
 const AboutPage = () => {
-  const scrollRef = useRef(null);
+  const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
-    target: scrollRef,
-    offset: ["start start", "end end"],
+    target: heroRef,
+    offset: ["start start", "end start"],
   });
 
-  const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 1.1]);
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0.3]);
+  const heroScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
-    <div ref={scrollRef} className="bg-white">
+    <div className="bg-white scroll-smooth w-full">
+      <Seo
+        title="Coworking Space in Kerala | About Business Bureau"
+        description="Learn about our coworking space in Kerala built to support collaboration, productivity, and sustainable business growth."
+      />
       <Header />
 
       {/* Hero Section */}
-      <section className="relative h-[80vh] md:h-[90vh] overflow-hidden flex items-center justify-center bg-black">
+      <section
+        ref={heroRef}
+        className="relative h-[80vh] md:h-[90vh] overflow-hidden flex items-center justify-center bg-black"
+      >
         <motion.div
           style={{ scale: heroScale, opacity: heroOpacity }}
           className="absolute inset-0"
@@ -72,9 +87,11 @@ const AboutPage = () => {
           <img
             src={officeImage}
             alt="Business Bureau"
-            className="w-full h-full object-cover opacity-80"
+            className="w-full h-full object-cover opacity-60"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black" />
+          {/* Enhanced black overlay for better text visibility */}
+          <div className="absolute inset-0 bg-black/10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/50 to-black" />
         </motion.div>
 
         <div className="relative z-10 text-center px-6 max-w-5xl">
@@ -121,11 +138,11 @@ const AboutPage = () => {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, margin: "-50px" }}
           >
-            <span className="text-primary text-[10px] md:text-xs uppercase tracking-[0.4em] md:tracking-[0.5em] font-bold mb-6 block">
-              The Genesis
-            </span>
+            <h1 className="text-primary text-[10px] uppercase tracking-[0.5em] font-bold mb-4 block">
+              coworking space in Kochi
+            </h1>
             <h2 className="text-gray-900 text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light mb-8 md:mb-12 leading-tight tracking-tighter">
               A workspace that <br />
               <span className="text-primary italic font-serif">
@@ -135,20 +152,43 @@ const AboutPage = () => {
             </h2>
             <div className="space-y-6 md:space-y-8 text-base md:text-lg text-gray-600 font-light leading-relaxed max-w-xl">
               <p>
-                Business Bureau was born from a simple yet powerful realization:
-                workspace is not just a physical location, but a catalyst for
-                innovation. We set out to create more than just offices; we
-                built a dynamic ecosystem.
+                With over 4+ years of proven experience, Business Bureau has
+                established itself as a reliable and professionally managed
+                coworking destination in Kochi and Ernakulam. Designed to
+                support modern workstyles, the workspace offers a refined
+                balance of flexibility, functionality, and operational
+                excellence, making it a preferred choice for today’s dynamic
+                professionals.
               </p>
               <p>
-                With half a decade of expertise in managing high-end business
-                environments, our team combines operational excellence with a
-                deep understanding of what ambitious entrepreneurs truly need.
+                Backed by strong expertise in Operations & Facilities
+                Management, the workspace ensures seamless day-to-day
+                functioning, consistent service quality, and a dependable
+                professional environment. From infrastructure upkeep to member
+                support systems, every operational detail is managed with
+                precision.
               </p>
               <p className="font-medium text-gray-900 italic font-serif text-lg md:text-xl">
-                "We don't just provide desks; we provide the foundation for your
-                next big breakthrough."
+                "We enable individuals and teams to focus entirely on
+                productivity without unnecessary distractions."
               </p>
+              <div className="pt-4">
+                <Link
+                  to="/contact"
+                  className="group relative inline-flex items-center gap-4 px-8 py-4 bg-primary overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary/20"
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-white"
+                    initial={{ x: "-100%" }}
+                    whileHover={{ x: 0 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                  <span className="relative z-10 text-[10px] uppercase tracking-[0.3em] font-bold text-white group-hover:text-black transition-colors duration-300">
+                    Connect Us
+                  </span>
+                  <span className="relative z-10 w-8 h-[1px] bg-white group-hover:bg-black group-hover:w-12 transition-all duration-300"></span>
+                </Link>
+              </div>
             </div>
           </motion.div>
 
@@ -156,7 +196,7 @@ const AboutPage = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, margin: "-50px" }}
             className="relative"
           >
             <div className="aspect-[4/5] rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl">
@@ -174,81 +214,109 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Leadership Section */}
-      <section className="py-20 md:py-32 lg:py-40 bg-white">
+      {/* Leadership Section - Premium Redesign */}
+      <section className="py-20 md:py-32 lg:py-48 bg-white overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16 md:mb-32">
-            <span className="text-primary text-[10px] md:text-xs uppercase tracking-[0.4em] md:tracking-[0.6em] font-bold mb-6 block">
-              The Architects
-            </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light text-gray-900 tracking-tighter">
-              Meet our{" "}
-              <span className="text-primary italic font-serif">
-                Visionaries.
-              </span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12 md:gap-20 max-w-6xl mx-auto">
-            {/* Leader 1 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              viewport={{ once: true }}
-              className="group space-y-6 md:space-y-8"
-            >
-              <div className="aspect-[3/4] overflow-hidden rounded-xl md:rounded-2xl transition-all duration-700">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-0 items-center">
+            {/* Image Column */}
+            <div className="lg:col-span-5 relative">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1.5, ease: [0.19, 1, 0.22, 1] }}
+                viewport={{ once: true }}
+                className="relative z-10 aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)]"
+              >
                 <img
                   src={leader1}
                   alt="Alen Jacob"
-                  loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                  className="w-full h-full object-cover"
                 />
-              </div>
-              <div>
-                <h4 className="text-2xl md:text-3xl font-light text-gray-900 mb-1 md:mb-2">
-                  Alen Jacob
-                </h4>
-                <p className="text-primary text-[10px] uppercase tracking-[0.3em] font-bold">
-                  Founder & CEO
-                </p>
-                <p className="mt-3 md:mt-4 text-gray-500 font-light leading-relaxed text-sm md:text-base">
-                  A visionary strategist with a passion for building cohesive
-                  business communities that thrive on collaboration.
-                </p>
-              </div>
-            </motion.div>
+              </motion.div>
 
-            {/* Leader 2 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="group space-y-6 md:space-y-8"
-            >
-              <div className="aspect-[3/4] overflow-hidden rounded-xl md:rounded-2xl transition-all duration-700">
-                <img
-                  src={leader2}
-                  alt="Sham"
-                  loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
-                />
-              </div>
-              <div>
-                <h4 className="text-2xl md:text-3xl font-light text-gray-900 mb-1 md:mb-2">
-                  Sham SK
-                </h4>
-                <p className="text-primary text-[10px] uppercase tracking-[0.3em] font-bold">
-                  Managing Director
-                </p>
-                <p className="mt-3 md:mt-4 text-gray-500 font-light leading-relaxed text-sm md:text-base">
-                  Driving operational excellence and ensuring that every member
-                  experiences the highest standard of service.
-                </p>
-              </div>
-            </motion.div>
+              {/* Decorative elements for premium feel */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1.5, delay: 0.5 }}
+                className="absolute -right-8 -bottom-8 w-48 h-48 bg-primary/5 rounded-full -z-10 blur-3xl"
+              />
+              <div className="absolute top-1/2 -left-12 -translate-y-1/2 w-24 h-[1px] bg-primary hidden lg:block" />
+            </div>
+
+            {/* Content Column */}
+            <div className="lg:col-span-6 lg:col-start-7">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+                viewport={{ once: true }}
+              >
+                <span className="text-primary text-[10px] md:text-xs uppercase tracking-[0.6em] font-bold mb-6 block">
+                  Leadership
+                </span>
+                <h2 className="text-4xl md:text-6xl lg:text-8xl font-light text-gray-900 tracking-tighter leading-none mb-10">
+                  Alen <br />
+                  <span className="text-primary italic font-serif">Jacob.</span>
+                </h2>
+
+                <div className="space-y-8">
+                  <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="text-gray-900 text-lg md:text-2xl font-light leading-snug"
+                  >
+                    Alan Sir, the owner, brings a hands-on leadership approach
+                    backed by deep operational knowledge and industry
+                    experience.
+                  </motion.p>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                    className="space-y-6 text-gray-500 font-light leading-relaxed text-base md:text-lg max-w-xl"
+                  >
+                    <p>
+                      His vision focuses on creating professional work
+                      environments that promote efficiency, collaboration, and
+                      long-term business growth. Through consistent involvement
+                      and attention to detail, he has shaped a workspace trusted
+                      by diverse professionals across Kochi.
+                    </p>
+                    <p>
+                      His leadership style emphasizes practical decision-making,
+                      service consistency, and member satisfaction, ensuring
+                      that every workspace operates to high professional
+                      standards.
+                    </p>
+                    <p>
+                      By actively overseeing operations and continuously
+                      improving facilities, he has created an environment where
+                      professionals feel supported, valued, and confident in
+                      their daily work experience.
+                    </p>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: "100%" }}
+                    transition={{ duration: 1.5, delay: 0.6 }}
+                    className="h-[1px] bg-gray-100 mt-12"
+                  />
+
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 1, delay: 1 }}
+                    className="text-[10px] uppercase tracking-[0.4em] text-gray-400 font-bold"
+                  >
+                    Founder & Managing Director
+                  </motion.p>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -262,7 +330,7 @@ const AboutPage = () => {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: false, margin: "-50px" }}
               className="p-8 sm:p-12 md:p-16 lg:p-20 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl md:rounded-[3rem] group hover:bg-white/10 transition-colors duration-500"
             >
               <div className="w-12 md:w-16 h-[1px] bg-primary mb-8 md:mb-12" />
@@ -271,9 +339,12 @@ const AboutPage = () => {
                 <span className="text-primary italic font-serif">Vision.</span>
               </h3>
               <p className="text-gray-400 text-base md:text-xl font-light leading-relaxed">
-                To be the global benchmark for creative workspaces, empowering
-                the next generation of innovators through design-led
-                environments and a vibrant community.
+                The vision focuses on fostering a supportive environment that
+                encourages innovation, knowledge sharing, and meaningful
+                professional relationships. By removing rigid structures and
+                promoting flexibility, the workspace aims to empower individuals
+                and businesses to adapt, scale, and thrive in a modern work
+                culture.
               </p>
             </motion.div>
 
@@ -282,7 +353,7 @@ const AboutPage = () => {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: false, margin: "-50px" }}
               className="p-8 sm:p-12 md:p-16 lg:p-20 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl md:rounded-[3rem] group hover:bg-white/10 transition-colors duration-500"
             >
               <div className="w-12 md:w-16 h-[1px] bg-primary mb-8 md:mb-12" />
@@ -291,9 +362,11 @@ const AboutPage = () => {
                 <span className="text-primary italic font-serif">Mission.</span>
               </h3>
               <p className="text-gray-400 text-base md:text-xl font-light leading-relaxed">
-                To provide flawlessly managed, community-focused workspaces that
-                eliminate operational friction, allowing businesses to focus
-                entirely on their mission and success.
+                The mission is driven by a commitment to operational excellence,
+                reliable infrastructure, and consistent service quality. By
+                offering flexible workspace solutions and strategic locations,
+                the workspace enables professionals and teams to focus on their
+                goals while adapting easily to changing business needs.
               </p>
             </motion.div>
           </div>

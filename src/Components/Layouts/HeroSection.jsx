@@ -61,7 +61,7 @@ export default function HeroSection() {
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <section ref={containerRef} className="relative h-[300vh] bg-black">
+    <section ref={containerRef} className="relative h-[200vh] bg-black">
       <div className="sticky top-0 h-screen w-full overflow-hidden">
         {/* Section 1: Hero Image (Base Layer) */}
         <div className="absolute inset-0 z-10">
@@ -135,7 +135,7 @@ export default function HeroSection() {
             >
               <h2 className="text-white text-5xl md:text-8xl font-serif italic tracking-tighter mb-4">
                 Now at <span className="text-primary">Petta</span> <br /> &{" "}
-                <span className="text-primary">Panampally Nagar</span>
+                <span className="text-primary">Panampilly Nagar</span>
               </h2>
               <div className="w-16 h-[2px] bg-primary mx-auto mb-6" />
               <p className="text-white/70 max-w-md text-sm md:text-base tracking-widest uppercase font-light">

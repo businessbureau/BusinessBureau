@@ -1,17 +1,18 @@
 import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
 import {
   motion,
   useScroll,
   useTransform,
   AnimatePresence,
 } from "framer-motion";
+import { Link } from "react-router-dom";
 import Header from "../Layouts/Header";
 import Seo from "../Seo";
 import Footer from "../Layouts/Footer";
-import officeImage from "../../assets/office pics/second slide.webp";
-import aboutImage from "../../assets/office pics/third slide.webp";
-import basementImage from "../../assets/about/IMG_0534_0002_Color Lookup 3.jpg";
+import officeImage from "../../assets/office pics/first slide.webp";
+import aboutImage from "../../assets/office pics/forth slide.webp";
+import parkingImage from "../../assets/about/IMG_0534_0002_Color Lookup 3.jpg";
+import FAQ from "../Layouts/FAQ";
 import Testimonials from "../Layouts/Testimonials";
 
 const PricingCard = ({ title, price, details, index }) => (
@@ -116,7 +117,7 @@ const FAQItem = ({ question, answer, isOpen, onClick, index }) => {
   );
 };
 
-const Petta = () => {
+const PanampillyNagar = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -128,77 +129,68 @@ const Petta = () => {
 
   const cabinPricing = [
     {
-      title: "10-Seat Private Cabin",
-      price: "60,000",
-      details:
-        "Expansive suite for larger teams needing a collaborative and exclusive hub.",
-    },
-    {
-      title: "9-Seat Private Cabin",
-      price: "54,000",
-      details:
-        "High-performance space designed for productivity and team synergy.",
-    },
-    {
       title: "6-Seat Private Cabin",
-      price: "36,000",
+      price: "42,000",
       details:
-        "Balanced workspace for medium-sized teams with professional finish.",
+        "Spacious and professionally designed for growing teams seeking a focused environment.",
     },
     {
-      title: "4-Seat Cabin — Office for Small Business Teams",
-      price: "24,000",
+      title: "4-Seat Private Cabin",
+      price: "30,000",
       details:
-        "Compact and efficient, ideal for startups and active collaborators.",
+        "The perfect balance of collaboration and privacy for small teams.",
     },
     {
-      title: "3-Seat Private Cabin",
-      price: "19,500",
+      title: "2-Seat Manager Cabin",
+      price: "20,000",
       details:
-        "Focused environment for small units seeking privacy and comfort.",
+        "Exclusive 2-seat cabin designed for luxury and executive privacy.",
     },
     {
       title: "1-Seat Coworking Desk",
-      price: "6,000",
-      details: "Personalized coworking seat in a thriving business ecosystem.",
+      price: "7,000",
+      details:
+        "Dedicated desk for professionals who require a consistent workspace.",
     },
     {
       title: "Meeting Room",
-      price: "500",
-      details: "Affordable state-of-the-art facility available per hour.",
+      price: "800",
+      details:
+        "State-of-the-art facility available per hour for impactful presentations.",
     },
     {
       title: "Day Pass",
-      price: "500",
-      details: "Flexible daily access for professionals on the move.",
+      price: "800",
+      details:
+        "Total flexibility for travelers, consultants, or remote workers.",
     },
   ];
 
   const faqs = [
     {
-      question: "How close is the metro station?",
+      question: "Is this location suitable for corporate teams?",
       answer:
-        "The metro station is located within very close walking distance, making daily commuting quick and convenient. This easy access significantly reduces travel time for professionals, clients, and visiting team members.",
+        "Yes, this location is highly suitable for corporate teams, offering a professional environment, scalable workspace options, strong infrastructure, and a setting that supports collaboration, productivity, and long-term business operations.",
     },
     {
-      question: "Is this suitable for remote workers?",
+      question: "Are dedicated desks available?",
       answer:
-        "Yes, this workspace is highly suitable for remote workers who need a reliable, professional environment. It offers quiet work areas, strong connectivity, and flexible options that support remote and hybrid work models.",
+        "Yes, dedicated desks are available for professionals and teams who require a consistent, personalized workspace, providing comfort, security, and the flexibility needed for daily use and focused work.",
     },
     {
-      question: "Are meeting rooms available here?",
+      question: "What are the operating hours?",
       answer:
-        "Yes, fully equipped meeting rooms are available and designed for professional discussions, presentations, and client meetings, providing privacy, modern facilities, and a comfortable setting for productive collaboration.",
+        "The workspace operates during extended business hours to accommodate different work schedules, ensuring teams can work efficiently while maintaining a secure, well-managed, and professionally supervised environment.",
     },
     {
-      question: "Can I book short-term access?",
+      question: "Is this workspace fully furnished?",
       answer:
-        "Short-term access options are available, making it ideal for freelancers, consultants, and teams needing temporary workspace solutions without long-term commitments, while still enjoying full professional amenities.",
+        "Yes, the workspace is fully furnished with modern desks, ergonomic seating, meeting rooms, and essential office amenities, allowing teams to move in and begin working immediately without additional setup.",
     },
     {
-      question: "Is internet reliability high?",
+      question: "How accessible is the area?",
       answer:
-        "Internet reliability is very high, with stable, high-speed connectivity that supports video calls, cloud-based work, and daily business operations without interruptions or performance issues.",
+        "The area is highly accessible, with excellent connectivity via major roads and public transport, making daily commuting convenient for teams and ensuring clients can reach the location with ease.",
     },
   ];
 
@@ -207,8 +199,8 @@ const Petta = () => {
   return (
     <div ref={containerRef} className="bg-white">
       <Seo
-        title="Coworking Space in Petta | Professional Workspaces"
-        description="Discover a coworking space in Petta near Petta Metro Station, offering professional workspaces, shared offices, and meeting rooms for startups and teams."
+        title="Coworking Space in Panampilly Nagar | Office Spaces"
+        description="Discover a coworking space in Panampilly Nagar offering professional offices, shared work areas, and meeting rooms for businesses."
       />
       <Header />
 
@@ -220,7 +212,7 @@ const Petta = () => {
         >
           <img
             src={officeImage}
-            alt="Petta Kochi"
+            alt="Panampilly Nagar Interior"
             className="w-full h-full object-cover opacity-70"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black" />
@@ -231,7 +223,7 @@ const Petta = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-primary text-[10px] uppercase tracking-[0.8em] font-bold mb-8 block"
           >
-            Strategic Hub
+            Premier Hub
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -239,9 +231,9 @@ const Petta = () => {
             transition={{ duration: 1, delay: 0.2 }}
             className="text-white text-5xl md:text-8xl font-light tracking-tighter leading-none mb-12"
           >
-            Petta <br />
+            Panampilly <br />
             <span className="text-primary italic font-serif text-6xl md:text-9xl">
-              Kochi.
+              Nagar.
             </span>
           </motion.h1>
         </div>
@@ -251,43 +243,67 @@ const Petta = () => {
       <section className="py-24 px-6 bg-white overflow-hidden">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
+            {/* Image Side (Reversed for visual rhythm compared to Petta) */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.2 }}
+              viewport={{ once: true }}
+              className="relative order-2 lg:order-1"
+            >
+              <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl relative z-10">
+                <img
+                  src={aboutImage}
+                  alt="Panampilly Nagar Interior"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute -top-10 -left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10" />
+              <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-gray-100 rounded-full blur-3xl -z-10" />
+            </motion.div>
+
+            {/* Text Side */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1 }}
               viewport={{ once: true }}
+              className="order-1 lg:order-2"
             >
               <h1 className="text-primary text-[10px] uppercase tracking-[0.5em] font-bold mb-4 block">
-                coworking space in petta
+                coworking space in panampilly nagar
               </h1>
               <h2 className="text-gray-900 text-4xl md:text-6xl font-light mb-10 tracking-tight leading-none">
-                Thrive in Kochi's <br />
+                About Panampilly Nagar <br />
                 <span className="text-primary italic font-serif">
-                  emerging hub.
+                  Business Bureau.
                 </span>
               </h2>
-              <div className="space-y-6 text-gray-600 text-lg font-light leading-relaxed">
+              <div className="space-y-6 text-gray-600 text-lg font-light leading-relaxed mb-12">
                 <p>
-                  The Petta workspace offers unmatched convenience for
-                  professionals relying on public transport. Its proximity to
-                  the metro station makes it a preferred choice for consultants,
-                  freelancers, and remote teams seeking easy accessibility.
+                  Our Panampilly Nagar workspace is designed for professionals
+                  who value premium surroundings and efficient infrastructure.
+                  With thoughtfully planned layouts, dedicated desk options, and
+                  business lounge facilities, it supports focused work and
+                  long-term growth.
                 </p>
                 <p>
-                  The surrounding area provides quick access to key parts of the
-                  city, making it ideal for professionals with frequent meetings
-                  or flexible schedules. The ease of commuting helps reduce
-                  daily travel stress and supports a more balanced work routine.
+                  With a flexible desk space for rent near Kadavanthara, this
+                  location is easy to reach from the broader Ernakulam district
+                  and sits close to major corporate offices, banks, restaurants,
+                  and essential services. The ambience here is calm and focused
+                  — ideal for professionals who need to concentrate and for
+                  teams that regularly host clients.
                 </p>
                 <p>
-                  The workspace is also convenient for those travelling between
-                  business districts. Being coworking near Vytilla makes it easy
-                  to reach clients across the southern part of Ernakulam without
-                  long commutes. Parking is available in the basement, ensuring
-                  hassle-free daily access for commuters.
+                  The workspace includes premium office infrastructure across
+                  all its cabin and desk configurations, along with business
+                  lounge facilities for informal meetings and focused solo work.
+                  Every detail — from lighting and seating to internet and
+                  security — is managed to a high standard.
                 </p>
               </div>
-              <div className="flex mt-12">
+              <div className="flex">
                 <Link
                   to="/contact"
                   className="group relative inline-flex items-center gap-4 px-8 py-4 bg-primary overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 rounded-full"
@@ -305,49 +321,30 @@ const Petta = () => {
                 </Link>
               </div>
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.2 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl relative z-10">
-                <img
-                  src={aboutImage}
-                  alt="Petta Office Interior"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              {/* Decorative Elements */}
-              <div className="absolute -top-10 -right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10" />
-              <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-gray-100 rounded-full blur-3xl -z-10" />
-            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Cabin Details & Pricing */}
-      <section className="py-32 bg-gray-50 overflow-hidden border-y border-gray-100">
+      <section className="py-32 bg-white overflow-hidden border-y border-gray-100">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-20">
             <div className="max-w-2xl">
               <span className="text-primary text-[10px] uppercase tracking-[0.5em] font-bold mb-6 block">
-                Value & Growth
+                Flexible Options
               </span>
               <h3 className="text-5xl md:text-7xl font-light tracking-tighter leading-none">
                 Pricing & <br />
-                <span className="text-primary italic font-serif">Spaces.</span>
+                <span className="text-primary italic font-serif">Cabins.</span>
               </h3>
             </div>
             <p className="text-gray-400 text-lg font-light max-w-xs leading-relaxed border-l border-gray-200 pl-8">
-              Transparent pricing for professionals who demand excellence in
-              Kochi's prime locations.
+              Bespoke workspace solutions tailored for corporate excellence in
+              Panampilly Nagar.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {cabinPricing.map((item, i) => (
               <PricingCard key={i} index={i} {...item} />
             ))}
@@ -356,18 +353,18 @@ const Petta = () => {
       </section>
 
       {/* Parking Highlights */}
-      <section className="py-12 overflow-hidden bg-white border-y border-gray-100">
+      <section className="py-20 overflow-hidden bg-gray-50 border-y border-gray-100">
         <div className="container mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
           <div className="order-2 md:order-1 relative">
             <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src={basementImage}
-                alt="Parking at Petta"
+                src={parkingImage}
+                alt="Parking at Panampilly Nagar"
                 loading="lazy"
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-gray-100 rounded-full blur-3xl -z-10" />
+            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl -z-10" />
           </div>
           <div className="order-1 md:order-2">
             <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-bold mb-6 block">
@@ -378,12 +375,9 @@ const Petta = () => {
               <span className="text-primary italic font-serif">Parking.</span>
             </h3>
             <p className="text-gray-600 text-lg font-light leading-relaxed mb-10">
-              We understand that accessibility is key. Our Petta location
-              provides dedicated and secure
-              <span className="font-medium text-gray-900">
-                {" "}
-                basement parking for both cars and bikes
-              </span>
+              We understand that accessibility is key. Our Panampilly Nagar
+              center provides dedicated and secure parking for both
+              <span className="font-medium text-gray-900"> cars and bikes</span>
               , ensuring that your commute is as smooth as your workflow.
             </p>
             <ul className="space-y-4">
@@ -391,7 +385,7 @@ const Petta = () => {
                 "Secure car parking",
                 "Dedicated bike spots",
                 "CCTV surveillance",
-                "Easy metro access",
+                "Easy road access",
               ].map((item, i) => (
                 <li
                   key={i}
@@ -410,7 +404,7 @@ const Petta = () => {
       <Testimonials />
 
       {/* FAQs Redesign */}
-      <section className="py-12 bg-white">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-6 grid lg:grid-cols-12 gap-20">
           <div className="lg:col-span-4 lg:sticky lg:top-32 h-fit">
             <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-bold mb-6 block">
@@ -422,7 +416,7 @@ const Petta = () => {
             </h3>
             <p className="text-gray-400 text-base font-light max-w-xs leading-relaxed">
               Find answers to common questions about our corporate-ready
-              ecosystem in Petta.
+              ecosystem in Panampilly Nagar.
             </p>
           </div>
           <div className="lg:col-span-8 border-t border-gray-200">
@@ -445,4 +439,4 @@ const Petta = () => {
   );
 };
 
-export default Petta;
+export default PanampillyNagar;

@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Header from "./Layouts/Header";
+import Seo from "./Seo";
 import Footer from "./Layouts/Footer";
 import Forms from "./Layouts/Utils/Forms";
 import contactImg from "../assets/service page/WhatsApp Image 2026-01-23 at 6.22.55 PM (1) - Copy.jpeg";
@@ -9,6 +10,10 @@ import officeImg from "../assets/office pics/first slide.webp";
 const ContactPage = () => {
   return (
     <div className="bg-white min-h-screen">
+      <Seo
+        title="Contact Coworking Space in Kerala | Business Bureau"
+        description="Contact our coworking space in Kerala to learn more about office spaces, meeting rooms, locations, and professional work environments"
+      />
       <Header />
 
       {/* Hero Section */}
@@ -85,9 +90,9 @@ const ContactPage = () => {
                   </span>
                 </motion.h2>
                 <p className="text-gray-500 text-lg font-light leading-relaxed max-w-md">
-                  We are here to help you find the perfect workspace for your
-                  vision. Whether you need a private suite or a flexible desk,
-                  our team is ready to guide you.
+                  Looking for a workspace that fits your needs? Get in touch
+                  with us to learn more about our coworking spaces in kochi
+                  memberships, and availability.
                 </p>
                 <div className="pt-8 grid grid-cols-2 gap-8 border-t border-gray-100">
                   <div>
