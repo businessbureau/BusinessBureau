@@ -30,6 +30,7 @@ const About = () => {
           src={interiorImage}
           alt="Business Bureau Reception"
           loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover opacity-60"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/40 to-transparent" />

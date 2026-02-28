@@ -28,7 +28,7 @@ const PricingCard = ({ title, price, details, index }) => (
     className="relative group bg-white hover:bg-primary pt-16 pb-12 px-10 rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-3xl transition-all duration-700 overflow-hidden"
   >
     {/* Background Numerals */}
-    <div className="absolute top-[-2rem] right-[-1rem] pointer-events-none select-none opacity-[0.03] group-hover:opacity-[0.12] group-hover:text-white group-hover:scale-110 group-hover:rotate-6 transition-all duration-700">
+    <div className="absolute top-[-2rem] right-[-1rem] pointer-events-none select-none opacity-[0.03] group-hover:opacity-0 transition-all duration-700">
       <span className="text-[12rem] font-black leading-none tracking-tighter">
         0{index + 1}
       </span>
@@ -78,7 +78,6 @@ const FAQItem = ({ question, answer, isOpen, onClick, index }) => {
     >
       <button
         onClick={onClick}
-        onMouseEnter={onClick}
         className="w-full py-8 flex items-center justify-between text-left group"
       >
         <span className="text-xl md:text-2xl font-light text-gray-900 group-hover:text-primary transition-colors duration-300 pr-8">
@@ -221,6 +220,8 @@ const Petta = () => {
           <img
             src={officeImage}
             alt="Petta Kochi"
+            fetchpriority="high"
+            decoding="async"
             className="w-full h-full object-cover opacity-70"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black" />
@@ -317,6 +318,8 @@ const Petta = () => {
                 <img
                   src={aboutImage}
                   alt="Petta Office Interior"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -364,6 +367,7 @@ const Petta = () => {
                 src={basementImage}
                 alt="Parking at Petta"
                 loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             </div>

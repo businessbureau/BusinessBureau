@@ -1,10 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import officeImage from "../../assets/office pics/first slide.webp";
-import dedicatedDesks from "../../assets/office pics/services/Dedicated desks.webp";
-import privateCabins from "../../assets/office pics/services/Private Cabins.webp";
-import virtualOffice from "../../assets/office pics/services/Meeting Rooms.webp";
-import cafeteria from "../../assets/office pics/services/Cafeteria.webp";
 import VideoPlayer from "./VideoPlayer";
 import Modal from "./Utils/Modals";
 import Forms from "./Utils/Forms";
@@ -37,6 +33,8 @@ export default function HeroSection() {
           <img
             src={officeImage}
             alt="Business Bureau"
+            fetchpriority="high"
+            decoding="async"
             className="w-full h-full object-cover opacity-80"
           />
           <div className="absolute inset-0 bg-gradient-to-l from-black via-black/40 to-transparent" />
@@ -117,7 +115,7 @@ export default function HeroSection() {
         {/* Global Scroll Hint */}
         <motion.div
           style={{ opacity: hintOpacity }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center gap-4"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-50 hidden md:flex flex-col items-center gap-4"
         >
           <div className="w-[1px] h-12 bg-gradient-to-b from-transparent via-white/50 to-transparent" />
           <span className="text-[10px] text-white/40 uppercase tracking-[0.4em] rotate-90 translate-x-1">

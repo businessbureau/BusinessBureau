@@ -78,12 +78,12 @@ const GalleryPage = () => {
           </motion.h1>
 
           {/* Filters */}
-          <div className="flex justify-center gap-8 mb-20 overflow-x-auto pb-4 scrollbar-hide">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-20 px-4">
             {["all", "interior", "exterior"].map((filter) => (
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`text-[10px] uppercase tracking-[0.4em] font-bold transition-all whitespace-nowrap px-6 py-2 rounded-full border ${
+                className={`text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] font-bold transition-all px-5 md:px-6 py-2 rounded-full border ${
                   activeFilter === filter
                     ? "bg-primary text-white border-primary"
                     : "text-gray-400 border-gray-100 hover:border-primary/30"
@@ -121,6 +121,7 @@ const GalleryPage = () => {
                     src={image.src}
                     alt={image.title}
                     loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-10">
@@ -165,6 +166,7 @@ const GalleryPage = () => {
                 src={selectedImage.src}
                 alt={selectedImage.title}
                 loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
               <div className="absolute bottom-10 left-10 text-white">

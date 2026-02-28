@@ -110,6 +110,7 @@ const Amenities = () => {
                   <img
                     src={item.icon}
                     loading="lazy"
+                    decoding="async"
                     className="w-6 h-6 object-contain transition-all duration-500 group-hover:brightness-0 group-hover:invert"
                     alt={item.title}
                   />

@@ -20,6 +20,8 @@ const WhoWeAre = () => {
             <img
               src={whoWeAreImg}
               alt="Business Bureau Workspace"
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
             />
             {/* Decorative block */}

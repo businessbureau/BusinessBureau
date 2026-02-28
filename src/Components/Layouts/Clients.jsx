@@ -71,6 +71,7 @@ const Clients = () => {
                     src={client.src}
                     className="transition-all duration-700 w-32 md:w-44 lg:w-48 object-contain opacity-60 group-hover:opacity-100 grayscale-[20%] group-hover:grayscale-0 filter drop-shadow-sm group-hover:drop-shadow-md mix-blend-multiply"
                     loading="lazy"
+                    decoding="async"
                     alt={client.alt}
                   />
                 </motion.div>

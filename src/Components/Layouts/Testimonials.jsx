@@ -124,6 +124,7 @@ const Testimonials = () => {
                       src={item.image}
                       alt={item.name}
                       loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <div>
@@ -156,6 +157,8 @@ const Testimonials = () => {
                 className="h-16 w-16 rounded-full object-cover border-2 border-primary/20"
                 src={selectedReview.image}
                 alt={selectedReview.name}
+                loading="lazy"
+                decoding="async"
               />
               <div>
                 <h6 className="text-white font-bold uppercase tracking-widest text-xs mb-1">

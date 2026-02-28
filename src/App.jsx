@@ -1,23 +1,23 @@
-import React, { useEffect } from "react";
-import Home from "./Components/Home";
-import AboutPage from "./Components/AboutPage";
-import PanampillyNagar from "./Components/Locations/PanampillyNagar";
-import Petta from "./Components/Locations/Petta";
-import ServicesPage from "./Components/ServicesPage";
-import GalleryPage from "./Components/GalleryPage";
-import ContactPage from "./Components/ContactPage";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useLocation,
-} from "react-router-dom";
+import React, { useEffect, lazy, Suspense } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PageNotFound from "./Components/Layouts/Utils/PageNotFound";
 import SpeedDial from "./Components/Layouts/Utils/SpeedDial";
-import PrivacyPolicy from "./Components/PrivacyPolicy";
-import TermsAndCondition from "./Components/TermsAndCondition";
 import ScrollToTop from "./Components/Layouts/Utils/ScrollToTop";
+import Loader from "./Components/Layouts/Utils/Loader";
 import Lenis from "lenis";
+
+// Lazy-loaded components
+const Home = lazy(() => import("./Components/Home"));
+const AboutPage = lazy(() => import("./Components/AboutPage"));
+const PanampillyNagar = lazy(
+  () => import("./Components/Locations/PanampillyNagar"),
+);
+const Petta = lazy(() => import("./Components/Locations/Petta"));
+const ServicesPage = lazy(() => import("./Components/ServicesPage"));
+const GalleryPage = lazy(() => import("./Components/GalleryPage"));
+const ContactPage = lazy(() => import("./Components/ContactPage"));
+const PrivacyPolicy = lazy(() => import("./Components/PrivacyPolicy"));
+const TermsAndCondition = lazy(() => import("./Components/TermsAndCondition"));
 
 const LenisScroll = ({ children }) => {
   useEffect(() => {
@@ -52,24 +52,26 @@ function App() {
       <Router>
         <LenisScroll>
           <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/gallery" element={<GalleryPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route
-              path="/locations/panampilly-nagar"
-              element={<PanampillyNagar />}
-            />
-            <Route path="/locations/petta" element={<Petta />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route
-              path="/terms-and-conditions"
-              element={<TermsAndCondition />}
-            />
-            <Route path="*" element={<PageNotFound />} />
-          </Routes>
+          <Suspense fallback={<Loader />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/services" element={<ServicesPage />} />
+              <Route path="/gallery" element={<GalleryPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route
+                path="/locations/panampilly-nagar"
+                element={<PanampillyNagar />}
+              />
+              <Route path="/locations/petta" element={<Petta />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route
+                path="/terms-and-conditions"
+                element={<TermsAndCondition />}
+              />
+              <Route path="*" element={<PageNotFound />} />
+            </Routes>
+          </Suspense>
           <SpeedDial />
         </LenisScroll>
       </Router>

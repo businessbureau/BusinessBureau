@@ -75,7 +75,6 @@ const FAQItem = ({ question, answer, isOpen, onClick, index }) => {
     >
       <button
         onClick={onClick}
-        onMouseEnter={onClick}
         className="w-full py-8 flex items-center justify-between text-left group"
       >
         <span className="text-xl md:text-2xl font-light text-gray-900 group-hover:text-primary transition-colors duration-300 pr-8">

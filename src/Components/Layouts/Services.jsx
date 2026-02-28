@@ -92,36 +92,41 @@ const Services = () => {
               className="group relative"
             >
               <Link to="/services">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+                <div className="relative aspect-[4/3] sm:aspect-[16/10] md:aspect-[4/3] overflow-hidden rounded-2xl">
                   <motion.img
                     src={service.img}
                     alt={service.title}
                     loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover opacity-100 group-hover:scale-105 transition-all duration-1000"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent text-opacity-100" />
                   <div className="absolute inset-0 bg-[#0a0a0a]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                   {/* Floating Label */}
-                  <div className="absolute top-8 left-8">
+                  <div className="absolute top-6 left-6 md:top-8 md:left-8 group-hover:opacity-0 transition-opacity duration-300">
                     <span
-                      className={`px-4 py-1.5 ${service.accent} text-white text-[8px] uppercase tracking-[0.3em] font-bold rounded-full`}
+                      className={`px-3 py-1 md:px-4 md:py-1.5 ${service.accent} text-white text-[7px] md:text-[8px] uppercase tracking-[0.3em] font-bold rounded-full`}
                     >
                       {service.subtitle}
                     </span>
                   </div>
 
                   {/* Content Overlay */}
-                  <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full">
-                    <h3 className="text-white text-3xl md:text-4xl font-light mb-4 group-hover:text-primary transition-colors duration-500">
+                  <div className="absolute bottom-0 left-0 p-6 md:p-12 w-full">
+                    <h3 className="text-white text-2xl md:text-3xl lg:text-4xl font-light mb-2 md:mb-4 group-hover:text-primary transition-colors duration-500">
                       {service.title}
                     </h3>
-                    <p className="text-gray-300 text-sm md:text-base font-light max-w-md opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 delay-100">
+                    <p className="text-gray-300 text-xs md:text-sm lg:text-base font-light max-w-md opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 delay-100 hidden sm:block">
+                      {service.description}
+                    </p>
+                    {/* Mobile optimized description (shorter or hidden if needed) */}
+                    <p className="text-gray-300 text-[10px] font-light max-w-xs opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 delay-100 sm:hidden block line-clamp-2">
                       {service.description}
                     </p>
 
                     {/* Decorative Line */}
-                    <div className="w-12 h-[1px] bg-primary mt-6 scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
+                    <div className="w-12 h-[1px] bg-primary mt-4 md:scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
                   </div>
                 </div>
               </Link>

@@ -23,7 +23,7 @@ const ServiceRow = ({ service, index }) => {
     >
       <div className="container mx-auto px-6">
         <div
-          className={`flex flex-col ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"} gap-20 items-center`}
+          className={`flex flex-col md:flex-row ${isEven ? "" : "md:flex-row-reverse"} gap-12 lg:gap-20 items-center`}
         >
           {/* Image Side */}
           <motion.div
@@ -31,12 +31,14 @@ const ServiceRow = ({ service, index }) => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
-            className="lg:w-1/2 relative group"
+            className="md:w-1/2 relative group"
           >
             <div className="aspect-[16/10] overflow-hidden rounded-[2.5rem] shadow-2xl">
               <img
                 src={service.img}
                 alt={service.title}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2s]"
               />
               <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-700" />
@@ -48,7 +50,7 @@ const ServiceRow = ({ service, index }) => {
           </motion.div>
 
           {/* Content Side */}
-          <div className="lg:w-1/2">
+          <div className="md:w-1/2">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -145,7 +147,6 @@ const FAQItem = ({ question, answer, isOpen, onClick, index }) => {
     >
       <button
         onClick={onClick}
-        onMouseEnter={onClick}
         className="w-full py-8 flex items-center justify-between text-left group"
       >
         <span className="text-xl md:text-2xl font-light text-gray-900 group-hover:text-primary transition-colors duration-300 pr-8">
@@ -222,6 +223,17 @@ const ServicesPage = () => {
 
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center bg-black overflow-hidden">
+        {/* Hero Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src={privateCabins}
+            alt="Workspace Solutions"
+            loading="lazy"
+            decoding="async"
+            className="w-full h-full object-cover opacity-50"
+          />
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
         <div className="relative z-10 text-center px-6">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
@@ -322,7 +334,7 @@ const ServicesPage = () => {
             </p>
             <Link
               to="/contact"
-              className="inline-block px-12 py-5 bg-gray-900 text-white rounded-full text-xs uppercase tracking-[0.2em] font-bold hover:bg-primary transition-all duration-500 transform hover:scale-105"
+              className="inline-block px-8 py-4 md:px-12 md:py-5 bg-gray-900 text-white rounded-full text-xs uppercase tracking-[0.2em] font-bold hover:bg-primary transition-all duration-500 transform hover:scale-105"
             >
               Get Started
             </Link>

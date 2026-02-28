@@ -27,14 +27,6 @@ function Header() {
     setIsModalOpen(false);
   };
 
-  const scrollToElement = (ref, menuItem) => {
-    setActiveMenuItem(menuItem);
-    const element = document.querySelector(`#${ref}`);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   const [isLocationOpen, setIsLocationOpen] = useState(false);
 
   // Sync activeMenuItem with URL path
@@ -87,7 +79,7 @@ function Header() {
     >
       <div className="max-w-screen-xl lg:max-w-full flex flex-wrap items-center justify-between mx-auto p-4 md:px-12">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src={logo} className="w-28" alt="Business bureau logo" />
+          <img src={logo} className="w-20 lg:w-28" alt="Business bureau logo" />
         </a>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <div className="sm:flex hidden items-center justify-end gap-6 me-8">
@@ -119,7 +111,7 @@ function Header() {
           <button
             type="button"
             onClick={openModal}
-            className="group relative px-6 py-2 bg-primary overflow-hidden rounded-sm"
+            className="group relative px-4 py-2 lg:px-6 lg:py-2 bg-primary overflow-hidden rounded-sm hidden lg:block"
           >
             <motion.div
               className="absolute inset-0 bg-gray-800"
@@ -135,7 +127,7 @@ function Header() {
             onClick={toggleHidden}
             data-collapse-toggle="navbar-sticky"
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100"
           >
             <span className="sr-only">Open main menu</span>
             <svg className="w-5 h-5" fill="none" viewBox="0 0 17 14">
@@ -150,10 +142,10 @@ function Header() {
           </button>
         </div>
         <div
-          className={`items-center justify-between ${isHidden ? "hidden" : ""} w-full md:flex md:w-auto md:order-1`}
+          className={`items-center justify-between ${isHidden ? "hidden" : ""} w-full lg:flex lg:w-auto lg:order-1`}
           id="navbar-sticky"
         >
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0">
+          <ul className="flex flex-col p-4 lg:p-0 mt-4 font-medium lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 space-y-2 lg:space-y-0">
             {["Home", "About", "Services", "Gallery"].map((item) => (
               <li key={item}>
                 <Link
@@ -250,6 +242,17 @@ function Header() {
                 </Link>
               </li>
             ))}
+            <li className="lg:hidden pt-4">
+              <button
+                type="button"
+                onClick={openModal}
+                className="w-full group relative px-6 py-4 bg-primary overflow-hidden rounded-xl shadow-lg shadow-primary/20"
+              >
+                <span className="relative z-10 text-[10px] uppercase tracking-[0.2em] font-bold text-white">
+                  Get in Touch
+                </span>
+              </button>
+            </li>
           </ul>
         </div>
       </div>
