@@ -15,7 +15,7 @@ const Footer = () => {
         Business Bureau
       </motion.div>
 
-      <div className="xl:container mx-auto px-6 md:px-12 relative z-10">
+      <div className="container mx-auto px-6 md:px-12 xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px] relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-20 mb-24">
           {/* Brand Column */}
           <div className="sm:col-span-2 space-y-12">

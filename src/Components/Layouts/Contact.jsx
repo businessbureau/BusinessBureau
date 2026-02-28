@@ -9,7 +9,7 @@ const Contact = () => {
       id="contactRef"
       className="bg-white min-h-screen flex items-center py-24 px-6 md:px-12"
     >
-      <div className="xl:container mx-auto">
+      <div className="xl:container mx-auto xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

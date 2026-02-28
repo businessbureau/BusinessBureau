@@ -192,14 +192,62 @@ const PanampillyNagar = () => {
     },
   ];
 
+  const panampillyFaqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Is this location suitable for corporate teams?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, this location is highly suitable for corporate teams, offering a professional environment, scalable workspace options, strong infrastructure, and a setting that supports collaboration, productivity, and long-term business operations.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Are dedicated desks available?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, dedicated desks are available for professionals and teams who require a consistent, personalized workspace, providing comfort, security, and the flexibility needed for daily use and focused work.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What are the operating hours?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "The workspace operates during extended business hours to accommodate different work schedules, ensuring teams can work efficiently while maintaining a secure, well-managed, and professionally supervised environment.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is this workspace fully furnished?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, the workspace is fully furnished with modern desks, ergonomic seating, meeting rooms, and essential office amenities, allowing teams to move in and begin working immediately without additional setup.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How accessible is the area?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "The area is highly accessible, with excellent connectivity via major roads and public transport, making daily commuting convenient for teams and ensuring clients can reach the location with ease.",
+        },
+      },
+    ],
+  };
+
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <div ref={containerRef} className="bg-white">
+    <div ref={containerRef} className="bg-white min-h-screen">
       <Seo
         title="Coworking Space in Panampilly Nagar | Business Bureau"
-        description="Discover a coworking space in Panampilly Nagar offering professional offices, shared work areas, and meeting rooms for businesses."
+        description="Premium coworking space in Panampilly Nagar, Kochi. Managed offices, meeting rooms, and dedicated desks in a prime business location."
         url="https://www.businessbureau.in/panampilly-nagar"
+        jsonLd={panampillyFaqSchema}
       />
       <Header />
 
@@ -242,7 +290,7 @@ const PanampillyNagar = () => {
 
       {/* About Section */}
       <section className="py-24 px-6 bg-white overflow-hidden">
-        <div className="container mx-auto">
+        <div className="container mx-auto xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px]">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             {/* Image Side (Reversed for visual rhythm compared to Petta) */}
             <motion.div
@@ -330,7 +378,7 @@ const PanampillyNagar = () => {
 
       {/* Cabin Details & Pricing */}
       <section className="py-32 bg-white overflow-hidden border-y border-gray-100">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px]">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-20">
             <div className="max-w-2xl">
               <span className="text-primary text-[10px] uppercase tracking-[0.5em] font-bold mb-6 block">
@@ -357,7 +405,7 @@ const PanampillyNagar = () => {
 
       {/* Parking Highlights */}
       <section className="py-20 overflow-hidden bg-gray-50 border-y border-gray-100">
-        <div className="container mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+        <div className="container mx-auto px-6 xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px] grid md:grid-cols-2 gap-20 items-center">
           <div className="order-2 md:order-1 relative">
             <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl bg-gray-100">
               <img
@@ -409,7 +457,7 @@ const PanampillyNagar = () => {
 
       {/* FAQs Redesign */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-6 grid lg:grid-cols-12 gap-20">
+        <div className="container mx-auto px-6 xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px] grid lg:grid-cols-12 gap-20">
           <div className="lg:col-span-4 lg:sticky lg:top-32 h-fit">
             <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-bold mb-6 block">
               FAQ

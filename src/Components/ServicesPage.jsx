@@ -21,7 +21,7 @@ const ServiceRow = ({ service, index }) => {
     <div
       className={`py-24 border-b border-gray-100 last:border-0 ${isEven ? "bg-white" : "bg-gray-50/50"}`}
     >
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px]">
         <div
           className={`flex flex-col md:flex-row ${isEven ? "" : "md:flex-row-reverse"} gap-12 lg:gap-20 items-center`}
         >
@@ -103,7 +103,7 @@ const StackingReason = ({ reason, index, total }) => {
       style={{ scale, opacity }}
       className="sticky top-0 h-screen flex items-center bg-gray-50 border-t border-gray-100 overflow-hidden"
     >
-      <div className="container mx-auto px-6 grid lg:grid-cols-12 gap-12 items-end py-20">
+      <div className="container mx-auto px-6 xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px] grid lg:grid-cols-12 gap-12 items-end py-20">
         <div className="lg:col-span-8">
           <div className="flex items-center gap-4 mb-12">
             <span className="text-gray-400 text-sm font-medium tracking-widest">
@@ -186,6 +186,53 @@ const FAQItem = ({ question, answer, isOpen, onClick, index }) => {
 
 const ServicesPage = () => {
   const [openIndex, setOpenIndex] = useState(0);
+
+  const servicesFaqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What services does your coworking space offer?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Our coworking space offers flexible workspace solutions including meeting rooms, day pass access, and private offices. These options are designed for startups, freelancers, remote workers, and businesses looking for professional work environments without long-term commitments.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How does the coworking day pass work?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "A coworking day pass allows you to access our shared workspace for a full day. It includes high-speed internet, comfortable seating, power backup, and common amenities—ideal for remote workers, travelers, and short-term professionals.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can I book a meeting room in advance?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, our meeting rooms can be booked in advance for client meetings, team discussions, interviews, or presentations. Each meeting room is equipped with high-speed Wi-Fi, presentation screens, and a professional setup to ensure productive sessions.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What are the benefits of choosing a private office in your coworking space?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Our private offices provide a secure, fully furnished workspace with dedicated access, privacy, and flexibility. They are ideal for growing teams, startups, and businesses that need a professional office environment without the cost of traditional office leasing.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Who should choose a coworking space instead of a traditional office?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "A coworking space is perfect for freelancers, startups, remote teams, and consultants who want flexible office solutions, cost efficiency, and networking opportunities without long-term contracts or high overhead costs.",
+        },
+      },
+    ],
+  };
   const services = [
     {
       title: "Coworking Space",
@@ -217,10 +264,9 @@ const ServicesPage = () => {
     <div className="bg-white">
       <Seo
         title="Coworking Services in Kochi | Business Bureau Workspace"
-        description="Looking for a coworking space in Kochi? Explore workspace services including shared offices, desks, meeting rooms, and a productive business environment.
-
-"
+        description="Looking for a coworking space in Kochi? Explore workspace services including shared offices, desks, meeting rooms, and a productive business environment."
         url="https://www.businessbureau.in/services"
+        jsonLd={servicesFaqSchema}
       />
       <Header />
 
@@ -261,7 +307,7 @@ const ServicesPage = () => {
 
       {/* Services Breakdown Redesign */}
       <section className="py-20 bg-white overflow-hidden">
-        <div className="container mx-auto px-6 mb-24 text-center">
+        <div className="container mx-auto px-6 xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px] mb-24 text-center">
           <span className="text-primary text-[10px] uppercase tracking-[0.5em] font-bold mb-6 block">
             Core Offerings
           </span>
@@ -279,7 +325,7 @@ const ServicesPage = () => {
       {/* Why Choose Us - Immersive Stacking Redesign */}
       <section className="bg-gray-50 relative">
         <div className="bg-white py-32 px-6 border-b border-gray-100">
-          <div className="container mx-auto text-center">
+          <div className="container mx-auto xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px] text-center">
             <span className="text-primary text-[10px] uppercase tracking-[0.5em] font-bold mb-8 block">
               The Distinction
             </span>
@@ -347,7 +393,7 @@ const ServicesPage = () => {
 
       {/* Service FAQs Redesign */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-6 grid lg:grid-cols-12 gap-20">
+        <div className="container mx-auto px-6 xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px] grid lg:grid-cols-12 gap-20">
           <div className="lg:col-span-4 lg:sticky lg:top-32 h-fit">
             <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-bold mb-6 block">
               POLICY Q&A

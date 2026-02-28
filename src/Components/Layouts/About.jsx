@@ -1,7 +1,8 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import interiorImage from "../../assets/about/IMG_0534_0002_Color Lookup 3.jpg";
+const interiorImage =
+  "https://res.cloudinary.com/dfwlj6k8j/image/upload/f_auto,q_auto/v1772277602/IMG_0534_0002_Color_Lookup_3_jiiuek.webp";
 
 const About = () => {
   const containerRef = useRef(null);
@@ -36,19 +37,19 @@ const About = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/40 to-transparent" />
       </motion.div>
 
-      <div className="relative z-10 container mx-auto px-6 md:px-20 grid md:grid-cols-2 gap-12">
+      <div className="relative z-10 container mx-auto px-6 md:px-20 xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px] grid md:grid-cols-2 gap-12">
         <motion.div
           style={{ y: textY }}
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="max-w-xl"
+          className="max-w-xl 2xl:max-w-2xl 3xl:max-w-3xl"
         >
           <span className="text-primary text-[10px] uppercase tracking-[0.6em] mb-4 block font-bold">
             Our Story
           </span>
-          <h2 className="text-gray-900 text-5xl md:text-7xl font-light mb-8 leading-tight">
+          <h2 className="text-gray-900 text-5xl md:text-7xl 2xl:text-8xl 3xl:text-9xl font-light mb-8 leading-tight">
             Innovate. <br />
             <span className="text-primary italic font-serif">
               Collaborate.
@@ -58,7 +59,7 @@ const About = () => {
           </h2>
 
           <div className="space-y-6 text-gray-600 font-light leading-relaxed">
-            <p>
+            <p className="2xl:text-xl 3xl:text-2xl">
               At Business Bureau, we create professional environments that
               empower innovation, collaboration, and long-term growth. Our
               coworking spaces are designed to help individuals and teams work

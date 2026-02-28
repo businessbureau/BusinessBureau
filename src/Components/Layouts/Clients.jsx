@@ -14,7 +14,7 @@ const Clients = () => {
   ];
 
   return (
-    <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto w-full">
+    <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto w-full xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px]">
       <div className="relative flex flex-col items-center overflow-hidden bg-white shadow-[0_30px_100px_-20px_rgba(0,0,0,0.15)] rounded-[3rem] py-20 px-6 md:px-12 border border-white/50 w-full transition-all duration-700 hover:shadow-[0_40px_120px_-20px_rgba(0,0,0,0.2)]">
         {/* Soft decorative background gradients for a premium feel */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden rounded-[3rem] pointer-events-none">
@@ -22,7 +22,7 @@ const Clients = () => {
           <div className="absolute bottom-[-25%] right-[-15%] w-[60%] h-[60%] bg-gradient-to-tl from-gray-100/80 to-transparent blur-[80px] rounded-full" />
         </div>
 
-        <div className="container relative z-[1] w-full max-w-6xl mx-auto">
+        <div className="container relative z-[1] w-full max-w-6xl mx-auto xl:max-w-7xl 2xl:max-w-[1500px] 3xl:max-w-[1800px]">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -43,10 +43,10 @@ const Clients = () => {
             >
               Trusted By Industry Leaders
             </motion.div>
-            <h2 className="text-4xl font-extrabold text-gray-900 md:text-5xl lg:text-7xl tracking-tighter mb-5">
+            <h2 className="text-4xl font-extrabold text-gray-900 md:text-5xl lg:text-7xl 2xl:text-8xl 3xl:text-9xl tracking-tighter mb-5">
               Our Clients
             </h2>
-            <p className="text-gray-500 text-lg md:text-xl font-medium max-w-2xl mx-auto leading-relaxed">
+            <p className="text-gray-500 text-lg md:text-xl 2xl:text-2xl 3xl:text-3xl font-medium max-w-2xl 2xl:max-w-4xl mx-auto leading-relaxed">
               We collaborate with forward-thinking companies to build
               exceptional digital experiences.
             </p>

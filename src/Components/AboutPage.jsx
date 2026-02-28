@@ -117,7 +117,7 @@ const AboutPage = () => {
 
       {/* Numbers Section */}
       <section className="py-16 md:py-24 lg:py-32 bg-gray-50 border-y border-gray-100">
-        <div className="container mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-20">
+        <div className="container mx-auto px-6 xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px] grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-20">
           <Counter value="5" title="Years of Passion" suffix="+" />
           <Counter value="500" title="Visionary Clients" suffix="+" />
           <Counter value="2" title="Prime Locations" />
@@ -127,7 +127,7 @@ const AboutPage = () => {
 
       {/* Our Story Section */}
       <section className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20 overflow-hidden">
-        <div className="max-w-screen-2xl mx-auto grid lg:grid-cols-2 gap-12 md:gap-24 items-center">
+        <div className="max-w-screen-2xl 3xl:max-w-[2000px] mx-auto grid lg:grid-cols-2 gap-12 md:gap-24 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -210,7 +210,7 @@ const AboutPage = () => {
 
       {/* Leadership Section - Premium Redesign */}
       <section className="py-20 md:py-32 lg:py-48 bg-white overflow-hidden">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px]">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-0 items-center">
             {/* Image Column */}
             <div className="lg:col-span-5 relative">
@@ -317,7 +317,7 @@ const AboutPage = () => {
 
       {/* Vision & Mission */}
       <section className="py-20 md:py-32 lg:py-40 bg-[#0a0a0a]">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px]">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-24">
             {/* Vision */}
             <motion.div

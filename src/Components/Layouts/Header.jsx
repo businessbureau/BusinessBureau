@@ -78,7 +78,7 @@ function Header() {
       ref={headerRef}
       className="bg-white sticky w-full z-50 top-0 start-0 border-b border-gray-100 shadow-sm transition-all duration-300"
     >
-      <div className="max-w-screen-xl lg:max-w-full flex flex-wrap items-center justify-between mx-auto p-4 md:px-12">
+      <div className="container mx-auto px-4 md:px-12 xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px] flex flex-wrap items-center justify-between">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img
             src={logo}

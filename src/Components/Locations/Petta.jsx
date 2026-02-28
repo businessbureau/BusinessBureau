@@ -201,6 +201,53 @@ const Petta = () => {
     },
   ];
 
+  const pettaFaqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How close is the metro station?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "The metro station is located within very close walking distance, making daily commuting quick and convenient. This easy access significantly reduces travel time for professionals, clients, and visiting team members.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is this suitable for remote workers?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, this workspace is highly suitable for remote workers who need a reliable, professional environment. It offers quiet work areas, strong connectivity, and flexible options that support remote and hybrid work models.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Are meeting rooms available here?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, fully equipped meeting rooms are available and designed for professional discussions, presentations, and client meetings, providing privacy, modern facilities, and a comfortable setting for productive collaboration.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can I book short-term access?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Short-term access options are available, making it ideal for freelancers, consultants, and teams needing temporary workspace solutions without long-term commitments, while still enjoying full professional amenities.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is internet reliability high?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Internet reliability is very high, with stable, high-speed connectivity that supports video calls, cloud-based work, and daily business operations without interruptions or performance issues.",
+        },
+      },
+    ],
+  };
+
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
@@ -209,6 +256,7 @@ const Petta = () => {
         title="Coworking Space in Petta | Business Bureau Kochi"
         description="Discover a coworking space in Petta near Petta Metro Station, offering professional workspaces, shared offices, and meeting rooms for startups and teams."
         url="https://www.businessbureau.in/petta"
+        jsonLd={pettaFaqSchema}
       />
       <Header />
 
@@ -251,7 +299,7 @@ const Petta = () => {
 
       {/* About Section */}
       <section className="py-24 px-6 bg-white overflow-hidden">
-        <div className="container mx-auto">
+        <div className="container mx-auto xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px]">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -334,7 +382,7 @@ const Petta = () => {
 
       {/* Cabin Details & Pricing */}
       <section className="py-32 bg-gray-50 overflow-hidden border-y border-gray-100">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px]">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-20">
             <div className="max-w-2xl">
               <span className="text-primary text-[10px] uppercase tracking-[0.5em] font-bold mb-6 block">
@@ -361,7 +409,7 @@ const Petta = () => {
 
       {/* Parking Highlights */}
       <section className="py-12 overflow-hidden bg-white border-y border-gray-100">
-        <div className="container mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+        <div className="container mx-auto px-6 xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px] grid md:grid-cols-2 gap-20 items-center">
           <div className="order-2 md:order-1 relative">
             <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl bg-gray-100">
               <img
@@ -416,7 +464,7 @@ const Petta = () => {
 
       {/* FAQs Redesign */}
       <section className="py-12 bg-white">
-        <div className="container mx-auto px-6 grid lg:grid-cols-12 gap-20">
+        <div className="container mx-auto px-6 xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px] grid lg:grid-cols-12 gap-20">
           <div className="lg:col-span-4 lg:sticky lg:top-32 h-fit">
             <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-bold mb-6 block">
               FAQ

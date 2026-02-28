@@ -5,36 +5,39 @@ import Seo from "./Seo";
 import Footer from "./Layouts/Footer";
 
 // Gallery Assets - Organized by Folder
-import int1 from "../assets/Gallery/Interior/IMG_0534_0000_Color Lookup 1.jpg";
-import int2 from "../assets/Gallery/Interior/IMG_0543_0002_Color Lookup 2.jpg";
-import int3 from "../assets/Gallery/Interior/IMG_0543_0010_Brightness_Contrast 7.jpg";
-import int4 from "../assets/Gallery/Interior/WhatsApp Image 2026-01-23 at 6.22.55 PM (1) - Copy.jpeg";
-import int5 from "../assets/Gallery/Interior/WhatsApp Image 2026-01-23 at 6.22.57 PM.jpeg";
-import int6 from "../assets/Gallery/Interior/WhatsApp Image 2026-01-23 at 6.22.59 PM.jpeg";
-import int7 from "../assets/Gallery/Interior/WhatsApp Image 2026-01-23 at 6.23.00 PM.jpeg";
+const int1 =
+  "https://res.cloudinary.com/dfwlj6k8j/image/upload/f_auto,q_auto/v1772275465/WhatsApp_Image_2026-01-23_at_6.22.57_PM_od067y.webp";
+const int2 =
+  "https://res.cloudinary.com/dfwlj6k8j/image/upload/f_auto,q_auto/v1772275472/WhatsApp_Image_2026-01-23_at_6.22.55_PM_1_-_Copy_vv7jfv.webp";
+const int3 =
+  "https://res.cloudinary.com/dfwlj6k8j/image/upload/f_auto,q_auto/v1772275480/IMG_0543_0010_Brightness_Contrast_7_wqmhqa.webp";
+const int4 =
+  "https://res.cloudinary.com/dfwlj6k8j/image/upload/f_auto,q_auto/v1772275488/IMG_0543_0002_Color_Lookup_2_xqx3k7.webp";
+const int5 =
+  "https://res.cloudinary.com/dfwlj6k8j/image/upload/f_auto,q_auto/v1772275496/IMG_0534_0000_Color_Lookup_1_ihzcpx.webp";
+const int6 =
+  "https://res.cloudinary.com/dfwlj6k8j/image/upload/f_auto,q_auto/v1772275939/WhatsApp_Image_2026-01-23_at_6.23.00_PM_j0zrfd.webp";
+const int7 =
+  "https://res.cloudinary.com/dfwlj6k8j/image/upload/f_auto,q_auto/v1772275953/WhatsApp_Image_2026-01-23_at_6.22.59_PM_gocx8d.webp";
 
-import ext1 from "../assets/Gallery/Exterior/exterior1.jpg";
-import ext2 from "../assets/Gallery/Exterior/exterior2.jpg";
-import ext3 from "../assets/Gallery/Exterior/exterior3.jpg";
-import ext4 from "../assets/Gallery/Exterior/exterior4.jpg";
+const ext1 =
+  "https://res.cloudinary.com/dfwlj6k8j/image/upload/f_auto,q_auto/v1772274398/exterior1_i7obaw.webp";
+const ext2 =
+  "https://res.cloudinary.com/dfwlj6k8j/image/upload/f_auto,q_auto/v1772274415/exterior2_y7ppuw.webp";
+const ext3 =
+  "https://res.cloudinary.com/dfwlj6k8j/image/upload/f_auto,q_auto/v1772274423/exterior3_nw8wsf.webp";
+const ext4 =
+  "https://res.cloudinary.com/dfwlj6k8j/image/upload/f_auto,q_auto/v1772274441/exterior4_l79fxe.webp";
 
 const GalleryPage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [activeFilter, setActiveFilter] = useState("all");
 
   const images = [
+    // Interior Gallery
     { src: int1, type: "interior", title: "Premium Workspace", size: "large" },
-    { src: ext1, type: "exterior", title: "Business Hub", size: "small" },
     { src: int2, type: "interior", title: "Collaborative Zone", size: "small" },
-    { src: ext2, type: "exterior", title: "Urban Presence", size: "small" },
     { src: int3, type: "interior", title: "Executive Suite", size: "small" },
-    {
-      src: ext3,
-      type: "exterior",
-      title: "Architectural Detail",
-      size: "large",
-    },
-    { src: ext4, type: "exterior", title: "Modern Facade", size: "small" },
     { src: int4, type: "interior", title: "Common Area", size: "small" },
     {
       src: int5,
@@ -44,6 +47,17 @@ const GalleryPage = () => {
     },
     { src: int6, type: "interior", title: "Focus Zone", size: "small" },
     { src: int7, type: "interior", title: "Community Corner", size: "small" },
+
+    // Exterior Gallery
+    { src: ext1, type: "exterior", title: "Business Hub", size: "small" },
+    { src: ext2, type: "exterior", title: "Urban Presence", size: "small" },
+    {
+      src: ext3,
+      type: "exterior",
+      title: "Architectural Detail",
+      size: "large",
+    },
+    { src: ext4, type: "exterior", title: "Modern Facade", size: "small" },
   ];
 
   const filteredImages =
@@ -62,7 +76,7 @@ const GalleryPage = () => {
 
       {/* Hero Section */}
       <section className="pt-40 pb-20 px-6">
-        <div className="container mx-auto text-center">
+        <div className="container mx-auto xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px] text-center">
           <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -99,7 +113,7 @@ const GalleryPage = () => {
 
       {/* Gallery Grid */}
       <section className="pb-40 px-6">
-        <div className="container mx-auto">
+        <div className="container mx-auto xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px]">
           <motion.div
             layout
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
