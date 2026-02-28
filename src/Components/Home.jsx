@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Header from "./Layouts/Header";
 import Seo from "./Seo";
 import HeroSection from "./Layouts/HeroSection";
@@ -10,7 +10,6 @@ import Testimonials from "./Layouts/Testimonials";
 import FAQ from "./Layouts/FAQ";
 import Contact from "./Layouts/Contact";
 import Footer from "./Layouts/Footer";
-import Loader from "./Layouts/Utils/Loader";
 
 import SectionWrapper from "./Layouts/Utils/SectionWrapper";
 
