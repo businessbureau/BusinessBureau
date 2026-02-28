@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import dedicatedDesks from "../../assets/office pics/services/Dedicated desks.webp";
 import privateCabins from "../../assets/office pics/services/Private Cabins.webp";

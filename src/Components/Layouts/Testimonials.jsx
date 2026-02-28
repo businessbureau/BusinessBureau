@@ -1,10 +1,5 @@
 import React, { useRef, useState } from "react";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  AnimatePresence,
-} from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Modal from "./Utils/Modals";
 
 // New Google Review Images

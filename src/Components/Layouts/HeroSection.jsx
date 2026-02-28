@@ -9,37 +9,6 @@ import VideoPlayer from "./VideoPlayer";
 import Modal from "./Utils/Modals";
 import Forms from "./Utils/Forms";
 
-const servicesData = [
-  {
-    title: "Coworking Space",
-    img: dedicatedDesks,
-    description:
-      "Elevate your productivity with our dedicated desks, providing a personalized workspace for focused and efficient work.",
-    key: "dedicatedDesks",
-  },
-  {
-    title: "Private Offices",
-    img: privateCabins,
-    description:
-      "Experience privacy and exclusivity in our private cabins, tailored for those who value a dedicated and secluded office environment.",
-    key: "privateCabins",
-  },
-  {
-    title: "Meeting Rooms",
-    img: virtualOffice,
-    description:
-      "Foster collaboration and make impactful presentations in our state-of-the-art meeting rooms.",
-    key: "virtualOffice",
-  },
-  {
-    title: "Day Pass",
-    img: cafeteria,
-    description:
-      "Recharge and socialize in our vibrant cafeteria, offering a welcoming space for networking and casual meetings.",
-    key: "cafeteria",
-  },
-];
-
 export default function HeroSection() {
   const containerRef = useRef(null);
   const [isModalOpen, setIsModalOpen] = React.useState(false);

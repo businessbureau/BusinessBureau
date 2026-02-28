@@ -12,7 +12,6 @@ import Footer from "../Layouts/Footer";
 import officeImage from "../../assets/office pics/first slide.webp";
 import aboutImage from "../../assets/office pics/forth slide.webp";
 import parkingImage from "../../assets/about/IMG_0534_0002_Color Lookup 3.jpg";
-import FAQ from "../Layouts/FAQ";
 import Testimonials from "../Layouts/Testimonials";
 
 const PricingCard = ({ title, price, details, index }) => (
