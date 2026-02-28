@@ -36,7 +36,8 @@ function Header() {
     else if (path === "/services") setActiveMenuItem("Services");
     else if (path === "/gallery") setActiveMenuItem("Gallery");
     else if (path === "/contact") setActiveMenuItem("Contact");
-    else if (path.startsWith("/locations")) setActiveMenuItem("Locations");
+    else if (path === "/petta" || path === "/panampilly-nagar")
+      setActiveMenuItem("Locations");
     else if (path === "/") setActiveMenuItem("Home");
   }, [location.pathname]);
 
@@ -210,10 +211,10 @@ function Header() {
                     className="absolute left-0 mt-2 w-48 bg-white border border-gray-100 shadow-xl rounded-xl overflow-hidden z-50 p-2"
                   >
                     {[
-                      { name: "Petta", path: "/locations/petta" },
+                      { name: "Petta", path: "/petta" },
                       {
                         name: "Panampilly Nagar",
-                        path: "/locations/panampilly-nagar",
+                        path: "/panampilly-nagar",
                       },
                     ].map((loc) => (
                       <Link

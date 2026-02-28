@@ -55,7 +55,7 @@ const GalleryPage = () => {
     <div className="bg-white min-h-screen">
       <Seo
         title="Workspace Gallery | Business Bureau Coworking in Kochi"
-        description="Explore the professional workspace gallery of Business Bureau in Kochi. View our modern shared offices, executive suites, and collaborative environments."
+        description="View images of our coworking space in Kochi showcasing modern workspaces, shared offices, meeting rooms, and professional interiors."
         url="https://www.businessbureau.in/gallery"
       />
       <Header />

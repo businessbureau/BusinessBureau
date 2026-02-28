@@ -105,10 +105,10 @@ const Footer = () => {
             </h6>
             <ul className="space-y-6">
               {[
-                { name: "Petta, Kochi", path: "/locations/petta" },
+                { name: "Petta, Kochi", path: "/petta" },
                 {
                   name: "Panampilly Nagar",
-                  path: "/locations/panampilly-nagar",
+                  path: "/panampilly-nagar",
                 },
               ].map((loc) => (
                 <li key={loc.name}>

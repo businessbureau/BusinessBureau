@@ -32,7 +32,7 @@ const Home = () => {
         <>
           <Seo
             title="Coworking Space in Kerala | Business Bureau"
-            description="Experience the best coworking space in Kerala at Business Bureau. Premium shared offices, private cabins, and meeting rooms designed for productivity and growth."
+            description="Discover a premium coworking space in Kerala with shared offices, meeting rooms, and a productive environment for professionals."
             url="https://www.businessbureau.in/"
           />
           <Header />

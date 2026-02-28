@@ -59,11 +59,8 @@ function App() {
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/contact" element={<ContactPage />} />
-              <Route
-                path="/locations/panampilly-nagar"
-                element={<PanampillyNagar />}
-              />
-              <Route path="/locations/petta" element={<Petta />} />
+              <Route path="/panampilly-nagar" element={<PanampillyNagar />} />
+              <Route path="/petta" element={<Petta />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route
                 path="/terms-and-conditions"

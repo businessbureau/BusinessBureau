@@ -12,7 +12,7 @@ const ContactPage = () => {
     <div className="bg-white min-h-screen">
       <Seo
         title="Contact Business Bureau | Coworking Space in Kerala"
-        description="Get in touch with Business Bureau to find your perfect coworking space in Kerala. We offer flexible memberships, meeting rooms, and professional support."
+        description="Contact our coworking space in Kerala to learn more about office spaces, meeting rooms, locations, and professional work environments."
         url="https://www.businessbureau.in/contact"
       />
       <Header />
