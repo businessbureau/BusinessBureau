@@ -206,7 +206,7 @@ const PanampillyNagar = () => {
       <section className="relative h-[80vh] overflow-hidden flex items-center justify-center bg-black">
         <motion.div
           style={{ scale: heroScale, opacity: heroOpacity }}
-          className="absolute inset-0"
+          className="absolute inset-0 bg-gray-900"
         >
           <img
             src={officeImage}
@@ -251,7 +251,7 @@ const PanampillyNagar = () => {
               viewport={{ once: true }}
               className="relative order-2 lg:order-1"
             >
-              <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl relative z-10">
+              <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl relative z-10 bg-gray-100">
                 <img
                   src={aboutImage}
                   alt="Panampilly Nagar Interior"
@@ -358,7 +358,7 @@ const PanampillyNagar = () => {
       <section className="py-20 overflow-hidden bg-gray-50 border-y border-gray-100">
         <div className="container mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
           <div className="order-2 md:order-1 relative">
-            <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl">
+            <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl bg-gray-100">
               <img
                 src={parkingImage}
                 alt="Parking at Panampilly Nagar"

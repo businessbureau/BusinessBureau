@@ -75,7 +75,7 @@ const AboutPage = () => {
       >
         <motion.div
           style={{ scale: heroScale, opacity: heroOpacity }}
-          className="absolute inset-0"
+          className="absolute inset-0 bg-gray-900"
         >
           <img
             src={officeImage}
@@ -192,7 +192,7 @@ const AboutPage = () => {
             viewport={{ once: false, margin: "-50px" }}
             className="relative"
           >
-            <div className="aspect-[4/5] rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl">
+            <div className="aspect-[4/5] rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl bg-gray-100">
               <img
                 src={officeImage}
                 alt="Office Story"
@@ -218,7 +218,7 @@ const AboutPage = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1.5, ease: [0.19, 1, 0.22, 1] }}
                 viewport={{ once: true }}
-                className="relative z-10 aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)]"
+                className="relative z-10 aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] bg-gray-100"
               >
                 <img
                   src={leader1}

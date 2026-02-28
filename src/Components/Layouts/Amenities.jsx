@@ -106,7 +106,7 @@ const Amenities = () => {
               className="group relative bg-white p-10 hover:bg-gray-50 transition-colors duration-500"
             >
               <div className="relative z-10 space-y-8">
-                <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center group-hover:bg-primary transition-colors duration-500">
+                <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center group-hover:bg-primary transition-colors duration-500 overflow-hidden">
                   <img
                     src={item.icon}
                     loading="lazy"

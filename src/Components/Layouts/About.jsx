@@ -24,7 +24,7 @@ const About = () => {
       {/* Background Image with Scale Animation */}
       <motion.div
         style={{ scale: videoScale }}
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 bg-gray-100"
       >
         <img
           src={interiorImage}

@@ -33,7 +33,7 @@ const ServiceRow = ({ service, index }) => {
             viewport={{ once: true }}
             className="md:w-1/2 relative group"
           >
-            <div className="aspect-[16/10] overflow-hidden rounded-[2.5rem] shadow-2xl">
+            <div className="aspect-[16/10] overflow-hidden rounded-[2.5rem] shadow-2xl bg-gray-100">
               <img
                 src={service.img}
                 alt={service.title}
@@ -224,7 +224,7 @@ const ServicesPage = () => {
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center bg-black overflow-hidden">
         {/* Hero Background Image */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 bg-gray-900">
           <img
             src={privateCabins}
             alt="Workspace Solutions"

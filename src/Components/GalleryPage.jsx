@@ -112,7 +112,7 @@ const GalleryPage = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className={`relative group cursor-pointer overflow-hidden rounded-[2rem] aspect-[4/5] ${
+                  className={`relative group cursor-pointer overflow-hidden rounded-[2rem] aspect-[4/5] bg-gray-100 ${
                     image.size === "large" ? "md:col-span-2 lg:col-span-1" : ""
                   }`}
                   onClick={() => setSelectedImage(image)}
@@ -159,13 +159,12 @@ const GalleryPage = () => {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
-              className="relative max-w-5xl w-full aspect-[16/9] rounded-[3rem] overflow-hidden"
+              className="relative max-w-5xl w-full aspect-[16/9] rounded-[3rem] overflow-hidden bg-gray-900"
               onClick={(e) => e.stopPropagation()}
             >
               <img
                 src={selectedImage.src}
                 alt={selectedImage.title}
-                loading="lazy"
                 decoding="async"
                 className="w-full h-full object-cover"
               />

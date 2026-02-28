@@ -117,7 +117,7 @@ const Testimonials = () => {
                 </div>
 
                 <div className="flex items-center gap-6 pt-2">
-                  <div className="relative w-16 h-16 shrink-0">
+                  <div className="relative w-16 h-16 shrink-0 bg-gray-200 rounded-full">
                     <motion.div className="absolute inset-0 bg-primary ring-2 ring-primary/20 rounded-full scale-0 group-hover:scale-110 transition-transform duration-500" />
                     <img
                       className="relative z-10 h-full w-full rounded-full object-cover transition-all duration-700 border-2 border-white"
@@ -154,7 +154,7 @@ const Testimonials = () => {
           <div className="space-y-8 py-4">
             <div className="flex items-center gap-6">
               <img
-                className="h-16 w-16 rounded-full object-cover border-2 border-primary/20"
+                className="h-16 w-16 rounded-full object-cover border-2 border-primary/20 bg-gray-200"
                 src={selectedReview.image}
                 alt={selectedReview.name}
                 loading="lazy"

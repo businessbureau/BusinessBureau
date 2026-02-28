@@ -65,7 +65,7 @@ const Clients = () => {
                   key={index}
                   whileHover={{ y: -8, scale: 1.03 }}
                   transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                  className="group flex items-center justify-center p-8 md:p-10 bg-white hover:bg-gray-50/50 rounded-3xl transition-all duration-500 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.1)] cursor-pointer border border-gray-100/50 hover:border-gray-200 aspect-[4/3]"
+                  className="group flex items-center justify-center p-8 md:p-10 bg-gray-50 hover:bg-white rounded-3xl transition-all duration-500 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.1)] cursor-pointer border border-gray-100/50 hover:border-gray-200 aspect-[4/3]"
                 >
                   <img
                     src={client.src}

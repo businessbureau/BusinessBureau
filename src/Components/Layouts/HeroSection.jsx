@@ -99,13 +99,14 @@ export default function HeroSection() {
           <div className="absolute inset-0 bg-black/30 flex flex-col justify-center items-center text-center p-6">
             <motion.div
               style={{ opacity: section2Opacity, scale: section2Scale }}
+              className="text-center"
             >
               <h2 className="text-white text-5xl md:text-8xl font-serif italic tracking-tighter mb-4">
                 Now at <span className="text-primary">Petta</span> <br /> &{" "}
                 <span className="text-primary">Panampilly Nagar</span>
               </h2>
               <div className="w-16 h-[2px] bg-primary mx-auto mb-6" />
-              <p className="text-white/70 max-w-md text-sm md:text-base tracking-widest uppercase font-light">
+              <p className="text-white/70 max-w-md text-sm md:text-base tracking-widest uppercase font-light mx-auto">
                 Expanding our vision to new horizons
               </p>
             </motion.div>

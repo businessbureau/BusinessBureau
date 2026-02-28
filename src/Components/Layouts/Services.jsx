@@ -92,7 +92,7 @@ const Services = () => {
               className="group relative"
             >
               <Link to="/services">
-                <div className="relative aspect-[4/3] sm:aspect-[16/10] md:aspect-[4/3] overflow-hidden rounded-2xl">
+                <div className="relative aspect-[4/3] sm:aspect-[16/10] md:aspect-[4/3] overflow-hidden rounded-2xl bg-gray-900">
                   <motion.img
                     src={service.img}
                     alt={service.title}

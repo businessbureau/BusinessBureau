@@ -22,7 +22,7 @@ const ContactPage = () => {
           initial={{ scale: 1.2, opacity: 0 }}
           animate={{ scale: 1, opacity: 0.8 }}
           transition={{ duration: 2 }}
-          className="absolute inset-0"
+          className="absolute inset-0 bg-gray-900"
         >
           <img
             src={officeImg}
@@ -66,7 +66,7 @@ const ContactPage = () => {
               viewport={{ once: true }}
               className="space-y-16"
             >
-              <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl relative group">
+              <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl relative group bg-gray-100">
                 <img
                   src={contactImg}
                   alt="Business Bureau Hospitality"

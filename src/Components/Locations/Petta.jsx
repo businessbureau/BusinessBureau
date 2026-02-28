@@ -215,7 +215,7 @@ const Petta = () => {
       <section className="relative h-[80vh] overflow-hidden flex items-center justify-center bg-black">
         <motion.div
           style={{ scale: heroScale, opacity: heroOpacity }}
-          className="absolute inset-0"
+          className="absolute inset-0 bg-gray-900"
         >
           <img
             src={officeImage}
@@ -314,7 +314,7 @@ const Petta = () => {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl relative z-10">
+              <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl relative z-10 bg-gray-100">
                 <img
                   src={aboutImage}
                   alt="Petta Office Interior"
@@ -362,7 +362,7 @@ const Petta = () => {
       <section className="py-12 overflow-hidden bg-white border-y border-gray-100">
         <div className="container mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
           <div className="order-2 md:order-1 relative">
-            <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl">
+            <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl bg-gray-100">
               <img
                 src={basementImage}
                 alt="Parking at Petta"

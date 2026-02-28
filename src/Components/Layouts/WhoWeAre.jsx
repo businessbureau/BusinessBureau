@@ -14,7 +14,7 @@ const WhoWeAre = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="relative h-[400px] md:h-[600px] rounded-2xl overflow-hidden group"
+            className="relative h-[400px] md:h-[600px] rounded-2xl overflow-hidden group bg-gray-100"
           >
             <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10"></div>
             <img
