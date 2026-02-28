@@ -197,8 +197,9 @@ const PanampillyNagar = () => {
   return (
     <div ref={containerRef} className="bg-white">
       <Seo
-        title="Coworking Space in Panampilly Nagar | Office Spaces"
-        description="Discover a coworking space in Panampilly Nagar offering professional offices, shared work areas, and meeting rooms for businesses."
+        title="Coworking Space in Panampilly Nagar | Business Bureau"
+        description="Elevate your work at Panampilly Nagar's premier coworking space. Modern office infrastructure, business lounges, and premium shared workspaces await you."
+        url="https://www.businessbureau.in/panampilly-nagar"
       />
       <Header />
 

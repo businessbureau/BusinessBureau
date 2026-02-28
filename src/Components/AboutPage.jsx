@@ -63,8 +63,9 @@ const AboutPage = () => {
   return (
     <div className="bg-white scroll-smooth w-full">
       <Seo
-        title="Coworking Space in Kerala | About Business Bureau"
-        description="Learn about our coworking space in Kerala built to support collaboration, productivity, and sustainable business growth."
+        title="About Business Bureau | Coworking Space in Kerala"
+        description="Business Bureau is the leading provider of premium coworking spaces in Kerala, offering modern infrastructure and operational excellence for your business."
+        url="https://www.businessbureau.in/about"
       />
       <Header />
 

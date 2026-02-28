@@ -206,8 +206,9 @@ const Petta = () => {
   return (
     <div ref={containerRef} className="bg-white">
       <Seo
-        title="Coworking Space in Petta | Professional Workspaces"
-        description="Discover a coworking space in Petta near Petta Metro Station, offering professional workspaces, shared offices, and meeting rooms for startups and teams."
+        title="Coworking Space in Petta | Business Bureau Kochi"
+        description="Discover premium coworking spaces in Petta near the Metro Station. Business Bureau offers shared offices, meeting rooms, and professional work hubs for all."
+        url="https://www.businessbureau.in/petta"
       />
       <Header />
 

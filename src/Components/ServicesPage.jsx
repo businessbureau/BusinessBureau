@@ -216,8 +216,9 @@ const ServicesPage = () => {
   return (
     <div className="bg-white">
       <Seo
-        title="Coworking Space in Kochi | Workspace Services"
-        description="Looking for a coworking space in Kochi? Explore workspace services including shared offices, desks, meeting rooms, and a productive business environment."
+        title="Coworking Services in Kochi | Business Bureau Workspace"
+        description="Explore premium coworking services in Kochi at Business Bureau. From dedicated desks and private office cabins to modern meeting rooms for high-performance teams."
+        url="https://www.businessbureau.in/services"
       />
       <Header />
 
