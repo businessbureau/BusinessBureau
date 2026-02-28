@@ -41,12 +41,19 @@ const VideoPlayer = ({
     return () => observer.disconnect();
   }, [src]);
 
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = true;
+    }
+  }, []);
+
   return (
     <video
       ref={videoRef}
       className={className}
       autoPlay
-      muted={isMuted}
+      muted
+      defaultMuted
       loop={loop}
       controls={controls}
       poster={poster}

@@ -51,7 +51,7 @@ export default function HeroSection() {
                 alt="logo"
                 className="w-64 md:w-80 mb-6"
               />
-              <motion.h1
+              <motion.h2
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.5 }}
@@ -62,7 +62,7 @@ export default function HeroSection() {
                   to
                 </span>{" "}
                 <span className="font-bold">Work</span>
-              </motion.h1>
+              </motion.h2>
               <div className="mt-8 flex gap-4 justify-end">
                 <button
                   onClick={openModal}

@@ -97,7 +97,7 @@ const AboutPage = () => {
           >
             Since 2019
           </motion.span>
-          <motion.h1
+          <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
@@ -105,7 +105,7 @@ const AboutPage = () => {
           >
             A Legacy of <br />
             <span className="text-primary italic font-serif">Excellence.</span>
-          </motion.h1>
+          </motion.h2>
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: 60 }}

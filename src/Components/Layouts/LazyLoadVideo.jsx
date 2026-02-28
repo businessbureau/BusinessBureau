@@ -15,6 +15,7 @@ const LazyLoadVideo = ({ src, isMuted, className }) => {
         if (entry.isIntersecting) {
           // Load the video when it comes into the viewport
           if (videoRef.current) {
+            videoRef.current.muted = true;
             videoRef.current.load();
             observer.disconnect();
           }
@@ -36,7 +37,8 @@ const LazyLoadVideo = ({ src, isMuted, className }) => {
       ref={videoRef}
       className={className || "w-full h-full object-cover"}
       autoPlay
-      muted={isMuted !== false} // Default to muted
+      muted
+      defaultMuted
       loop
       playsInline // Added for better mobile support
       controls={false}

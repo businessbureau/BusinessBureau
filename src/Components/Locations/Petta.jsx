@@ -235,7 +235,7 @@ const Petta = () => {
           >
             Strategic Hub
           </motion.span>
-          <motion.h1
+          <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
@@ -245,7 +245,7 @@ const Petta = () => {
             <span className="text-primary italic font-serif text-6xl md:text-9xl">
               Kochi.
             </span>
-          </motion.h1>
+          </motion.h2>
         </div>
       </section>
 
