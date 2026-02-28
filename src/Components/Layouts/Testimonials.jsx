@@ -66,7 +66,7 @@ const Testimonials = () => {
         Voices Voices Voices
       </motion.div>
 
-      <div className="xl:container mx-auto px-6 md:px-20 xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px] relative z-10">
+      <div className="xl:container mx-auto px-6 md:px-20 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

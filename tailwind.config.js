@@ -2,15 +2,7 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {
-      screens: {
-        "3xl": "2000px",
-      },
-      maxWidth: {
-        "8xl": "1920px",
-        "9xl": "2560px",
-      },
-    },
+    extend: {},
   },
   daisyui: {
     themes: [

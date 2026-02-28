@@ -76,7 +76,7 @@ const GalleryPage = () => {
 
       {/* Hero Section */}
       <section className="pt-40 pb-20 px-6">
-        <div className="container mx-auto xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px] text-center">
+        <div className="container mx-auto text-center">
           <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -113,7 +113,7 @@ const GalleryPage = () => {
 
       {/* Gallery Grid */}
       <section className="pb-40 px-6">
-        <div className="container mx-auto xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px]">
+        <div className="container mx-auto">
           <motion.div
             layout
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"

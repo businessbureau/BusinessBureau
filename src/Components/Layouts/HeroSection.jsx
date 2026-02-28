@@ -39,7 +39,7 @@ export default function HeroSection() {
           />
           <div className="absolute inset-0 bg-gradient-to-l from-black via-black/40 to-transparent" />
 
-          <div className="absolute inset-0 flex flex-col justify-center items-end p-8 md:p-24 2xl:px-[10%] 3xl:px-[15%] text-right">
+          <div className="absolute inset-0 flex flex-col justify-center items-end p-8 md:p-24 text-right">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -49,14 +49,14 @@ export default function HeroSection() {
               <img
                 src="https://res.cloudinary.com/dtwcgfmar/image/upload/f_auto,q_auto/v1764996691/Business_Bureau_logo_l8enkr.png"
                 alt="logo"
-                className="w-64 md:w-80 2xl:w-[400px] 3xl:w-[500px] mb-6"
+                className="w-64 md:w-80 mb-6"
                 fetchpriority="high"
               />
               <motion.h2
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.5 }}
-                className="text-white text-4xl md:text-6xl lg:text-7xl 2xl:text-8xl 3xl:text-9xl font-light leading-tight tracking-tight uppercase"
+                className="text-white text-4xl md:text-6xl lg:text-7xl font-light leading-tight tracking-tight uppercase"
               >
                 A Smart Place <br />
                 <span className="text-primary italic font-serif lowercase">
@@ -102,7 +102,7 @@ export default function HeroSection() {
               style={{ opacity: section2Opacity, scale: section2Scale }}
               className="text-center"
             >
-              <h2 className="text-white text-5xl md:text-8xl 2xl:text-9xl 3xl:text-[10rem] font-serif italic tracking-tighter mb-4 leading-none">
+              <h2 className="text-white text-5xl md:text-8xl font-serif italic tracking-tighter mb-4">
                 Now at <span className="text-primary">Petta</span> <br /> &{" "}
                 <span className="text-primary">Panampilly Nagar</span>
               </h2>

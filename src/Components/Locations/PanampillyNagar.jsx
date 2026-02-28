@@ -290,7 +290,7 @@ const PanampillyNagar = () => {
 
       {/* About Section */}
       <section className="py-24 px-6 bg-white overflow-hidden">
-        <div className="container mx-auto xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px]">
+        <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             {/* Image Side (Reversed for visual rhythm compared to Petta) */}
             <motion.div
@@ -378,7 +378,7 @@ const PanampillyNagar = () => {
 
       {/* Cabin Details & Pricing */}
       <section className="py-32 bg-white overflow-hidden border-y border-gray-100">
-        <div className="container mx-auto px-6 xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px]">
+        <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-20">
             <div className="max-w-2xl">
               <span className="text-primary text-[10px] uppercase tracking-[0.5em] font-bold mb-6 block">
@@ -405,7 +405,7 @@ const PanampillyNagar = () => {
 
       {/* Parking Highlights */}
       <section className="py-20 overflow-hidden bg-gray-50 border-y border-gray-100">
-        <div className="container mx-auto px-6 xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px] grid md:grid-cols-2 gap-20 items-center">
+        <div className="container mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
           <div className="order-2 md:order-1 relative">
             <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl bg-gray-100">
               <img
@@ -457,7 +457,7 @@ const PanampillyNagar = () => {
 
       {/* FAQs Redesign */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-6 xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px] grid lg:grid-cols-12 gap-20">
+        <div className="container mx-auto px-6 grid lg:grid-cols-12 gap-20">
           <div className="lg:col-span-4 lg:sticky lg:top-32 h-fit">
             <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-bold mb-6 block">
               FAQ

@@ -21,7 +21,7 @@ const ServiceRow = ({ service, index }) => {
     <div
       className={`py-24 border-b border-gray-100 last:border-0 ${isEven ? "bg-white" : "bg-gray-50/50"}`}
     >
-      <div className="container mx-auto px-6 xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px]">
+      <div className="container mx-auto px-6">
         <div
           className={`flex flex-col md:flex-row ${isEven ? "" : "md:flex-row-reverse"} gap-12 lg:gap-20 items-center`}
         >
@@ -103,7 +103,7 @@ const StackingReason = ({ reason, index, total }) => {
       style={{ scale, opacity }}
       className="sticky top-0 h-screen flex items-center bg-gray-50 border-t border-gray-100 overflow-hidden"
     >
-      <div className="container mx-auto px-6 xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px] grid lg:grid-cols-12 gap-12 items-end py-20">
+      <div className="container mx-auto px-6 grid lg:grid-cols-12 gap-12 items-end py-20">
         <div className="lg:col-span-8">
           <div className="flex items-center gap-4 mb-12">
             <span className="text-gray-400 text-sm font-medium tracking-widest">
@@ -307,7 +307,7 @@ const ServicesPage = () => {
 
       {/* Services Breakdown Redesign */}
       <section className="py-20 bg-white overflow-hidden">
-        <div className="container mx-auto px-6 xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px] mb-24 text-center">
+        <div className="container mx-auto px-6 mb-24 text-center">
           <span className="text-primary text-[10px] uppercase tracking-[0.5em] font-bold mb-6 block">
             Core Offerings
           </span>
@@ -325,7 +325,7 @@ const ServicesPage = () => {
       {/* Why Choose Us - Immersive Stacking Redesign */}
       <section className="bg-gray-50 relative">
         <div className="bg-white py-32 px-6 border-b border-gray-100">
-          <div className="container mx-auto xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px] text-center">
+          <div className="container mx-auto text-center">
             <span className="text-primary text-[10px] uppercase tracking-[0.5em] font-bold mb-8 block">
               The Distinction
             </span>
@@ -393,7 +393,7 @@ const ServicesPage = () => {
 
       {/* Service FAQs Redesign */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-6 xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px] grid lg:grid-cols-12 gap-20">
+        <div className="container mx-auto px-6 grid lg:grid-cols-12 gap-20">
           <div className="lg:col-span-4 lg:sticky lg:top-32 h-fit">
             <span className="text-primary text-[10px] uppercase tracking-[0.4em] font-bold mb-6 block">
               POLICY Q&A

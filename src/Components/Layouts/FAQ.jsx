@@ -117,7 +117,7 @@ const FAQ = () => {
 
   return (
     <section id="faqRef" data-section className="py-24 bg-white">
-      <div className="container mx-auto px-6 xl:max-w-7xl 2xl:max-w-[1600px] 3xl:max-w-[2000px] grid lg:grid-cols-12 gap-20">
+      <div className="container mx-auto px-6 grid lg:grid-cols-12 gap-20">
         <div className="lg:col-span-4 lg:sticky lg:top-32 h-fit">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
