@@ -4,7 +4,6 @@ import {
   AnimatePresence,
   useScroll,
   useTransform,
-  useSpring,
 } from "framer-motion";
 import Header from "./Layouts/Header";
 import Seo from "./Seo";
