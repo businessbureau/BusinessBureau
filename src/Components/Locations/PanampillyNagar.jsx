@@ -5,7 +5,6 @@ import {
   useTransform,
   AnimatePresence,
 } from "framer-motion";
-import { Link } from "react-router-dom";
 import Header from "../Layouts/Header";
 import Seo from "../Seo";
 import Footer from "../Layouts/Footer";
