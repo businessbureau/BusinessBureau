@@ -54,15 +54,17 @@ const PricingCard = ({ title, price, details, index }) => (
         {details}
       </p>
 
-      <Link
-        to="/contact"
+      <a
+        href="https://wa.me/917907556090"
+        target="_blank"
+        rel="noopener noreferrer"
         className="inline-flex items-center gap-4 text-primary group-hover:text-white font-bold tracking-[0.2em] text-[10px] uppercase group/btn transition-colors duration-700"
       >
         <span>Enquire Now</span>
         <div className="relative w-8 h-[1px] bg-primary/30 group-hover:bg-white/30 overflow-hidden transition-colors duration-700">
           <div className="absolute inset-0 bg-primary group-hover:bg-white translate-x-[-100%] group-hover/btn:translate-x-0 transition-transform duration-500" />
         </div>
-      </Link>
+      </a>
     </div>
   </motion.div>
 );
@@ -261,7 +263,7 @@ const Petta = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative h-[80vh] overflow-hidden flex items-center justify-center bg-black">
+      <section className="relative h-[80vh] overflow-hidden flex items-center justify-center bg-black group">
         <motion.div
           style={{ scale: heroScale, opacity: heroOpacity }}
           className="absolute inset-0 bg-gray-900"
@@ -271,8 +273,18 @@ const Petta = () => {
             alt="Petta Kochi"
             fetchpriority="high"
             decoding="async"
-            className="w-full h-full object-cover opacity-70"
+            className="w-full h-full object-cover opacity-70 transition-transform duration-[2s] group-hover:scale-110"
           />
+          <a
+            href="https://wa.me/917907556090"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 cursor-pointer"
+          >
+            <span className="text-white text-[10px] font-bold tracking-[0.5em] uppercase border-b border-primary/30 pb-1">
+              Coworking space in petta
+            </span>
+          </a>
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black" />
         </motion.div>
         <div className="relative z-10 text-center px-6">
@@ -338,8 +350,10 @@ const Petta = () => {
                 </p>
               </div>
               <div className="flex mt-12">
-                <Link
-                  to="/contact"
+                <a
+                  href="https://wa.me/917907556090"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group relative inline-flex items-center gap-4 px-8 py-4 bg-primary overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 rounded-full"
                 >
                   <motion.div
@@ -352,7 +366,7 @@ const Petta = () => {
                     Contact Us
                   </span>
                   <span className="relative z-10 w-8 h-[1px] bg-white group-hover:bg-black group-hover:w-12 transition-all duration-300"></span>
-                </Link>
+                </a>
               </div>
             </motion.div>
 
@@ -361,7 +375,7 @@ const Petta = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.2 }}
               viewport={{ once: true }}
-              className="relative"
+              className="relative group"
             >
               <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl relative z-10 bg-gray-100">
                 <img
@@ -369,8 +383,18 @@ const Petta = () => {
                   alt="Petta Office Interior"
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
                 />
+                <a
+                  href="https://wa.me/917907556090"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 cursor-pointer"
+                >
+                  <span className="text-white text-[10px] font-bold tracking-[0.5em] uppercase border-b border-primary/30 pb-1">
+                    Coworking space in petta
+                  </span>
+                </a>
               </div>
               {/* Decorative Elements */}
               <div className="absolute -top-10 -right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10" />
@@ -410,15 +434,25 @@ const Petta = () => {
       {/* Parking Highlights */}
       <section className="py-12 overflow-hidden bg-white border-y border-gray-100">
         <div className="container mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
-          <div className="order-2 md:order-1 relative">
+          <div className="order-2 md:order-1 relative group">
             <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl bg-gray-100">
               <img
                 src={basementImage}
                 alt="Parking at Petta"
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
               />
+              <a
+                href="https://wa.me/917907556090"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 cursor-pointer"
+              >
+                <span className="text-white text-[10px] font-bold tracking-[0.5em] uppercase border-b border-primary/30 pb-1">
+                  Coworking space in petta
+                </span>
+              </a>
             </div>
             <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-gray-100 rounded-full blur-3xl -z-10" />
           </div>

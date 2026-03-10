@@ -25,6 +25,12 @@ const WhoWeAre = () => {
               decoding="async"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
             />
+            {/* Hover Title Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 pointer-events-none">
+              <span className="text-white text-[10px] font-bold tracking-[0.5em] uppercase border-b border-primary/30 pb-1">
+                Coworking space in kochi
+              </span>
+            </div>
             {/* Decorative block */}
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gray-50 rounded-2xl -z-10"></div>
             <div className="absolute -top-6 -left-6 w-32 h-32 bg-primary/5 rounded-2xl -z-10"></div>
@@ -40,7 +46,7 @@ const WhoWeAre = () => {
           >
             <div className="mb-8">
               <h1 className="text-primary text-[10px] uppercase tracking-[0.5em] font-bold mb-4 block">
-                coworking space in Kerala
+                coworking space in Kochi
               </h1>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 leading-tight">
                 Short Business Bureau <br className="hidden md:block" />

@@ -5,7 +5,7 @@ import Seo from "./Seo";
 import Header from "./Layouts/Header";
 import Footer from "./Layouts/Footer";
 import officeImage from "../assets/about/IMG_0534_0002_Color Lookup 3.jpg";
-import leader1 from "../assets/about/Alen.JPG"; // Alen Jacob
+import leader1 from "../assets/about/Alen.JPG"; 
 
 const Counter = ({ value, title, suffix = "" }) => {
   const [count, setCount] = useState(0);
