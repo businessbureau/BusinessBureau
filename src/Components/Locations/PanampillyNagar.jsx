@@ -247,7 +247,7 @@ const PanampillyNagar = () => {
       <Seo
         title="Coworking Space in Panampilly Nagar | Business Bureau"
         description="Premium coworking space in Panampilly Nagar, Kochi. Managed offices, meeting rooms, and dedicated desks in a prime business location."
-        url="https://www.businessbureau.in/panampilly-nagar/coworking-space-in-panamppallynagar"
+        url="https://www.businessbureau.in/panampilly-nagar/coworking-space-in-panampillynagar"
         jsonLd={panampillyFaqSchema}
       />
       <Header />
@@ -272,7 +272,7 @@ const PanampillyNagar = () => {
             className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 cursor-pointer"
           >
             <span className="text-white text-[10px] font-bold tracking-[0.5em] uppercase border-b border-primary/30 pb-1">
-              coworkingspacein panamppallynagar
+              coworkingspacein panampillynagar
             </span>
           </a>
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black" />
@@ -326,7 +326,7 @@ const PanampillyNagar = () => {
                   className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 cursor-pointer"
                 >
                   <span className="text-white text-[10px] font-bold tracking-[0.5em] uppercase border-b border-primary/30 pb-1">
-                    coworkingspacein panamppallynagar
+                    coworkingspacein panampillynagar
                   </span>
                 </a>
               </div>
@@ -445,7 +445,7 @@ const PanampillyNagar = () => {
                 className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 cursor-pointer"
               >
                 <span className="text-white text-[10px] font-bold tracking-[0.5em] uppercase border-b border-primary/30 pb-1">
-                  coworkingspacein panamppallynagar
+                  coworkingspacein panampillynagar
                 </span>
               </a>
             </div>

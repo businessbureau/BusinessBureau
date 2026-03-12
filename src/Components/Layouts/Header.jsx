@@ -38,7 +38,7 @@ function Header() {
     else if (path === "/contact") setActiveMenuItem("Contact");
     else if (
       path === "/petta/coworking-space-in-petta" ||
-      path === "/panampilly-nagar/coworking-space-in-panamppallynagar"
+      path === "/panampilly-nagar/coworking-space-in-panampillynagar"
     )
       setActiveMenuItem("Locations");
     else if (path === "/") setActiveMenuItem("Home");
@@ -217,7 +217,7 @@ function Header() {
                       { name: "Petta", path: "/petta/coworking-space-in-petta" },
                       {
                         name: "Panampilly Nagar",
-                        path: "/panampilly-nagar/coworking-space-in-panamppallynagar",
+                        path: "/panampilly-nagar/coworking-space-in-panampillynagar",
                       },
                     ].map((loc) => (
                       <Link

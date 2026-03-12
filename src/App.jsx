@@ -63,7 +63,7 @@ function App() {
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route
-                path="/panampilly-nagar/coworking-space-in-panamppallynagar"
+                path="/panampilly-nagar/coworking-space-in-panampillynagar"
                 element={<PanampillyNagar />}
               />
               <Route

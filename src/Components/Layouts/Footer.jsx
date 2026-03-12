@@ -108,7 +108,7 @@ const Footer = () => {
                 { name: "Petta, Kochi", path: "/petta/coworking-space-in-petta" },
                 {
                   name: "Panampilly Nagar",
-                  path: "/panampilly-nagar/coworking-space-in-panamppallynagar",
+                  path: "/panampilly-nagar/coworking-space-in-panampillynagar",
                 },
               ].map((loc) => (
                 <li key={loc.name}>
