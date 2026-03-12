@@ -71,7 +71,7 @@ const WhoWeAre = () => {
             </div>
 
             <Link
-              to="/about"
+              to="/about/coworking-space-in-kochi"
               className="mt-10 flex items-center gap-4 group cursor-pointer w-max"
             >
               <span className="w-12 h-[1px] bg-primary group-hover:w-16 transition-all duration-300"></span>

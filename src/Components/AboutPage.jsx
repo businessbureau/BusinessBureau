@@ -65,7 +65,7 @@ const AboutPage = () => {
       <Seo
         title="About Business Bureau | Coworking Space in Kerala"
         description="Learn about our coworking space in Kerala built to support collaboration, productivity, and sustainable business growth."
-        url="https://www.businessbureau.in/about"
+        url="https://www.businessbureau.in/about/coworking-space-in-kochi"
       />
       <Header />
 
@@ -96,6 +96,14 @@ const AboutPage = () => {
             className="text-primary text-[10px] md:text-xs uppercase tracking-[0.4em] md:tracking-[0.8em] font-bold mb-6 md:mb-8 block"
           >
             Since 2019
+          </motion.span>
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className="text-white/20 text-[8px] uppercase tracking-[0.4em] block mb-2"
+          >
+            coworking space in kochi
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -160,7 +168,7 @@ const AboutPage = () => {
                 functioning, consistent service quality, and a dependable
                 professional environment. From infrastructure upkeep to member
                 support systems, every operational detail is managed with
-                precision.
+                precision. coworking space in kochi
               </p>
               <p className="font-medium text-gray-900 italic font-serif text-lg md:text-xl">
                 "We enable individuals and teams to focus entirely on
@@ -263,7 +271,7 @@ const AboutPage = () => {
                   >
                     Alan Sir, the owner, brings a hands-on leadership approach
                     backed by deep operational knowledge and industry
-                    experience.
+                    experience. coworking space in kochi
                   </motion.p>
 
                   <motion.div
@@ -338,7 +346,7 @@ const AboutPage = () => {
                 professional relationships. By removing rigid structures and
                 promoting flexibility, the workspace aims to empower individuals
                 and businesses to adapt, scale, and thrive in a modern work
-                culture.
+                culture. coworking space in kochi
               </p>
             </motion.div>
 

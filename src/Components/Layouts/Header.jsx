@@ -32,11 +32,14 @@ function Header() {
   // Sync activeMenuItem with URL path
   useEffect(() => {
     const path = location.pathname;
-    if (path === "/about") setActiveMenuItem("About");
+    if (path === "/about/coworking-space-in-kochi") setActiveMenuItem("About");
     else if (path === "/services") setActiveMenuItem("Services");
     else if (path === "/gallery") setActiveMenuItem("Gallery");
     else if (path === "/contact") setActiveMenuItem("Contact");
-    else if (path === "/petta" || path === "/panampilly-nagar")
+    else if (
+      path === "/petta/coworking-space-in-petta" ||
+      path === "/panampilly-nagar/coworking-space-in-panamppallynagar"
+    )
       setActiveMenuItem("Locations");
     else if (path === "/") setActiveMenuItem("Home");
   }, [location.pathname]);
@@ -158,12 +161,12 @@ function Header() {
                 <Link
                   to={
                     item === "Home"
-                      ? "/"
-                      : item === "About"
-                        ? "/about"
-                        : item === "Services"
-                          ? "/services"
-                          : "/gallery"
+                        ? "/"
+                        : item === "About"
+                          ? "/about/coworking-space-in-kochi"
+                          : item === "Services"
+                            ? "/services"
+                            : "/gallery"
                   }
                   onClick={() => {
                     setActiveMenuItem(item);
@@ -211,10 +214,10 @@ function Header() {
                     className="absolute left-0 mt-2 w-48 bg-white border border-gray-100 shadow-xl rounded-xl overflow-hidden z-50 p-2"
                   >
                     {[
-                      { name: "Petta", path: "/petta" },
+                      { name: "Petta", path: "/petta/coworking-space-in-petta" },
                       {
                         name: "Panampilly Nagar",
-                        path: "/panampilly-nagar",
+                        path: "/panampilly-nagar/coworking-space-in-panamppallynagar",
                       },
                     ].map((loc) => (
                       <Link

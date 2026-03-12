@@ -78,7 +78,7 @@ const Footer = () => {
                         item === "Home"
                           ? "/"
                           : item === "About"
-                            ? "/about"
+                            ? "/about/coworking-space-in-kochi"
                             : item === "Services"
                               ? "/services"
                               : item === "Gallery"
@@ -105,10 +105,10 @@ const Footer = () => {
             </h6>
             <ul className="space-y-6">
               {[
-                { name: "Petta, Kochi", path: "/petta" },
+                { name: "Petta, Kochi", path: "/petta/coworking-space-in-petta" },
                 {
                   name: "Panampilly Nagar",
-                  path: "/panampilly-nagar",
+                  path: "/panampilly-nagar/coworking-space-in-panamppallynagar",
                 },
               ].map((loc) => (
                 <li key={loc.name}>

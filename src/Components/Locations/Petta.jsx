@@ -256,7 +256,7 @@ const Petta = () => {
       <Seo
         title="Coworking Space in Petta | Business Bureau Kochi"
         description="Discover a coworking space in Petta near Petta Metro Station, offering professional workspaces, shared offices, and meeting rooms for startups and teams."
-        url="https://www.businessbureau.in/petta"
+        url="https://www.businessbureau.in/petta/coworking-space-in-petta"
         jsonLd={pettaFaqSchema}
       />
       <Header />
@@ -281,7 +281,7 @@ const Petta = () => {
             className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 cursor-pointer"
           >
             <span className="text-white text-[10px] font-bold tracking-[0.5em] uppercase border-b border-primary/30 pb-1">
-              Coworking space in petta
+              cowarking space in petta
             </span>
           </a>
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black" />
@@ -391,7 +391,7 @@ const Petta = () => {
                   className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 cursor-pointer"
                 >
                   <span className="text-white text-[10px] font-bold tracking-[0.5em] uppercase border-b border-primary/30 pb-1">
-                    Coworking space in petta
+                    cowarking space in petta
                   </span>
                 </a>
               </div>
@@ -449,7 +449,7 @@ const Petta = () => {
                 className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 cursor-pointer"
               >
                 <span className="text-white text-[10px] font-bold tracking-[0.5em] uppercase border-b border-primary/30 pb-1">
-                  Coworking space in petta
+                  cowarking space in petta
                 </span>
               </a>
             </div>

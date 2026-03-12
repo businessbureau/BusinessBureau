@@ -68,7 +68,7 @@ const About = () => {
             </p>
 
             <Link
-              to="/about"
+              to="/about/coworking-space-in-kochi"
               className="group flex items-center gap-4 text-gray-800 text-sm uppercase tracking-widest mt-8 w-max"
             >
               <span className="w-8 h-[1px] bg-primary group-hover:w-12 transition-all" />

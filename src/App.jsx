@@ -55,12 +55,21 @@ function App() {
           <Suspense fallback={<Loader />}>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/about" element={<AboutPage />} />
+              <Route
+                path="/about/coworking-space-in-kochi"
+                element={<AboutPage />}
+              />
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/contact" element={<ContactPage />} />
-              <Route path="/panampilly-nagar" element={<PanampillyNagar />} />
-              <Route path="/petta" element={<Petta />} />
+              <Route
+                path="/panampilly-nagar/coworking-space-in-panamppallynagar"
+                element={<PanampillyNagar />}
+              />
+              <Route
+                path="/petta/coworking-space-in-petta"
+                element={<Petta />}
+              />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route
                 path="/terms-and-conditions"
