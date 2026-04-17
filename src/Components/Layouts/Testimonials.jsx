@@ -61,12 +61,12 @@ const Testimonials = () => {
       {/* Cinematic Background Text */}
       <motion.div
         style={{ x: backgroundX }}
-        className="absolute top-1/2 left-0 -translate-y-1/2 text-[25rem] font-black text-gray-900/10 whitespace-nowrap pointer-events-none select-none uppercase tracking-tighter"
+        className="absolute top-1/2 left-0 -translate-y-1/2 text-[12rem] md:text-[18rem] lg:text-[25rem] font-black text-gray-900/10 whitespace-nowrap pointer-events-none select-none uppercase tracking-tighter"
       >
         Voices Voices Voices
       </motion.div>
 
-      <div className="xl:container mx-auto px-6 md:px-20 relative z-10">
+      <div className="xl:container mx-auto px-6 md:px-10 lg:px-20 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -77,7 +77,7 @@ const Testimonials = () => {
           <span className="text-primary text-[10px] uppercase tracking-[0.6em] font-bold mb-6 block">
             The Bureau Echo
           </span>
-          <h2 className="text-5xl md:text-8xl font-light text-gray-900 leading-[0.9] tracking-tighter">
+          <h2 className="text-5xl md:text-6xl lg:text-8xl font-light text-gray-900 leading-[0.9] tracking-tighter">
             Real Stories. <br />
             <span className="text-primary italic font-serif">Unfiltered.</span>
           </h2>

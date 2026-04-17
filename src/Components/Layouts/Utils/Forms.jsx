@@ -1,6 +1,67 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
+const InputField = ({
+  label,
+  name,
+  type = "text",
+  required = false,
+  isTextArea = false,
+  formData,
+  focusedField,
+  handleInputChange,
+  setFocusedField,
+}) => (
+  <motion.div
+    className="relative mb-10 group"
+    initial={{ opacity: 0, y: 10 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+  >
+    <label
+      htmlFor={name}
+      className={`absolute left-0 transition-all duration-300 pointer-events-none uppercase tracking-[0.2em] text-[10px] ${
+        focusedField === name || formData[name]
+          ? "-top-6 text-primary font-bold"
+          : "top-2 text-gray-400"
+      }`}
+    >
+      {label}
+      {required && "*"}
+    </label>
+    {isTextArea ? (
+      <textarea
+        name={name}
+        id={name}
+        required={required}
+        className="w-full bg-transparent border-b border-gray-200 py-2 text-gray-900 caret-primary outline-none transition-colors duration-300 focus:border-primary resize-none h-24 font-light"
+        onFocus={() => setFocusedField(name)}
+        onBlur={() => setFocusedField(null)}
+        onChange={handleInputChange}
+        value={formData[name] || ""}
+      />
+    ) : (
+      <input
+        type={type}
+        name={name}
+        id={name}
+        required={required}
+        className="w-full bg-transparent border-b border-gray-200 py-2 text-gray-900 caret-primary outline-none transition-colors duration-300 focus:border-primary font-light"
+        onFocus={() => setFocusedField(name)}
+        onBlur={() => setFocusedField(null)}
+        onChange={handleInputChange}
+        value={formData[name] || ""}
+      />
+    )}
+    <motion.div
+      className="absolute bottom-0 left-0 h-[1px] bg-primary"
+      initial={{ width: 0 }}
+      animate={{ width: focusedField === name ? "100%" : 0 }}
+      transition={{ duration: 0.3 }}
+    />
+  </motion.div>
+);
+
 const Forms = () => {
   const [formData, setFormData] = useState({});
   const [submitted, setSubmitted] = useState(false);
@@ -96,65 +157,15 @@ const Forms = () => {
     );
   }
 
-  const InputField = ({
-    label,
-    name,
-    type = "text",
-    required = false,
-    isTextArea = false,
-  }) => (
-    <motion.div
-      className="relative mb-10 group"
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      <label
-        htmlFor={name}
-        className={`absolute left-0 transition-all duration-300 pointer-events-none uppercase tracking-[0.2em] text-[10px] ${
-          focusedField === name || formData[name]
-            ? "-top-6 text-primary font-bold"
-            : "top-2 text-gray-400"
-        }`}
-      >
-        {label}
-        {required && "*"}
-      </label>
-      {isTextArea ? (
-        <textarea
-          name={name}
-          id={name}
-          required={required}
-          className="w-full bg-transparent border-b border-gray-200 py-2 text-gray-900 outline-none transition-colors duration-300 focus:border-primary resize-none h-24 font-light"
-          onFocus={() => setFocusedField(name)}
-          onBlur={() => setFocusedField(null)}
-          onChange={handleInputChange}
-          value={formData[name] || ""}
-        />
-      ) : (
-        <input
-          type={type}
-          name={name}
-          id={name}
-          required={required}
-          className="w-full bg-transparent border-b border-gray-200 py-2 text-gray-900 outline-none transition-colors duration-300 focus:border-primary font-light"
-          onFocus={() => setFocusedField(name)}
-          onBlur={() => setFocusedField(null)}
-          onChange={handleInputChange}
-          value={formData[name] || ""}
-        />
-      )}
-      <motion.div
-        className="absolute bottom-0 left-0 h-[1px] bg-primary"
-        initial={{ width: 0 }}
-        animate={{ width: focusedField === name ? "100%" : 0 }}
-        transition={{ duration: 0.3 }}
-      />
-    </motion.div>
-  );
+  const commonProps = {
+    formData,
+    focusedField,
+    handleInputChange,
+    setFocusedField,
+  };
 
   return (
-    <div className="w-full max-w-2xl mx-auto py-8">
+    <div className="w-full max-w-2xl mx-auto py-8" data-theme="light">
       <div className="mb-16">
         <h3 className="text-4xl font-light text-gray-900 leading-tight">
           Let's Start Your{" "}
@@ -169,13 +180,13 @@ const Forms = () => {
         onSubmit={handleFormSubmit}
         className="grid grid-cols-1 md:grid-cols-2 gap-x-12"
       >
-        <InputField label="First Name" name="firstName" required />
-        <InputField label="Last Name" name="lastName" />
-        <InputField label="Phone" name="phone" type="tel" required />
-        <InputField label="Email" name="email" type="email" required />
+        <InputField label="First Name" name="firstName" required {...commonProps} />
+        <InputField label="Last Name" name="lastName" {...commonProps} />
+        <InputField label="Phone" name="phone" type="tel" required {...commonProps} />
+        <InputField label="Email" name="email" type="email" required {...commonProps} />
         <div className="md:col-span-2">
-          <InputField label="Company Name" name="companyName" />
-          <InputField label="Message" name="message" isTextArea />
+          <InputField label="Company Name" name="companyName" {...commonProps} />
+          <InputField label="Message" name="message" isTextArea {...commonProps} />
         </div>
 
         <div className="md:col-span-2 flex flex-col items-start gap-8 mt-4">

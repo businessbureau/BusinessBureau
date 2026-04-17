@@ -45,10 +45,10 @@ const ContactPage = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-white text-6xl md:text-9xl font-light tracking-tighter leading-none"
+            className="text-white text-6xl md:text-7xl lg:text-9xl font-light tracking-tighter leading-none"
           >
             Join the <br />
-            <span className="text-primary italic font-serif text-5xl md:text-8xl">
+            <span className="text-primary italic font-serif text-5xl md:text-6xl lg:text-8xl">
               Collective.
             </span>
           </motion.h1>
@@ -83,7 +83,7 @@ const ContactPage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1 }}
                   viewport={{ once: true }}
-                  className="text-4xl md:text-6xl font-light tracking-tighter text-gray-900 leading-tight"
+                  className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tighter text-gray-900 leading-tight"
                 >
                   Your journey, <br />
                   <span className="text-primary italic font-serif">
@@ -120,7 +120,7 @@ const ContactPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-gray-50 p-12 md:p-20 rounded-[3rem] border border-gray-100 shadow-xl"
+              className="bg-gray-50 p-12 md:p-14 lg:p-20 rounded-[3rem] border border-gray-100 shadow-xl"
             >
               <span className="text-primary text-[10px] uppercase tracking-[0.5em] font-bold mb-8 block">
                 Inquiry Form

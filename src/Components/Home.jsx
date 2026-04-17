@@ -1,17 +1,19 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import Header from "./Layouts/Header";
 import Seo from "./Seo";
 import HeroSection from "./Layouts/HeroSection";
 import WhoWeAre from "./Layouts/WhoWeAre";
 import About from "./Layouts/About";
 import Services from "./Layouts/Services";
-import Amenities from "./Layouts/Amenities";
-import Testimonials from "./Layouts/Testimonials";
-import FAQ from "./Layouts/FAQ";
-import Contact from "./Layouts/Contact";
 import Footer from "./Layouts/Footer";
-
 import SectionWrapper from "./Layouts/Utils/SectionWrapper";
+import Loader from "./Layouts/Utils/Loader";
+
+// Lazy-loaded components for better performance
+const Amenities = lazy(() => import("./Layouts/Amenities"));
+const Testimonials = lazy(() => import("./Layouts/Testimonials"));
+const FAQ = lazy(() => import("./Layouts/FAQ"));
+const Contact = lazy(() => import("./Layouts/Contact"));
 
 const Home = () => {
   const faqSchema = {
@@ -114,18 +116,20 @@ const Home = () => {
       <WhoWeAre />
       <About />
       <Services />
-      <SectionWrapper>
-        <Amenities />
-      </SectionWrapper>
-      <SectionWrapper>
-        <Testimonials />
-      </SectionWrapper>
-      <SectionWrapper>
-        <FAQ />
-      </SectionWrapper>
-      <SectionWrapper>
-        <Contact />
-      </SectionWrapper>
+      <Suspense fallback={<Loader />}>
+        <SectionWrapper>
+          <Amenities />
+        </SectionWrapper>
+        <SectionWrapper>
+          <Testimonials />
+        </SectionWrapper>
+        <SectionWrapper>
+          <FAQ />
+        </SectionWrapper>
+        <SectionWrapper>
+          <Contact />
+        </SectionWrapper>
+      </Suspense>
       <Footer />
     </div>
   );

@@ -1,5 +1,5 @@
-import React from "react";
 import { motion } from "framer-motion";
+import { FaWhatsapp } from "react-icons/fa";
 
 const SpeedDial = () => {
   const handleClick = () => {
@@ -27,7 +27,7 @@ const SpeedDial = () => {
           aria-expanded="false"
           className="flex items-center justify-center text-white bg-emerald-500 rounded-full w-14 h-14 shadow-lg hover:shadow-xl hover:bg-emerald-600 dark:bg-emerald-500 dark:hover:bg-emerald-700 focus:ring-4 focus:ring-emerald-300 focus:outline-none dark:focus:ring-emerald-800 cursor-pointer"
         >
-          <i className="fa-brands fa-whatsapp text-3xl"></i>
+          <FaWhatsapp className="text-3xl" />
           <span className="sr-only">Open actions menu</span>
         </motion.button>
       </div>

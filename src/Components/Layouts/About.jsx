@@ -1,8 +1,12 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-const interiorImage =
-  "https://res.cloudinary.com/dfwlj6k8j/image/upload/f_auto,q_auto/v1772277602/IMG_0534_0002_Color_Lookup_3_jiiuek.webp";
+import { getOptimizedImageUrl, IMAGE_WIDTHS } from "../../utils/imgUtils";
+
+const interiorImage = getOptimizedImageUrl(
+  "https://res.cloudinary.com/dfwlj6k8j/image/upload/v1776403312/yclzds8rqm8fx9i0qjdi_i3u4z6.jpg",
+  IMAGE_WIDTHS.DESKTOP,
+);
 
 const About = () => {
   const containerRef = useRef(null);
@@ -37,7 +41,7 @@ const About = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/40 to-transparent" />
       </motion.div>
 
-      <div className="relative z-10 container mx-auto px-6 md:px-20 grid md:grid-cols-2 gap-12">
+      <div className="relative z-10 container mx-auto px-6 md:px-10 lg:px-20 grid md:grid-cols-2 gap-12">
         <motion.div
           style={{ y: textY }}
           initial={{ opacity: 0, x: -50 }}
@@ -49,7 +53,7 @@ const About = () => {
           <span className="text-primary text-[10px] uppercase tracking-[0.6em] mb-4 block font-bold">
             Our Story
           </span>
-          <h2 className="text-gray-900 text-5xl md:text-7xl font-light mb-8 leading-tight">
+          <h2 className="text-gray-900 text-5xl md:text-6xl lg:text-7xl font-light mb-8 leading-tight">
             Innovate. <br />
             <span className="text-primary italic font-serif">
               Collaborate.

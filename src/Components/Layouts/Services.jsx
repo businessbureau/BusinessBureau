@@ -62,7 +62,7 @@ const Services = () => {
               coworking space in Kochi
             </h2>
 
-            <h2 className="text-white text-5xl md:text-8xl font-light leading-[0.85] tracking-tighter">
+            <h2 className="text-white text-5xl md:text-6xl lg:text-8xl font-light leading-[0.85] tracking-tighter">
               Bespoke <br />
               <span className="text-primary italic font-serif">Services.</span>
             </h2>
@@ -113,7 +113,7 @@ const Services = () => {
                   </div>
 
                   {/* Content Overlay */}
-                  <div className="absolute bottom-0 left-0 p-6 md:p-12 w-full">
+                  <div className="absolute bottom-0 left-0 p-6 md:p-8 lg:p-12 w-full">
                     <h3 className="text-white text-2xl md:text-3xl lg:text-4xl font-light mb-2 md:mb-4 group-hover:text-primary transition-colors duration-500">
                       {service.title}
                     </h3>

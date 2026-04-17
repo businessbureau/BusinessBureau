@@ -7,7 +7,7 @@ const Contact = () => {
     <section
       data-section
       id="contactRef"
-      className="bg-white min-h-screen flex items-center py-24 px-6 md:px-12"
+      className="bg-white min-h-screen flex items-center py-24 px-6 md:px-8 lg:px-12"
     >
       <div className="xl:container mx-auto">
         <motion.div
@@ -20,7 +20,7 @@ const Contact = () => {
           <span className="text-primary text-[10px] uppercase tracking-[0.5em] font-bold mb-4 block">
             Get In Touch
           </span>
-          <h2 className="text-4xl md:text-6xl font-light text-gray-900 leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 leading-tight">
             Connect{" "}
             <span className="text-primary italic font-serif">With Us</span>
           </h2>

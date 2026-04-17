@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/bb logos-min.png";
 import Modal from "./Utils/Modals";
 import Forms from "./Utils/Forms";
+import { FaFacebook, FaInstagram, FaYoutube, FaChevronDown } from "react-icons/fa";
 
 function Header() {
   const headerRef = useRef(null);
@@ -81,7 +82,7 @@ function Header() {
       ref={headerRef}
       className="bg-white sticky w-full z-50 top-0 start-0 border-b border-gray-100 shadow-sm transition-all duration-300"
     >
-      <div className="max-w-screen-xl lg:max-w-full flex flex-wrap items-center justify-between mx-auto p-4 md:px-12">
+      <div className="max-w-screen-xl lg:max-w-full flex flex-wrap items-center justify-between mx-auto p-4 md:px-6 lg:px-12">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img
             src={logo}
@@ -92,18 +93,18 @@ function Header() {
           />
         </a>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <div className="sm:flex hidden items-center justify-end gap-6 me-8">
+          <div className="sm:flex hidden items-center justify-end gap-3 md:gap-6 me-2 md:me-8">
             {[
               {
-                icon: "fa-facebook",
+                name: "facebook",
                 link: "https://www.facebook.com/businessbureau.in",
               },
               {
-                icon: "fa-instagram",
+                name: "instagram",
                 link: "https://www.instagram.com/businessbureau.in",
               },
               {
-                icon: "fa-youtube",
+                name: "youtube",
                 link: "https://youtube.com/@BusinessBureaukochi",
               },
             ].map((social, i) => (
@@ -113,8 +114,11 @@ function Header() {
                 target="_blank"
                 rel="noreferrer"
                 className="text-gray-400 hover:text-gray-800 transition-colors"
+                aria-label={social.name}
               >
-                <i className={`fa-brands ${social.icon} text-lg`}></i>
+                {social.name === "facebook" && <FaFacebook className="text-lg" />}
+                {social.name === "instagram" && <FaInstagram className="text-lg" />}
+                {social.name === "youtube" && <FaYoutube className="text-lg" />}
               </a>
             ))}
           </div>
@@ -199,10 +203,12 @@ function Header() {
                 }`}
               >
                 Locations
-                <motion.i
+                <motion.span
                   animate={{ rotate: isLocationOpen ? 180 : 0 }}
-                  className="fa-solid fa-chevron-down text-[8px]"
-                />
+                  className="text-[8px] flex items-center justify-center"
+                >
+                  <FaChevronDown />
+                </motion.span>
               </button>
 
               <AnimatePresence>

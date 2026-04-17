@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import logo from "../../assets/bb logos-min.png";
+import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -10,12 +11,12 @@ const Footer = () => {
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 0.02, x: 0 }}
         transition={{ duration: 2, ease: "easeOut" }}
-        className="absolute top-0 left-0 text-[18rem] font-bold text-gray-900 whitespace-nowrap pointer-events-none select-none uppercase tracking-tighter"
+        className="absolute top-0 left-0 text-[10rem] md:text-[14rem] lg:text-[18rem] font-bold text-gray-900 whitespace-nowrap pointer-events-none select-none uppercase tracking-tighter"
       >
         Business Bureau
       </motion.div>
 
-      <div className="xl:container mx-auto px-6 md:px-12 relative z-10">
+      <div className="xl:container mx-auto px-6 md:px-8 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-20 mb-24">
           {/* Brand Column */}
           <div className="sm:col-span-2 space-y-12">
@@ -38,15 +39,15 @@ const Footer = () => {
             <div className="flex gap-8">
               {[
                 {
-                  icon: "fa-facebook",
+                  name: "facebook",
                   link: "https://www.facebook.com/businessbureau.in",
                 },
                 {
-                  icon: "fa-instagram",
+                  name: "instagram",
                   link: "https://www.instagram.com/businessbureau.in",
                 },
                 {
-                  icon: "fa-youtube",
+                  name: "youtube",
                   link: "https://youtube.com/@BusinessBureaukochi",
                 },
               ].map((social, i) => (
@@ -56,9 +57,12 @@ const Footer = () => {
                   href={social.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-gray-400 transition-all duration-300 text-3xl"
+                  className="text-gray-400 transition-all duration-300 text-3xl flex items-center justify-center"
+                  aria-label={social.name}
                 >
-                  <i className={`fa-brands ${social.icon}`}></i>
+                  {social.name === "facebook" && <FaFacebook />}
+                  {social.name === "instagram" && <FaInstagram />}
+                  {social.name === "youtube" && <FaYoutube />}
                 </motion.a>
               ))}
             </div>

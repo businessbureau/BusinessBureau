@@ -1,8 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-const whoWeAreImg =
-  "https://res.cloudinary.com/dfwlj6k8j/image/upload/f_auto,q_auto/v1772275472/WhatsApp_Image_2026-01-23_at_6.22.55_PM_1_-_Copy_vv7jfv.webp";
+import { getOptimizedImageUrl, IMAGE_WIDTHS } from "../../utils/imgUtils";
+
+const whoWeAreImg = getOptimizedImageUrl(
+  "https://res.cloudinary.com/dfwlj6k8j/image/upload/v1776403312/yclzds8rqm8fx9i0qjdi_i3u4z6.jpg",
+  IMAGE_WIDTHS.TABLET,
+);
 
 const WhoWeAre = () => {
   return (

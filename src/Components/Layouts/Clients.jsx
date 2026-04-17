@@ -15,7 +15,7 @@ const Clients = () => {
 
   return (
     <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto w-full">
-      <div className="relative flex flex-col items-center overflow-hidden bg-white shadow-[0_30px_100px_-20px_rgba(0,0,0,0.15)] rounded-[3rem] py-20 px-6 md:px-12 border border-white/50 w-full transition-all duration-700 hover:shadow-[0_40px_120px_-20px_rgba(0,0,0,0.2)]">
+      <div className="relative flex flex-col items-center overflow-hidden bg-white shadow-[0_30px_100px_-20px_rgba(0,0,0,0.15)] rounded-[3rem] py-20 px-6 md:px-8 lg:px-12 border border-white/50 w-full transition-all duration-700 hover:shadow-[0_40px_120px_-20px_rgba(0,0,0,0.2)]">
         {/* Soft decorative background gradients for a premium feel */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden rounded-[3rem] pointer-events-none">
           <div className="absolute top-[-25%] left-[-15%] w-[60%] h-[60%] bg-gradient-to-br from-gray-100/80 to-transparent blur-[80px] rounded-full" />

@@ -11,42 +11,48 @@ import Footer from "./Layouts/Footer";
 
 // Gallery Assets - Optimized by Width and Format
 // Gallery Assets - Optimized by Width and Format
-const buildUrl = (url) =>
-  url.replace("/f_auto,q_auto/", "/f_auto,q_auto,w_800,c_limit/");
+import { getOptimizedImageUrl, IMAGE_WIDTHS } from "../utils/imgUtils";
 
-const int1 = buildUrl(
-  "https://res.cloudinary.com/dfwlj6k8j/image/upload/f_auto,q_auto/v1772275465/WhatsApp_Image_2026-01-23_at_6.22.57_PM_od067y.webp",
+const int1 = getOptimizedImageUrl(
+  "https://res.cloudinary.com/dfwlj6k8j/image/upload/v1776403312/yclzds8rqm8fx9i0qjdi_i3u4z6.jpg",
+  IMAGE_WIDTHS.TABLET,
 );
-const int2 = buildUrl(
-  "https://res.cloudinary.com/dfwlj6k8j/image/upload/f_auto,q_auto/v1772275472/WhatsApp_Image_2026-01-23_at_6.22.55_PM_1_-_Copy_vv7jfv.webp",
+const int2 = getOptimizedImageUrl(
+  "https://res.cloudinary.com/dfwlj6k8j/image/upload/v1776403311/tavusm6lrcjisesiry2a_bbmk1p.jpg",
+  IMAGE_WIDTHS.TABLET,
 );
-const int3 = buildUrl(
-  "https://res.cloudinary.com/dfwlj6k8j/image/upload/f_auto,q_auto/v1772275480/IMG_0543_0010_Brightness_Contrast_7_wqmhqa.webp",
+const int3 = getOptimizedImageUrl(
+  "https://res.cloudinary.com/dfwlj6k8j/image/upload/v1776403309/rjtdgeubqottjthkpavd_qmzujy.jpg",
+  IMAGE_WIDTHS.TABLET,
 );
-const int4 = buildUrl(
-  "https://res.cloudinary.com/dfwlj6k8j/image/upload/f_auto,q_auto/v1772275488/IMG_0543_0002_Color_Lookup_2_xqx3k7.webp",
+const int4 = getOptimizedImageUrl(
+  "https://res.cloudinary.com/dfwlj6k8j/image/upload/v1776403308/okrsujxm0q3yjvi7srvn_znkfxw.jpg",
+  IMAGE_WIDTHS.TABLET,
 );
-const int5 = buildUrl(
-  "https://res.cloudinary.com/dfwlj6k8j/image/upload/f_auto,q_auto/v1772275496/IMG_0534_0000_Color_Lookup_1_ihzcpx.webp",
+const int5 = getOptimizedImageUrl(
+  "https://res.cloudinary.com/dfwlj6k8j/image/upload/v1776403308/bprd94wtx61j8w9lv5mr_v3zgw0.jpg",
+  IMAGE_WIDTHS.TABLET,
 );
-const int6 = buildUrl(
-  "https://res.cloudinary.com/dfwlj6k8j/image/upload/f_auto,q_auto/v1772275939/WhatsApp_Image_2026-01-23_at_6.23.00_PM_j0zrfd.webp",
-);
-const int7 = buildUrl(
-  "https://res.cloudinary.com/dfwlj6k8j/image/upload/f_auto,q_auto/v1772275953/WhatsApp_Image_2026-01-23_at_6.22.59_PM_gocx8d.webp",
+const int6 = getOptimizedImageUrl(
+  "https://res.cloudinary.com/dfwlj6k8j/image/upload/v1776403307/fjsz1llrkh1umi3tmgi8_gloltw.jpg",
+  IMAGE_WIDTHS.TABLET,
 );
 
-const ext1 = buildUrl(
-  "https://res.cloudinary.com/dfwlj6k8j/image/upload/f_auto,q_auto/v1772274398/exterior1_i7obaw.webp",
+const ext1 = getOptimizedImageUrl(
+  "https://res.cloudinary.com/dfwlj6k8j/image/upload/v1776404112/szdapnmgatkpddotafqb_wqdfmj.jpg",
+  IMAGE_WIDTHS.TABLET,
 );
-const ext2 = buildUrl(
-  "https://res.cloudinary.com/dfwlj6k8j/image/upload/f_auto,q_auto/v1772274415/exterior2_y7ppuw.webp",
+const ext2 = getOptimizedImageUrl(
+  "https://res.cloudinary.com/dfwlj6k8j/image/upload/v1776404111/it5pc6o2bvrhfefo2aom_d9kneu.jpg",
+  IMAGE_WIDTHS.TABLET,
 );
-const ext3 = buildUrl(
-  "https://res.cloudinary.com/dfwlj6k8j/image/upload/f_auto,q_auto/v1772274423/exterior3_nw8wsf.webp",
+const ext3 = getOptimizedImageUrl(
+  "https://res.cloudinary.com/dfwlj6k8j/image/upload/v1776404109/ievwej4anrpuntugfdub_hj6m8c.jpg",
+  IMAGE_WIDTHS.TABLET,
 );
-const ext4 = buildUrl(
-  "https://res.cloudinary.com/dfwlj6k8j/image/upload/f_auto,q_auto/v1772274441/exterior4_l79fxe.webp",
+const ext4 = getOptimizedImageUrl(
+  "https://res.cloudinary.com/dfwlj6k8j/image/upload/v1776404107/gorzbjsmwg7rknympfaq_w0lw28.jpg",
+  IMAGE_WIDTHS.TABLET,
 );
 
 const GalleryItem = ({ image, index, onSelect }) => {
@@ -75,8 +81,8 @@ const GalleryItem = ({ image, index, onSelect }) => {
         ease: [0.22, 1, 0.36, 1],
         delay: (index % 3) * 0.1,
       }}
-      className={`relative group cursor-pointer overflow-hidden rounded-[3rem] bg-gray-50 ${image.aspect} ${
-        index % 3 === 1 ? "md:mt-24" : index % 3 === 2 ? "md:mt-12" : ""
+      className={`relative group cursor-pointer overflow-hidden rounded-[2rem] bg-gray-50 ${image.aspect} ${
+        index % 3 === 1 ? "md:mt-8 lg:mt-24" : index % 3 === 2 ? "md:mt-4 lg:mt-12" : ""
       }`}
       onClick={() => onSelect(image)}
     >
@@ -87,11 +93,11 @@ const GalleryItem = ({ image, index, onSelect }) => {
         decoding="async"
         className="w-full h-full object-cover transition-transform duration-[2s] ease-out group-hover:scale-110"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 p-12 flex flex-col justify-end">
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 p-6 md:p-8 flex flex-col justify-end">
         <span className="text-primary text-[10px] uppercase tracking-[0.5em] font-bold mb-4 block">
           {image.type}
         </span>
-        <h3 className="text-white text-4xl font-light italic font-serif leading-tight">
+        <h3 className="text-white text-2xl md:text-3xl font-light italic font-serif leading-tight">
           {image.title}
         </h3>
       </div>
@@ -185,12 +191,6 @@ const GalleryPage = () => {
       aspect: "aspect-square",
     },
     {
-      src: int7,
-      type: "interior",
-      title: "Community Corner",
-      aspect: "aspect-square",
-    },
-    {
       src: ext2,
       type: "exterior",
       title: "Urban Presence",
@@ -241,7 +241,7 @@ const GalleryPage = () => {
             <span className="text-primary text-[10px] uppercase tracking-[1.5em] font-bold mb-10 block opacity-50">
               Visual Narrative
             </span>
-            <h1 className="text-8xl md:text-[14rem] font-light tracking-tighter leading-[0.75] text-gray-900 flex flex-wrap justify-center overflow-hidden">
+            <h1 className="text-8xl md:text-8xl lg:text-[14rem] font-light tracking-tighter leading-[0.75] text-gray-900 flex flex-wrap justify-center overflow-hidden">
               {["O", "u", "r", "\u00A0", "A", "u", "r", "a", "."].map(
                 (char, i) => (
                   <motion.span
@@ -335,7 +335,7 @@ const GalleryPage = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ type: "spring", damping: 30, stiffness: 200 }}
-              className="relative max-w-7xl w-full aspect-video rounded-[4rem] overflow-hidden shadow-[0_0_100px_rgba(0,0,0,0.5)]"
+              className="relative max-w-7xl w-full aspect-video rounded-[2rem] overflow-hidden shadow-[0_0_100px_rgba(0,0,0,0.5)]"
               onClick={(e) => e.stopPropagation()}
             >
               <img
@@ -343,11 +343,11 @@ const GalleryPage = () => {
                 alt={selectedImage.title}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-x-0 bottom-0 p-16 bg-gradient-to-t from-black/90 to-transparent">
+              <div className="absolute inset-x-0 bottom-0 p-8 md:p-12 bg-gradient-to-t from-black/90 to-transparent">
                 <span className="text-primary text-xs uppercase tracking-[0.8em] font-bold mb-6 block">
                   {selectedImage.type}
                 </span>
-                <h2 className="text-5xl md:text-7xl text-white font-light italic font-serif">
+                <h2 className="text-4xl md:text-5xl lg:text-7xl text-white font-light italic font-serif">
                   {selectedImage.title}
                 </h2>
               </div>

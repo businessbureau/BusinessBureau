@@ -4,6 +4,7 @@ import officeImage from "../../assets/office pics/first slide.webp";
 import VideoPlayer from "./VideoPlayer";
 import Modal from "./Utils/Modals";
 import Forms from "./Utils/Forms";
+import { getOptimizedImageUrl, IMAGE_WIDTHS } from "../../utils/imgUtils";
 
 export default function HeroSection() {
   const containerRef = useRef(null);
@@ -39,7 +40,7 @@ export default function HeroSection() {
           />
           <div className="absolute inset-0 bg-gradient-to-l from-black via-black/40 to-transparent" />
 
-          <div className="absolute inset-0 flex flex-col justify-center items-end p-8 md:p-24 text-right">
+          <div className="absolute inset-x-0 bottom-0 top-0 flex flex-col justify-center items-end p-8 md:p-12 lg:p-24 text-right">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -47,16 +48,19 @@ export default function HeroSection() {
               className="flex flex-col items-end"
             >
               <img
-                src="https://res.cloudinary.com/dtwcgfmar/image/upload/f_auto,q_auto/v1764996691/Business_Bureau_logo_l8enkr.png"
+                src={getOptimizedImageUrl(
+                  "https://res.cloudinary.com/dtwcgfmar/image/upload/v1764996691/Business_Bureau_logo_l8enkr.png",
+                  IMAGE_WIDTHS.THUMBNAIL * 2,
+                )}
                 alt="logo"
-                className="w-64 md:w-80 mb-6"
+                className="w-64 md:w-72 lg:w-80 mb-6"
                 fetchpriority="high"
               />
               <motion.h2
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.5 }}
-                className="text-white text-4xl md:text-6xl lg:text-7xl font-light leading-tight tracking-tight uppercase"
+                className="text-white text-4xl md:text-5xl lg:text-7xl font-light leading-tight tracking-tight uppercase"
               >
                 A Smart Place <br />
                 <span className="text-primary italic font-serif lowercase">

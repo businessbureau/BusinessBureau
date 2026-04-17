@@ -128,7 +128,7 @@ const FAQ = () => {
             <span className="text-primary text-[10px] uppercase tracking-[0.5em] font-bold mb-6 block">
               Common Questions
             </span>
-            <h3 className="text-5xl md:text-7xl font-light tracking-tighter leading-tight mb-8">
+            <h3 className="text-5xl md:text-5xl lg:text-7xl font-light tracking-tighter leading-tight mb-8">
               Every <br />
               <span className="text-primary italic font-serif">Detail.</span>
             </h3>
