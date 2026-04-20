@@ -107,6 +107,36 @@ const Forms = () => {
 
       setSubmitted(true);
 
+      // Meta CAPI Lead Event
+      try {
+        const PIXEL_ID = process.env.REACT_APP_META_PIXEL_ID;
+        const ACCESS_TOKEN = process.env.REACT_APP_META_ACCESS_TOKEN;
+
+        if (PIXEL_ID && ACCESS_TOKEN && !ACCESS_TOKEN.includes("YOUR_ACCESS_TOKEN")) {
+          await fetch(`https://graph.facebook.com/v18.0/${PIXEL_ID}/events`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              data: [
+                {
+                  event_name: "Lead",
+                  event_time: Math.floor(Date.now() / 1000),
+                  action_source: "website",
+                  event_source_url: window.location.href,
+                  user_data: {
+                    client_ip_address: "auto",
+                    client_user_agent: navigator.userAgent,
+                  },
+                },
+              ],
+              access_token: ACCESS_TOKEN,
+            }),
+          });
+        }
+      } catch (e) {
+        console.warn("Meta CAPI Lead event failed", e);
+      }
+
       if (
         typeof window !== "undefined" &&
         typeof window.gtag_report_conversion === "function"
