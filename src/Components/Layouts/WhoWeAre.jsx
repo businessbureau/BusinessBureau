@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { getOptimizedImageUrl, IMAGE_WIDTHS } from "../../utils/imgUtils";
 
 const whoWeAreImg = getOptimizedImageUrl(
-  "https://res.cloudinary.com/dfwlj6k8j/image/upload/v1776403312/yclzds8rqm8fx9i0qjdi_i3u4z6.jpg",
+  "https://res.cloudinary.com/dpfpenhqc/image/upload/v1777360094/yclzds8rqm8fx9i0qjdi_uvupy8.jpg",
   IMAGE_WIDTHS.TABLET,
 );
 

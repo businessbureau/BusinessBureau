@@ -14,44 +14,44 @@ import Footer from "./Layouts/Footer";
 import { getOptimizedImageUrl, IMAGE_WIDTHS } from "../utils/imgUtils";
 
 const int1 = getOptimizedImageUrl(
-  "https://res.cloudinary.com/dfwlj6k8j/image/upload/v1776403312/yclzds8rqm8fx9i0qjdi_i3u4z6.jpg",
+  "https://res.cloudinary.com/dpfpenhqc/image/upload/v1777360094/yclzds8rqm8fx9i0qjdi_uvupy8.jpg",
   IMAGE_WIDTHS.TABLET,
 );
 const int2 = getOptimizedImageUrl(
-  "https://res.cloudinary.com/dfwlj6k8j/image/upload/v1776403311/tavusm6lrcjisesiry2a_bbmk1p.jpg",
+  "https://res.cloudinary.com/dpfpenhqc/image/upload/v1777360095/tavusm6lrcjisesiry2a_znx3ju.jpg",
   IMAGE_WIDTHS.TABLET,
 );
 const int3 = getOptimizedImageUrl(
-  "https://res.cloudinary.com/dfwlj6k8j/image/upload/v1776403309/rjtdgeubqottjthkpavd_qmzujy.jpg",
+  "https://res.cloudinary.com/dpfpenhqc/image/upload/v1777360095/rjtdgeubqottjthkpavd_a4xwyl.jpg",
   IMAGE_WIDTHS.TABLET,
 );
 const int4 = getOptimizedImageUrl(
-  "https://res.cloudinary.com/dfwlj6k8j/image/upload/v1776403308/okrsujxm0q3yjvi7srvn_znkfxw.jpg",
+  "https://res.cloudinary.com/dpfpenhqc/image/upload/v1777360093/okrsujxm0q3yjvi7srvn_ljatga.jpg",
   IMAGE_WIDTHS.TABLET,
 );
 const int5 = getOptimizedImageUrl(
-  "https://res.cloudinary.com/dfwlj6k8j/image/upload/v1776403308/bprd94wtx61j8w9lv5mr_v3zgw0.jpg",
+  "https://res.cloudinary.com/dpfpenhqc/image/upload/v1777360093/bprd94wtx61j8w9lv5mr_al6m5n.jpg",
   IMAGE_WIDTHS.TABLET,
 );
 const int6 = getOptimizedImageUrl(
-  "https://res.cloudinary.com/dfwlj6k8j/image/upload/v1776403307/fjsz1llrkh1umi3tmgi8_gloltw.jpg",
+  "https://res.cloudinary.com/dpfpenhqc/image/upload/v1777360092/fjsz1llrkh1umi3tmgi8_mr3igs.jpg",
   IMAGE_WIDTHS.TABLET,
 );
 
 const ext1 = getOptimizedImageUrl(
-  "https://res.cloudinary.com/dfwlj6k8j/image/upload/v1776404112/szdapnmgatkpddotafqb_wqdfmj.jpg",
+  "https://res.cloudinary.com/dpfpenhqc/image/upload/v1777360094/yclzds8rqm8fx9i0qjdi_uvupy8.jpg",
   IMAGE_WIDTHS.TABLET,
 );
 const ext2 = getOptimizedImageUrl(
-  "https://res.cloudinary.com/dfwlj6k8j/image/upload/v1776404111/it5pc6o2bvrhfefo2aom_d9kneu.jpg",
+  "https://res.cloudinary.com/dpfpenhqc/image/upload/v1777360094/it5pc6o2bvrhfefo2aom_xwmh3y.jpg",
   IMAGE_WIDTHS.TABLET,
 );
 const ext3 = getOptimizedImageUrl(
-  "https://res.cloudinary.com/dfwlj6k8j/image/upload/v1776404109/ievwej4anrpuntugfdub_hj6m8c.jpg",
+  "https://res.cloudinary.com/dpfpenhqc/image/upload/v1777360094/ievwej4anrpuntugfdub_ye5mil.jpg",
   IMAGE_WIDTHS.TABLET,
 );
 const ext4 = getOptimizedImageUrl(
-  "https://res.cloudinary.com/dfwlj6k8j/image/upload/v1776404107/gorzbjsmwg7rknympfaq_w0lw28.jpg",
+  "https://res.cloudinary.com/dpfpenhqc/image/upload/v1777360093/gorzbjsmwg7rknympfaq_cwnigh.jpg",
   IMAGE_WIDTHS.TABLET,
 );
 

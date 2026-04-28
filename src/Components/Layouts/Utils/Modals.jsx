@@ -1,36 +1,33 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Modal = ({ isOpen, onRequestClose, children }) => {
   return (
     <>
       {isOpen && (
-        <div className="fixed inset-0 z-[999999] overflow-y-auto">
-          <div className="flex min-h-screen items-center justify-center p-4 text-center">
-            <div
-              className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+        <div className="fixed inset-0 z-[999999] overflow-y-auto bg-black/60 backdrop-blur-sm">
+          <div className="flex min-h-screen items-start justify-center p-4 sm:p-6 text-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="relative w-full max-w-4xl bg-white rounded-[2rem] text-left shadow-2xl my-auto"
               onClick={(e) => e.stopPropagation()}
-            ></div>
-            <span
-              className="hidden sm:inline-block sm:align-middle sm:h-screen"
-              aria-hidden="true"
             >
-              &#8203;
-            </span>
-            <div className="inline-block align-bottom bg-gray-900 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-              <div className="bg-gray-900 px-4 pt-5 pb-4 sm:p-6 sm:pb-4 relative">
+              <div className="bg-white px-6 py-10 md:p-16 lg:p-20 relative">
                 <button
-                  class="btn btn-sm btn-circle text-white dark:text-white absolute right-2 top-2"
+                  className="absolute right-6 top-6 w-10 h-10 flex items-center justify-center rounded-full bg-gray-50 text-gray-400 hover:text-gray-900 hover:bg-gray-100 transition-all z-20"
                   onClick={onRequestClose}
                 >
-                  ✕
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
                 </button>
-                <div className="sm:flex sm:items-start">
-                  <div className="mt-3 text-center sm:mt-0 sm:mx-4 sm:text-left">
-                    {children}
-                  </div>
+                <div className="w-full">
+                  {children}
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       )}

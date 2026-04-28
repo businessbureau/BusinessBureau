@@ -13,7 +13,7 @@ const InputField = ({
   setFocusedField,
 }) => (
   <motion.div
-    className="relative mb-10 group"
+    className="relative mb-6 md:mb-10 group"
     initial={{ opacity: 0, y: 10 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
@@ -160,7 +160,7 @@ const Forms = () => {
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="flex flex-col items-center justify-center py-20 text-center space-y-4"
+        className="flex flex-col items-center justify-center py-12 md:py-20 text-center space-y-4"
       >
         <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-4">
           <svg
@@ -195,20 +195,20 @@ const Forms = () => {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto py-8" data-theme="light">
-      <div className="mb-16">
-        <h3 className="text-4xl font-light text-gray-900 leading-tight">
+    <div className="w-full max-w-4xl mx-auto pb-8" data-theme="light">
+      <div className="mb-8 md:mb-16">
+        <h3 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 leading-[1.1] tracking-tighter">
           Let's Start Your{" "}
           <span className="text-primary italic font-serif">Journey.</span>
         </h3>
-        <p className="text-gray-500 text-[10px] uppercase tracking-[0.4em] mt-4">
+        <p className="text-gray-500 text-[10px] md:text-xs uppercase tracking-[0.4em] mt-6 opacity-70">
           Fill the details below and we'll be in touch.
         </p>
       </div>
 
       <form
         onSubmit={handleFormSubmit}
-        className="grid grid-cols-1 md:grid-cols-2 gap-x-12"
+        className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-2"
       >
         <InputField label="First Name" name="firstName" required {...commonProps} />
         <InputField label="Last Name" name="lastName" {...commonProps} />
@@ -219,25 +219,25 @@ const Forms = () => {
           <InputField label="Message" name="message" isTextArea {...commonProps} />
         </div>
 
-        <div className="md:col-span-2 flex flex-col items-start gap-8 mt-4">
+        <div className="md:col-span-2 flex flex-col sm:flex-row sm:items-center justify-between gap-8 mt-8">
           <button
             type="submit"
             disabled={loading}
-            className="group relative px-12 py-4 bg-primary overflow-hidden"
+            className="w-full sm:w-auto group relative px-12 py-5 bg-primary overflow-hidden shadow-lg shadow-primary/20 transition-all hover:shadow-xl hover:shadow-primary/30"
           >
             <motion.div
-              className="absolute inset-0 bg-gray-800"
+              className="absolute inset-0 bg-gray-900"
               initial={{ x: "-100%" }}
               whileHover={{ x: 0 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
             />
             <span
-              className={`relative z-10 text-[10px] uppercase tracking-[0.3em] font-bold transition-colors duration-300 ${loading ? "text-white" : "text-white group-hover:text-white"}`}
+              className={`relative z-10 text-[11px] uppercase tracking-[0.3em] font-bold transition-colors duration-300 ${loading ? "text-white" : "text-white group-hover:text-white"}`}
             >
               {loading ? "Discovering..." : "Send Request"}
             </span>
           </button>
-          <span className="text-[9px] text-gray-400 uppercase tracking-widest italic">
+          <span className="text-[9px] md:text-[10px] text-gray-400 uppercase tracking-widest italic opacity-60">
             * All fields are handled with utmost confidentiality.
           </span>
         </div>
