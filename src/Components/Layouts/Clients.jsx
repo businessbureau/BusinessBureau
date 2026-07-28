@@ -4,13 +4,29 @@ import client1 from "../../assets/clients/autobacs.png";
 import client2 from "../../assets/clients/whyletz.png";
 import client3 from "../../assets/clients/impressa.png";
 import client4 from "../../assets/clients/cushman whitefield.png";
+import client5 from "../../assets/clients/Kuehne.png";
+import client6 from "../../assets/clients/kims.png";
+import client7 from "../../assets/clients/AirlinePros.png";
+import client8 from "../../assets/clients/echowealth.svg";
+import client9 from "../../assets/clients/experteducation.png";
+import client10 from "../../assets/clients/FlyingCarpet.png";
+import client11 from "../../assets/clients/LaennecAI.png";
+import client12 from "../../assets/clients/lansto.png";
 
 const Clients = () => {
   const clientsData = [
     { src: client4, alt: "Cushman & Wakefield" },
     { src: client2, alt: "Whyletz" },
     { src: client3, alt: "Impreza" },
+    { src: client5, alt: "Kuehne+Nagel", url: "https://www.kuehne-nagel.com/in" },
     { src: client1, alt: "Autobacs" },
+    { src: client6, alt: "Kims", url: "https://www.kimshospitals.com/" },
+    { src: client10, alt: "Flying Carpet", url: "https://www.flyingcarpet.travel/" },
+    { src: client8, alt: "EchoWealth", url: "https://echowealth.in/" },
+    { src: client9, alt: "Expert Education", url: "https://experteducation.com/global/" },
+    { src: client12, alt: "Lansto", url: "https://lansto.in/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaerGAPOPHp8_6f1RezZaziojc-nRKNjs9b51cCjJu6vbNhFCqypBmT551mlKg_aem_JSdiA2I58pirb_HPp4SJPA#" },
+    { src: client11, alt: "Laennec AI", url: "https://www.laennec.ai/" },
+    { src: client7, alt: "Airline Pros", url: "https://www.airlinepros.com/" },
   ];
 
   return (
@@ -67,13 +83,30 @@ const Clients = () => {
                   transition={{ type: "spring", stiffness: 400, damping: 25 }}
                   className="group flex items-center justify-center p-8 md:p-10 bg-gray-50 hover:bg-white rounded-3xl transition-all duration-500 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.1)] cursor-pointer border border-gray-100/50 hover:border-gray-200 aspect-[4/3]"
                 >
-                  <img
-                    src={client.src}
-                    className="transition-all duration-700 w-32 md:w-44 lg:w-48 object-contain opacity-60 group-hover:opacity-100 grayscale-[20%] group-hover:grayscale-0 filter drop-shadow-sm group-hover:drop-shadow-md mix-blend-multiply"
-                    loading="lazy"
-                    decoding="async"
-                    alt={client.alt}
-                  />
+                  {client.url ? (
+                    <a
+                      href={client.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-center"
+                    >
+                      <img
+                        src={client.src}
+                        className="transition-all duration-700 w-32 md:w-44 lg:w-48 object-contain opacity-60 group-hover:opacity-100 grayscale-[20%] group-hover:grayscale-0 filter drop-shadow-sm group-hover:drop-shadow-md mix-blend-multiply"
+                        loading="lazy"
+                        decoding="async"
+                        alt={client.alt}
+                      />
+                    </a>
+                  ) : (
+                    <img
+                      src={client.src}
+                      className="transition-all duration-700 w-32 md:w-44 lg:w-48 object-contain opacity-60 group-hover:opacity-100 grayscale-[20%] group-hover:grayscale-0 filter drop-shadow-sm group-hover:drop-shadow-md mix-blend-multiply"
+                      loading="lazy"
+                      decoding="async"
+                      alt={client.alt}
+                    />
+                  )}
                 </motion.div>
               ))}
             </div>
