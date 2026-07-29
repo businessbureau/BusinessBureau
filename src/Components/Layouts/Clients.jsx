@@ -12,21 +12,23 @@ import client9 from "../../assets/clients/experteducation.png";
 import client10 from "../../assets/clients/FlyingCarpet.png";
 import client11 from "../../assets/clients/LaennecAI.png";
 import client12 from "../../assets/clients/lansto.png";
+import client13 from "../../assets/clients/trillionedition.png";
 
 const Clients = () => {
   const clientsData = [
     { src: client4, alt: "Cushman & Wakefield" },
+    { src: client5, alt: "Kuehne+Nagel", url: "https://www.kuehne-nagel.com/in" },
+    { src: client6, alt: "Kims", url: "https://www.kimshospitals.com/" },
     { src: client2, alt: "Whyletz" },
-    { src: client3, alt: "Impreza" },
     { src: client5, alt: "Kuehne+Nagel", url: "https://www.kuehne-nagel.com/in" },
     { src: client1, alt: "Autobacs" },
-    { src: client6, alt: "Kims", url: "https://www.kimshospitals.com/" },
     { src: client10, alt: "Flying Carpet", url: "https://www.flyingcarpet.travel/" },
     { src: client8, alt: "EchoWealth", url: "https://echowealth.in/" },
     { src: client9, alt: "Expert Education", url: "https://experteducation.com/global/" },
     { src: client12, alt: "Lansto", url: "https://lansto.in/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaerGAPOPHp8_6f1RezZaziojc-nRKNjs9b51cCjJu6vbNhFCqypBmT551mlKg_aem_JSdiA2I58pirb_HPp4SJPA#" },
     { src: client11, alt: "Laennec AI", url: "https://www.laennec.ai/" },
     { src: client7, alt: "Airline Pros", url: "https://www.airlinepros.com/" },
+    { src: client13, alt: "Trillionedition", url: "https://www.trillionedition.com/" },
   ];
 
   return (

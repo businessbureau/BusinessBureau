@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import logo from "../../assets/bb logos-min.png";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
+import socialbureau from "../../assets/clients/socialbureau.png";
 
 const Footer = () => {
   return (
@@ -179,6 +180,18 @@ const Footer = () => {
             <span className="w-12 h-[1px] bg-gray-200"></span>
             <span>© Business Bureau Coworking {new Date().getFullYear()}</span>
           </div>
+          <div className="max-w-7xl mx-auto px-6 md:px-12 py-8">
+        <div className="flex flex-row items-center gap-3 text-[9px] md:text-[11px] font-bold text-muted uppercase tracking-[0.2em] mt-6 justify-start w-full text-left">
+          <span>POWERED BY</span>
+          <a href="https://www.socialbureau.in/enquiry-form" target="_blank" rel="noopener noreferrer" className="flex justify-start items-center">
+            <img
+              src={socialbureau}
+              alt="SocialBureau"
+              className="h-5 md:h-8 w-auto"
+            />
+          </a>
+        </div>
+      </div>
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="flex items-center gap-2 group cursor-default"
