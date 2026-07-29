@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import client1 from "../../assets/clients/autobacs.png";
 import client2 from "../../assets/clients/whyletz.png";
-import client3 from "../../assets/clients/impressa.png";
 import client4 from "../../assets/clients/cushman whitefield.png";
 import client5 from "../../assets/clients/Kuehne.png";
 import client6 from "../../assets/clients/kims.png";
