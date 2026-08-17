@@ -11,7 +11,7 @@ const SpeedDial = () => {
 
   return (
     <>
-      <div data-dial-init="" className="fixed end-6 bottom-6 group z-[99999]">
+      <div data-dial-init="" className="fixed end-6 bottom-6 group z-[99999]" id="whatsapp-speed-dial">
         <motion.button
           type="button"
           onClick={handleClick}
